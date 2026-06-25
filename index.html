@@ -82,18 +82,14 @@
 
   /* 1 — PHILOSOPHY / eudaimonia (top) */
   .phil{min-height:92svh;display:flex;align-items:center;overflow:hidden;padding:150px 0 84px}
-  .phil-bust{position:absolute;left:0;top:0;bottom:0;width:min(640px,66vw);z-index:0;pointer-events:none;
+  .phil-bust{position:absolute;left:0;top:0;bottom:0;width:min(620px,62vw);z-index:0;pointer-events:none;
     display:flex;align-items:center;justify-content:flex-start}
-  .phil-bust img{height:104%;width:auto;object-fit:cover;object-position:right center;
-    filter:invert(1) grayscale(1) contrast(1.06);mix-blend-mode:screen;opacity:.26;
-    -webkit-mask-image:linear-gradient(90deg,#000 26%,transparent 90%);
-            mask-image:linear-gradient(90deg,#000 26%,transparent 90%)}
-  .phil-bust svg{height:96%;width:auto;color:var(--brass);opacity:.14;
-    fill:none;stroke:currentColor;stroke-width:.9;stroke-linecap:round;stroke-linejoin:round;
-    -webkit-mask-image:linear-gradient(90deg,#000 30%,transparent 88%);
-            mask-image:linear-gradient(90deg,#000 30%,transparent 88%)}
-  .phil-inner{position:relative;z-index:1;width:100%;margin-left:auto;max-width:600px;
-    padding-left:clamp(0px,8vw,40px)}
+  .phil-bust img{height:100%;width:100%;object-fit:cover;object-position:42% 16%;
+    filter:grayscale(1) contrast(1.08);mix-blend-mode:screen;opacity:.72;
+    -webkit-mask-image:linear-gradient(90deg,#000 34%,rgba(0,0,0,.5) 58%,transparent 76%);
+            mask-image:linear-gradient(90deg,#000 34%,rgba(0,0,0,.5) 58%,transparent 76%)}
+  .phil-inner{position:relative;z-index:1;width:100%;margin-left:auto;max-width:580px;
+    padding-left:clamp(0px,27vw,350px)}
   .phil .mark-xl{font-family:var(--serif);font-style:italic;font-weight:600;
     font-size:clamp(44px,8vw,86px);line-height:.96;color:var(--brass);letter-spacing:.01em}
   .phil .ipa{margin-top:14px;font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--ink-mute);font-weight:500}
@@ -223,19 +219,7 @@
 <!-- 1 · PHILOSOPHY -->
 <section class="phil">
   <div class="phil-bust" aria-hidden="true">
-    <!-- SWAP: replace this <svg> with <img src="assets/aristotle.jpg" alt=""> once the file is saved. Styling already handles it. -->
-    <svg viewBox="0 0 400 420" xmlns="http://www.w3.org/2000/svg">
-      <path d="M118 150 q-14 -78 82 -98 q96 20 82 98"/>
-      <path d="M132 128 q16 -16 32 -9 M174 112 q18 -13 36 -5 M214 110 q18 -9 35 5 M252 124 q15 -8 25 7"/>
-      <path d="M120 150 q-6 58 20 102"/><path d="M280 150 q6 58 -20 102"/>
-      <path d="M150 170 q24 -12 46 -3 M204 167 q24 -9 46 4"/>
-      <path d="M156 192 q18 9 36 2 M208 194 q18 7 36 -2"/>
-      <path d="M200 176 q-7 38 -15 54 q9 11 23 9 q14 2 23 -9 q-8 -16 -15 -54"/>
-      <path d="M166 250 q34 16 68 0"/>
-      <path d="M138 256 q4 74 62 100 q58 -26 62 -100 q-31 27 -62 23 q-31 4 -62 -23z"/>
-      <path d="M160 304 q12 20 0 40 M200 316 q0 24 0 44 M240 304 q-12 20 0 40"/>
-      <path d="M92 416 q14 -84 70 -110 M308 416 q-14 -84 -70 -110"/><path d="M150 372 q50 24 100 0"/>
-    </svg>
+    <img src="assets/aristotle.jpg" alt="">
   </div>
   <div class="wrap">
     <div class="phil-inner">
