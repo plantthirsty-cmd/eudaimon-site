@@ -251,19 +251,57 @@
   html.js .reveal{opacity:0;transform:translateY(18px);transition:opacity .9s cubic-bezier(.2,.6,.2,1), transform .9s cubic-bezier(.2,.6,.2,1)}
   html.js .reveal.in{opacity:1;transform:none}
   @media (prefers-reduced-motion:reduce){
-    .reveal{opacity:1;transform:none;transition:none}
+    html.js .reveal{opacity:1;transform:none;transition:none}
     html{scroll-behavior:auto}
   }
+
+  /* phase glyphs + day/night arc in the night section */
+  .step .col-left{display:flex;flex-direction:column;align-items:flex-start;gap:18px}
+  .glyph{display:block;width:30px;height:30px;color:var(--brass-deep);opacity:.92}
+  .glyph svg{width:100%;height:100%;display:block;fill:none;stroke:currentColor;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}
+  #night{overflow:hidden}
+  .night-amb{position:absolute;inset:0;pointer-events:none;z-index:0;
+    background:
+      radial-gradient(120% 42% at 50% 0%, rgba(232,146,32,.055), transparent 62%),
+      radial-gradient(120% 38% at 50% 100%, rgba(232,146,32,.075), transparent 62%);}
+  #night > .wrap{position:relative;z-index:1}
+
+  /* current status */
+  .status .quotes{display:grid;grid-template-columns:1fr 1fr;gap:32px 48px;margin-top:50px}
+  .quote{border-left:2px solid var(--hair);padding-left:22px;margin:0}
+  .quote .de{font-family:var(--serif);font-style:italic;font-weight:500;font-size:clamp(18px,2.1vw,24px);line-height:1.32;color:var(--ink)}
+  .quote .en{margin-top:10px;font-size:13px;letter-spacing:.03em;color:var(--ink-mute);line-height:1.5}
+  .stats-cap{margin-top:64px;margin-bottom:0}
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:34px;margin-top:24px;
+    border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);padding:46px 0}
+  .stat .n{font-family:var(--sans);font-weight:300;font-size:clamp(34px,4.6vw,52px);color:var(--brass);line-height:1;letter-spacing:-.02em}
+  .stat .n .u{font-size:.40em;color:var(--ink-soft);letter-spacing:.02em;font-weight:400}
+  .stat .n .d{color:var(--ink-mute)}
+  .stat .l{margin-top:14px;font-size:13.5px;line-height:1.5;color:var(--ink-soft);max-width:24ch}
+  .future{margin-top:58px}
+
+  /* aristotle backdrop behind the closing etymology */
+  .close-wrap{position:relative;overflow:hidden}
+  .aristotle{position:absolute;left:50%;top:-30px;transform:translateX(-50%);
+    width:min(560px,94vw);color:var(--brass);opacity:.06;pointer-events:none;z-index:0;
+    -webkit-mask-image:radial-gradient(ellipse 68% 66% at 50% 36%,#000 38%,transparent 80%);
+            mask-image:radial-gradient(ellipse 68% 66% at 50% 36%,#000 38%,transparent 80%);}
+  .aristotle svg{width:100%;height:auto;display:block;fill:none;stroke:currentColor;stroke-width:.9;stroke-linecap:round;stroke-linejoin:round}
+  .close-wrap .close{position:relative;z-index:1}
 
   /* responsive */
   @media (max-width:720px){
     .wrap{padding:0 22px}
     .feat{grid-template-columns:1fr;gap:30px}
-    .step{grid-template-columns:64px 1fr;gap:18px;padding:30px 0}
+    .step{grid-template-columns:54px 1fr;gap:18px;padding:30px 0}
+    .step .col-left{gap:12px}
+    .glyph{width:24px;height:24px}
     .hero{padding:104px 22px 60px}
     .pull{max-width:none}
     header{padding:16px 22px}
     header.scrolled{padding:12px 22px}
+    .status .quotes{grid-template-columns:1fr;gap:26px}
+    .stats{grid-template-columns:1fr 1fr;gap:30px 22px;padding:36px 0}
   }
 </style>
 </head>
@@ -297,7 +335,7 @@
     <p class="kicker reveal" style="margin-bottom:30px">The problem</p>
     <p class="pull reveal">The version of you at 11pm is not the same person who set your alarm at 8am. <span class="b">They share a body but not a will.</span></p>
     <p class="lead reveal" style="margin-top:38px">
-      Willpower is a depletable prefrontal-cortex resource, and by night it's spent. Most sleep and habit systems fail because they ask the <strong>depleted evening self</strong> to make good decisions — working against your own neurobiology.
+      Your willpower runs on the <strong>prefrontal cortex</strong> — the part of your brain right behind your forehead, where decisions and self-control are made. It works like a battery, and by late evening it's almost flat. Most sleep and habit apps fail because they ask your most drained self to make the hard call, at the exact moment it can't.
     </p>
   </div>
 </section>
@@ -316,49 +354,65 @@
 <section class="band--tight">
   <div class="wrap">
     <div class="insight reveal">
-      <p class="q"><b>80%</b> of the value is getting to bed on time.</p>
-      <p class="note">Everything else is in service of that.</p>
+      <p class="q">When it comes to improving yourself, <b>80%</b> of it is just getting to bed on time.</p>
+      <p class="note">Sleep is the lever under everything else. Win the night and the day mostly takes care of itself.</p>
     </div>
   </div>
 </section>
 
 <!-- THE NIGHT -->
 <section class="band" id="night">
+  <div class="night-amb" aria-hidden="true"></div>
   <div class="wrap">
     <p class="kicker reveal" style="margin-bottom:8px">The night, walked through</p>
     <p class="pull reveal" style="max-width:24ch">It only appears <span class="b">when you need it.</span> Doing fine? It stays dark and quiet.</p>
 
     <div class="steps">
       <div class="step reveal">
-        <div class="num">01</div>
+        <div class="col-left">
+          <div class="num">01</div>
+          <span class="glyph" aria-hidden="true"><svg viewBox="0 0 28 28"><line x1="3" y1="22" x2="25" y2="22"/><path d="M8 22a6 6 0 0 1 12 0"/><line x1="14" y1="5" x2="14" y2="9"/><line x1="6" y1="11" x2="7.7" y2="12.7"/><line x1="22" y1="11" x2="20.3" y2="12.7"/></svg></span>
+        </div>
         <div>
           <h3>Wind-down</h3>
           <p>One gentle ping as the evening begins. <span class="hl">Ease off now</span> — not a buzzer, not a nag. A single soft chime you can acknowledge with a tap.</p>
         </div>
       </div>
       <div class="step reveal">
-        <div class="num">02</div>
+        <div class="col-left">
+          <div class="num">02</div>
+          <span class="glyph" aria-hidden="true"><svg viewBox="0 0 28 28"><path d="M19 4a9 9 0 1 0 5 16A10.5 10.5 0 0 1 19 4z"/></svg></span>
+        </div>
         <div>
           <h3>The evening routine</h3>
           <p>A short checklist you wrote yourself, clear-headed. Each item marked <span class="hl">negotiable</span> or <span class="hl">non-negotiable</span> — so on a hard night you skip the rest and just do what matters.</p>
         </div>
       </div>
       <div class="step reveal">
-        <div class="num">03</div>
+        <div class="col-left">
+          <div class="num">03</div>
+          <span class="glyph" aria-hidden="true"><svg viewBox="0 0 28 28"><path d="M17 6a7.5 7.5 0 1 0 4.5 13.5A9 9 0 0 1 17 6z"/><path d="M7.3 6.5l.7 1.9 1.9.7-1.9.7-.7 1.9-.7-1.9-1.9-.7 1.9-.7z"/></svg></span>
+        </div>
         <div>
           <h3>The phone goes in the box</h3>
-          <p>You place your phone in a real box that <span class="hl">physically detects</span> it. No tap stands in for it. The commitment is real, and unfakeable — the box is the magic; the screen is just the interface.</p>
+          <p>You place your phone in a real box that <span class="hl">physically detects</span> when it's inside. No tap or checkbox can stand in for it — the commitment is physical, and you can't quietly talk yourself out of it.</p>
         </div>
       </div>
       <div class="step reveal">
-        <div class="num">04</div>
+        <div class="col-left">
+          <div class="num">04</div>
+          <span class="glyph" aria-hidden="true"><svg viewBox="0 0 28 28"><path d="M9 6l.8 2.1 2.1.8-2.1.8L9 11.8l-.8-2.1-2.1-.8 2.1-.8z"/><path d="M19.5 13l.6 1.6 1.6.6-1.6.6-.6 1.6-.6-1.6-1.6-.6 1.6-.6z"/><circle cx="13" cy="20" r="1"/></svg></span>
+        </div>
         <div>
           <h3>If you stall, it shifts tone</h3>
           <p>It doesn't just get louder. It moves from gentle, to firm, to <span class="hl">your own promise — in your own words</span> — filling the screen. There is no "comply" button. You finish by actually doing the thing.</p>
         </div>
       </div>
       <div class="step reveal">
-        <div class="num">05</div>
+        <div class="col-left">
+          <div class="num">05</div>
+          <span class="glyph" aria-hidden="true"><svg viewBox="0 0 28 28"><line x1="3" y1="22" x2="25" y2="22"/><path d="M8 22a6 6 0 0 1 12 0"/><line x1="14" y1="4" x2="14" y2="8"/><line x1="4.5" y1="13" x2="6.5" y2="13"/><line x1="21.5" y1="13" x2="23.5" y2="13"/><line x1="7" y1="8" x2="8.5" y2="9.5"/><line x1="21" y1="8" x2="19.5" y2="9.5"/></svg></span>
+        </div>
         <div>
           <h3>Morning gives it back</h3>
           <p>Light rises before the alarm. A small <span class="hl">cognitive task</span> — never math — proves you're actually up, with no snooze to tap your way out of. Then the phone is earned back, and the day is yours.</p>
@@ -379,10 +433,10 @@
     </div>
     <div class="reveal">
       <p class="lead" style="max-width:48ch">
-        Not a cop. It catches you; it never judges you. It never tells you that you failed — silence is the signal that things are fine.
+        Not a cop. It catches you, but it never judges you, and it never tells you that you failed. When things are going fine, it stays dark and quiet and out of your way.
       </p>
       <p class="lead" style="max-width:48ch;margin-top:22px">
-        And the deepest thing people report isn't discipline. It's <strong>relief from the decision</strong> — the quiet of having already chosen.
+        And the thing testers mention most isn't willpower. It's <strong>relief from the decision</strong> — the calm of having already chosen, hours earlier, when choosing was easy.
       </p>
     </div>
   </div>
@@ -399,7 +453,7 @@
     </div>
     <div class="reveal">
       <p class="lead" style="max-width:48ch">
-        Choose a partner. If you miss bedtime, they're told — short and factual, over a channel they already have. Its existence alone is the mechanism.
+        Choose a partner. If you miss bedtime, they get a short, factual note — over a channel they already use. Just knowing someone will see is usually enough to tip the night.
       </p>
       <p class="lead" style="max-width:48ch;margin-top:22px">
         They never see your apps, your usage, or where you are. Only <strong>whether the phone went in</strong>. Accountability without surveillance.
@@ -408,18 +462,69 @@
   </div>
 </section>
 
-<!-- MOAT -->
-<section class="moat">
+<div class="hair"></div>
+
+<!-- CURRENT STATUS -->
+<section class="band status" id="status">
   <div class="wrap">
-    <p class="pull reveal" style="margin:0 auto">Garmin could build the software. <span class="b">It cannot give you a place to put your phone.</span></p>
-    <p class="sub reveal">The physical box is the moat — a real object an app can never replicate.</p>
+    <p class="kicker reveal" style="margin-bottom:18px">Where it stands today</p>
+    <p class="pull reveal" style="max-width:22ch">A few dozen people are <span class="b">living with it</span> right now.</p>
+    <p class="lead reveal" style="margin-top:30px;max-width:62ch">
+      These are hand-built early units — real hardware on real nightstands, not a render. Rough around the edges, honestly. But everything the box is meant to do, it does, and people don't want to hand them back.
+    </p>
+
+    <div class="quotes">
+      <blockquote class="quote reveal"><p class="de">„Ich will es einfach weiter nutzen, noch so leicht.“</p><p class="en">I just want to keep using it — it's that effortless.</p></blockquote>
+      <blockquote class="quote reveal"><p class="de">„Richtige Erleichterung, das abends zu machen.“</p><p class="en">Genuine relief to do this each evening.</p></blockquote>
+      <blockquote class="quote reveal"><p class="de">„Endlich geh ich abends wirklich ins Bett, statt noch stundenlang am Handy.“</p><p class="en">I finally actually go to bed, instead of hours more on my phone.</p></blockquote>
+      <blockquote class="quote reveal"><p class="de">„Abends muss ich nicht mehr drüber nachdenken — die Box macht das.“</p><p class="en">At night I don't have to think about it anymore — the box handles it.</p></blockquote>
+    </div>
+
+    <p class="kicker stats-cap reveal">The early numbers — 17 active testers</p>
+    <div class="stats reveal">
+      <div class="stat"><div class="n">15<span class="d">/17</span></div><div class="l">have missed their handover time no more than once</div></div>
+      <div class="stat"><div class="n">16<span class="d">/17</span></div><div class="l">would keep using it</div></div>
+      <div class="stat"><div class="n">8<span class="u"> min</span></div><div class="l">average deviation from the phone-handover deadline</div></div>
+      <div class="stat"><div class="n">45<span class="u"> min</span></div><div class="l">average evening routine, across about 4 items</div></div>
+    </div>
+
+    <div class="future reveal">
+      <p class="kicker" style="margin-bottom:16px">What's next</p>
+      <p class="lead" style="max-width:62ch">
+        An MVP is an MVP. Today's units sense your phone with a simple push-button — it works, but it's fragile. The next version is a <strong>purpose-built case</strong> with <strong>USB-C charging and detection</strong> built in: plug the phone in to charge, and the box already knows it's there. Nothing to balance, nothing to miss. That's what we're building now.
+      </p>
+    </div>
   </div>
 </section>
 
 <div class="hair"></div>
 
 <!-- CLOSING -->
-<section class="band">
+<section class="band close-wrap">
+  <div class="aristotle" aria-hidden="true">
+    <svg viewBox="0 0 400 420" xmlns="http://www.w3.org/2000/svg">
+      <!-- crown of hair -->
+      <path d="M118 150 q-14 -78 82 -98 q96 20 82 98"/>
+      <path d="M132 128 q16 -16 32 -9 M174 112 q18 -13 36 -5 M214 110 q18 -9 35 5 M252 124 q15 -8 25 7"/>
+      <!-- temples / cheeks -->
+      <path d="M120 150 q-6 58 20 102"/>
+      <path d="M280 150 q6 58 -20 102"/>
+      <!-- brows -->
+      <path d="M150 170 q24 -12 46 -3 M204 167 q24 -9 46 4"/>
+      <!-- downcast eyes -->
+      <path d="M156 192 q18 9 36 2 M208 194 q18 7 36 -2"/>
+      <!-- nose -->
+      <path d="M200 176 q-7 38 -15 54 q9 11 23 9 q14 2 23 -9 q-8 -16 -15 -54"/>
+      <!-- mustache -->
+      <path d="M166 250 q34 16 68 0"/>
+      <!-- beard -->
+      <path d="M138 256 q4 74 62 100 q58 -26 62 -100 q-31 27 -62 23 q-31 4 -62 -23z"/>
+      <path d="M160 304 q12 20 0 40 M200 316 q0 24 0 44 M240 304 q-12 20 0 40"/>
+      <!-- shoulders / toga -->
+      <path d="M92 416 q14 -84 70 -110 M308 416 q-14 -84 -70 -110"/>
+      <path d="M150 372 q50 24 100 0"/>
+    </svg>
+  </div>
   <div class="wrap close">
     <p class="name reveal">Eudaimon</p>
     <p class="kicker reveal" style="display:inline-block;margin-bottom:0">yoo-DAI-mon</p>
