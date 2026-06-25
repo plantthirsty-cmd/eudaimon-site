@@ -9,7 +9,6 @@
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <script>document.documentElement.className+=' js';</script>
 
-<!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:title" content="Eudaimon — flourishing, one night at a time">
 <meta property="og:description" content="A bedside box that takes your phone at night, holds you to your own wind-down, and gives it back in the morning.">
@@ -23,18 +22,9 @@
 
 <style>
   :root{
-    --bg:#0a0908;
-    --ink:#f0e9da;
-    --ink-soft:rgba(240,233,218,.62);
-    --ink-mute:rgba(240,233,218,.32);
-    --brass:#c8b89a;
-    --brass-deep:#c0a274;
-    --gold-hot:#e89220;
-    --night:#c2d4f3;
-    --hair:rgba(200,184,154,.16);
-    --serif:'Cormorant Garamond', Georgia, serif;
-    --sans:'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    --maxw:1080px;
+    --bg:#0a0908;--ink:#f0e9da;--ink-soft:rgba(240,233,218,.62);--ink-mute:rgba(240,233,218,.32);
+    --brass:#c8b89a;--brass-deep:#c0a274;--gold-hot:#e89220;--night:#c2d4f3;--hair:rgba(200,184,154,.16);
+    --serif:'Cormorant Garamond', Georgia, serif;--sans:'Inter', -apple-system, BlinkMacSystemFont, sans-serif;--maxw:1080px;
   }
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth}
@@ -43,190 +33,167 @@
   ::selection{background:rgba(200,184,154,.22);color:#fff}
   .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
   section{position:relative}
+  .kicker{font-family:var(--sans);font-weight:500;font-size:11.5px;letter-spacing:.34em;text-transform:uppercase;color:var(--ink-mute)}
 
-  .kicker{font-family:var(--sans);font-weight:500;font-size:11.5px;letter-spacing:.34em;
-    text-transform:uppercase;color:var(--ink-mute)}
-
-  /* top bar */
-  header{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;
-    justify-content:space-between;padding:20px 28px;
-    transition:background .4s, padding .4s, border-color .4s;border-bottom:1px solid transparent}
+  header{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;
+    padding:20px 28px;transition:background .4s,padding .4s,border-color .4s;border-bottom:1px solid transparent}
   header.scrolled{background:rgba(10,9,8,.72);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
     border-bottom:1px solid var(--hair);padding:14px 28px}
-  .mark{font-family:var(--serif);font-style:italic;font-weight:600;font-size:23px;color:var(--ink)}
+  .mark{font-family:var(--serif);font-style:italic;font-weight:600;font-size:23px;color:var(--ink);text-decoration:none}
   .mark span{color:var(--brass)}
+  .head-right{display:flex;align-items:center;gap:22px}
+  .lang{display:flex;align-items:center;gap:7px}
+  .lang-btn{background:none;border:none;cursor:pointer;font-family:var(--sans);font-weight:500;font-size:12px;
+    letter-spacing:.12em;color:var(--ink-mute);padding:2px 1px;transition:color .3s}
+  .lang-btn:hover{color:var(--ink-soft)}
+  .lang-btn.is-active{color:var(--brass)}
+  .lang-sep{color:var(--ink-mute);font-size:11px}
   .nav-cta{font-family:var(--sans);font-weight:500;font-size:12px;letter-spacing:.18em;text-transform:uppercase;
-    color:var(--ink-soft);text-decoration:none;border-bottom:1px solid var(--hair);padding-bottom:3px;
-    transition:color .3s, border-color .3s}
+    color:var(--ink-soft);text-decoration:none;border-bottom:1px solid var(--hair);padding-bottom:3px;transition:color .3s,border-color .3s}
   .nav-cta:hover{color:var(--brass);border-color:var(--brass)}
 
-  /* shared type */
   .pull{font-family:var(--serif);font-style:italic;font-weight:500;font-size:clamp(27px,4.4vw,48px);
     line-height:1.18;letter-spacing:.004em;color:var(--ink);max-width:20ch}
   .pull .b{color:var(--brass)}
   .lead{font-size:clamp(17px,1.9vw,20px);font-weight:300;color:var(--ink-soft);line-height:1.7;max-width:56ch}
   .lead strong{color:var(--ink);font-weight:500}
-  .link-cta{display:inline-flex;align-items:center;gap:.55em;font-family:var(--sans);font-weight:500;
-    font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--brass);text-decoration:none;
-    padding-bottom:7px;border-bottom:1px solid rgba(200,184,154,.4);transition:gap .3s, border-color .3s, color .3s}
+  .link-cta{display:inline-flex;align-items:center;gap:.55em;font-family:var(--sans);font-weight:500;font-size:13px;
+    letter-spacing:.2em;text-transform:uppercase;color:var(--brass);text-decoration:none;padding-bottom:7px;
+    border-bottom:1px solid rgba(200,184,154,.4);transition:gap .3s,border-color .3s,color .3s}
   .link-cta:hover{gap:1em;border-color:var(--brass);color:#e7dcc6}
-  .link-cta .arr{transition:transform .3s}
-  .link-cta:hover .arr{transform:translateX(3px)}
+  .link-cta .arr{transition:transform .3s}.link-cta:hover .arr{transform:translateX(3px)}
 
   .band{padding:clamp(78px,12vh,140px) 0}
   .band--tight{padding:clamp(56px,8vh,100px) 0}
   .hair{height:1px;background:var(--hair);max-width:var(--maxw);margin:0 auto}
   .center{text-align:center;max-width:760px;margin:0 auto}
-  .center .pull{margin:0 auto}
-  .center .lead{margin-left:auto;margin-right:auto}
+  .center .pull{margin:0 auto}.center .lead{margin-left:auto;margin-right:auto}
 
-  /* 1 — PHILOSOPHY / eudaimonia (top) */
   .phil{min-height:92svh;display:flex;align-items:center;overflow:hidden;padding:150px 0 84px}
-  .phil-bust{position:absolute;left:-4vw;top:0;bottom:0;width:min(720px,70vw);z-index:0;pointer-events:none;
-    display:flex;align-items:center;justify-content:flex-start}
+  .phil-bust{position:absolute;left:-4vw;top:0;bottom:0;width:min(720px,70vw);z-index:0;pointer-events:none;display:flex;align-items:center;justify-content:flex-start}
   .phil-bust img{height:115%;width:auto;object-fit:contain;object-position:left center;opacity:.5;
-    -webkit-mask-image:linear-gradient(90deg,#000 52%,transparent 92%);
-            mask-image:linear-gradient(90deg,#000 52%,transparent 92%)}
-  .phil-inner{position:relative;z-index:1;width:100%;max-width:600px;
-    padding-left:clamp(0px,10vw,130px)}
-  .phil .mark-xl{font-family:var(--serif);font-style:italic;font-weight:600;
-    font-size:clamp(44px,8vw,86px);line-height:.96;color:var(--brass);letter-spacing:.01em}
+    -webkit-mask-image:linear-gradient(90deg,#000 52%,transparent 92%);mask-image:linear-gradient(90deg,#000 52%,transparent 92%)}
+  .phil-inner{position:relative;z-index:1;width:100%;max-width:600px;padding-left:clamp(0px,10vw,130px)}
+  .phil .mark-xl{font-family:var(--serif);font-style:italic;font-weight:600;font-size:clamp(44px,8vw,86px);line-height:.96;color:var(--brass);letter-spacing:.01em}
   .phil .ipa{margin-top:14px;font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--ink-mute);font-weight:500}
-  .phil h1{font-family:var(--serif);font-style:italic;font-weight:500;font-size:clamp(23px,3vw,33px);
-    line-height:1.24;color:var(--ink);margin-top:34px;max-width:24ch}
+  .phil h1{font-family:var(--serif);font-style:italic;font-weight:500;font-size:clamp(23px,3vw,33px);line-height:1.24;color:var(--ink);margin-top:34px;max-width:24ch}
   .phil h1 .b{color:var(--brass)}
   .phil .lead{margin-top:22px;max-width:46ch}
   .phil .link-cta{margin-top:38px}
 
-  /* 2 — PRODUCT reveal */
   .product .wrap{text-align:center}
   .product figure{position:relative;margin:0 auto 44px;max-width:720px}
-  .product .glow{position:absolute;left:50%;top:48%;transform:translate(-50%,-50%);
-    width:min(960px,116vw);height:560px;z-index:0;pointer-events:none;filter:blur(8px);
+  .product .glow{position:absolute;left:50%;top:48%;transform:translate(-50%,-50%);width:min(960px,116vw);height:560px;z-index:0;pointer-events:none;filter:blur(8px);
     background:radial-gradient(ellipse at center,rgba(232,146,32,.15),rgba(232,146,32,.05) 40%,transparent 70%)}
-  .product figure img{position:relative;z-index:1;width:100%;height:auto;display:block;border-radius:14px;
-    box-shadow:0 40px 120px -40px rgba(0,0,0,.85)}
-  .product .what{font-family:var(--serif);font-style:italic;font-weight:500;
-    font-size:clamp(24px,3.6vw,40px);line-height:1.22;color:var(--ink);max-width:22ch;margin:0 auto}
+  .product figure img{position:relative;z-index:1;width:100%;height:auto;display:block;border-radius:14px;box-shadow:0 40px 120px -40px rgba(0,0,0,.85)}
+  .product .what{font-family:var(--serif);font-style:italic;font-weight:500;font-size:clamp(24px,3.6vw,40px);line-height:1.22;color:var(--ink);max-width:22ch;margin:0 auto}
   .product .what .b{color:var(--brass)}
   .product .tag{margin-top:18px;font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-mute);font-weight:500}
 
-  /* 3 — FOUNDER */
   .founder .wrap{max-width:720px;margin:0 auto;text-align:center}
   .founder .kicker{display:inline-block;margin-bottom:26px}
   .founder p.story{font-size:clamp(18px,2.1vw,22px);font-weight:300;color:var(--ink-soft);line-height:1.66}
   .founder p.story strong{color:var(--ink);font-weight:500}
   .founder .sign{margin-top:26px;font-family:var(--serif);font-style:italic;font-size:22px;color:var(--brass)}
 
-  /* insight */
-  .insight{text-align:center;max-width:760px;margin:0 auto;padding:clamp(40px,6vh,60px) 34px;
-    border-top:1px solid var(--hair);border-bottom:1px solid var(--hair)}
-  .insight .q{font-family:var(--serif);font-style:italic;font-weight:500;font-size:clamp(24px,3.6vw,40px);
-    line-height:1.22;color:var(--brass);max-width:20ch;margin:0 auto}
+  .insight{text-align:center;max-width:760px;margin:0 auto;padding:clamp(40px,6vh,60px) 34px;border-top:1px solid var(--hair);border-bottom:1px solid var(--hair)}
+  .insight .q{font-family:var(--serif);font-style:italic;font-weight:500;font-size:clamp(24px,3.6vw,40px);line-height:1.22;color:var(--brass);max-width:20ch;margin:0 auto}
   .insight .q b{color:var(--ink);font-weight:500}
   .insight .note{margin-top:16px;font-size:13.5px;letter-spacing:.04em;color:var(--ink-mute)}
 
-  /* the night — steps */
   .steps{margin-top:58px;display:flex;flex-direction:column}
   .step{display:grid;grid-template-columns:96px 1fr;gap:30px;padding:34px 0;border-top:1px solid var(--hair)}
   .step:last-child{border-bottom:1px solid var(--hair)}
   .step .col-left{display:flex;flex-direction:column;align-items:flex-start;gap:16px}
-  .step .num{font-family:var(--sans);font-weight:300;font-size:clamp(38px,5vw,58px);line-height:.9;
-    color:var(--brass);letter-spacing:-.02em}
+  .step .num{font-family:var(--sans);font-weight:300;font-size:clamp(38px,5vw,58px);line-height:.9;color:var(--brass);letter-spacing:-.02em}
   .glyph{display:block;width:30px;height:30px}
-  .glyph svg{width:100%;height:100%;display:block;fill:none;stroke:currentColor;stroke-width:1.4;
-    stroke-linecap:round;stroke-linejoin:round}
+  .glyph svg{width:100%;height:100%;display:block;fill:none;stroke:currentColor;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}
   .glyph.dusk{color:#d98a3c}
   .glyph.night{color:var(--night);filter:drop-shadow(0 0 5px rgba(150,180,240,.45))}
   .glyph.day{color:#ecae44;filter:drop-shadow(0 0 5px rgba(232,169,60,.4))}
-  .step h3{font-family:var(--serif);font-style:italic;font-weight:500;font-size:clamp(21px,2.6vw,29px);
-    line-height:1.2;color:var(--ink);margin-bottom:9px}
+  .step h3{font-family:var(--serif);font-style:italic;font-weight:500;font-size:clamp(21px,2.6vw,29px);line-height:1.2;color:var(--ink);margin-bottom:9px}
   .step p{font-size:16px;font-weight:300;color:var(--ink-soft);max-width:56ch;line-height:1.62}
   .step p .hl{color:var(--brass);font-weight:400}
   #night{overflow:hidden}
-  .night-amb{position:absolute;inset:0;pointer-events:none;z-index:0;
-    background:linear-gradient(180deg, rgba(46,66,120,.20) 0%, rgba(34,50,98,.12) 38%, transparent 68%, rgba(232,146,32,.06) 100%)}
+  .night-amb{position:absolute;inset:0;pointer-events:none;z-index:0;background:linear-gradient(180deg,rgba(46,66,120,.20) 0%,rgba(34,50,98,.12) 38%,transparent 68%,rgba(232,146,32,.06) 100%)}
   #night > .wrap{position:relative;z-index:1}
 
-  /* feature rows */
   .feat{display:grid;grid-template-columns:1fr 1fr;gap:54px;align-items:start}
   .feat .kicker{margin-bottom:18px;display:block}
-  .feat h2{font-family:var(--serif);font-style:italic;font-weight:500;font-size:clamp(25px,3.3vw,38px);
-    line-height:1.16;color:var(--ink);margin-bottom:18px}
+  .feat h2{font-family:var(--serif);font-style:italic;font-weight:500;font-size:clamp(25px,3.3vw,38px);line-height:1.16;color:var(--ink);margin-bottom:18px}
   .feat h2 .b{color:var(--brass)}
   .feat .lead{max-width:48ch}
 
-  /* current status */
   .status .quotes{display:grid;grid-template-columns:1fr 1fr;gap:32px 48px;margin-top:48px}
   .quote{border-left:2px solid var(--hair);padding-left:22px;margin:0}
-  .quote .de{font-family:var(--serif);font-style:italic;font-weight:500;font-size:clamp(18px,2.1vw,24px);
-    line-height:1.32;color:var(--ink)}
+  .quote .de{font-family:var(--serif);font-style:italic;font-weight:500;font-size:clamp(18px,2.1vw,24px);line-height:1.32;color:var(--ink)}
   .quote .en{margin-top:10px;font-size:13px;letter-spacing:.03em;color:var(--ink-mute);line-height:1.5}
+  body.lang-de .en-only{display:none}
+  .shots{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:42px}
+  .shots img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:10px;display:block;filter:saturate(.92) contrast(1.02)}
+  .shots figcaption{grid-column:1/-1;margin-top:14px;font-size:12px;letter-spacing:.06em;color:var(--ink-mute);text-align:center}
   .stats-cap{margin-top:60px;margin-bottom:0}
-  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:34px;margin-top:24px;
-    border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);padding:44px 0}
-  .stat .n{font-family:var(--sans);font-weight:300;font-size:clamp(34px,4.6vw,52px);color:var(--brass);
-    line-height:1;letter-spacing:-.02em}
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:34px;margin-top:24px;border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);padding:44px 0}
+  .stat .n{font-family:var(--sans);font-weight:300;font-size:clamp(34px,4.6vw,52px);color:var(--brass);line-height:1;letter-spacing:-.02em}
   .stat .n .u{font-size:.40em;color:var(--ink-soft);letter-spacing:.02em;font-weight:400}
   .stat .n .d{color:var(--ink-mute)}
   .stat .l{margin-top:14px;font-size:13.5px;line-height:1.5;color:var(--ink-soft);max-width:24ch}
   .future{margin-top:54px}
 
-  /* closing */
   .close-simple{text-align:center;max-width:680px;margin:0 auto}
-  .close-simple .line{font-family:var(--serif);font-style:italic;font-weight:500;
-    font-size:clamp(28px,4.6vw,46px);line-height:1.16;color:var(--brass)}
+  .close-simple .line{font-family:var(--serif);font-style:italic;font-weight:500;font-size:clamp(28px,4.6vw,46px);line-height:1.16;color:var(--brass)}
 
-  footer{border-top:1px solid var(--hair);margin-top:0;padding:40px 28px 56px;display:flex;flex-wrap:wrap;
-    gap:14px 26px;align-items:center;justify-content:center;text-align:center}
+  footer{border-top:1px solid var(--hair);padding:40px 28px 56px;display:flex;flex-wrap:wrap;gap:14px 26px;align-items:center;justify-content:center;text-align:center}
   footer .fmark{font-family:var(--serif);font-style:italic;font-weight:600;color:var(--ink);font-size:17px}
   footer .fmark span{color:var(--brass)}
   footer small{color:var(--ink-mute);font-size:12px;letter-spacing:.08em}
+  footer .foot-link{color:var(--ink-mute);font-size:12px;letter-spacing:.08em;text-decoration:none;border-bottom:1px solid var(--hair);transition:color .3s,border-color .3s}
+  footer .foot-link:hover{color:var(--brass);border-color:var(--brass)}
 
-  /* reveal */
-  html.js .reveal{opacity:0;transform:translateY(18px);transition:opacity .9s cubic-bezier(.2,.6,.2,1), transform .9s cubic-bezier(.2,.6,.2,1)}
+  html.js .reveal{opacity:0;transform:translateY(18px);transition:opacity .9s cubic-bezier(.2,.6,.2,1),transform .9s cubic-bezier(.2,.6,.2,1)}
   html.js .reveal.in{opacity:1;transform:none}
-  @media (prefers-reduced-motion:reduce){
-    html.js .reveal{opacity:1;transform:none;transition:none}
-    html{scroll-behavior:auto}
-  }
+  @media (prefers-reduced-motion:reduce){html.js .reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
 
   @media (max-width:760px){
     .wrap{padding:0 22px}
     .feat{grid-template-columns:1fr;gap:28px}
-    .step{grid-template-columns:54px 1fr;gap:18px;padding:28px 0}
-    .step .col-left{gap:12px}
-    .glyph{width:24px;height:24px}
-    .phil{min-height:auto;padding:128px 0 76px}
-    .phil-inner{max-width:100%;padding-left:0}
-    .phil-bust{width:108vw;left:-12vw}
-    .phil-bust img{opacity:.16}
+    .step{grid-template-columns:54px 1fr;gap:18px;padding:28px 0}.step .col-left{gap:12px}.glyph{width:24px;height:24px}
+    .phil{min-height:auto;padding:128px 0 76px}.phil-inner{max-width:100%;padding-left:0}
+    .phil-bust{width:108vw;left:-12vw}.phil-bust img{opacity:.16}
     .status .quotes{grid-template-columns:1fr;gap:26px}
     .stats{grid-template-columns:1fr 1fr;gap:30px 22px;padding:34px 0}
-    header{padding:16px 22px}
-    header.scrolled{padding:12px 22px}
+    .shots{gap:8px}
+    header{padding:16px 22px}header.scrolled{padding:12px 22px}
+    .head-right{gap:16px}
   }
 </style>
 </head>
 <body>
 
 <header id="topbar">
-  <div class="mark">Eudaimon<span>.</span></div>
-  <a class="nav-cta" href="#product">What it is</a>
+  <a class="mark" href="#top">Eudaimon<span>.</span></a>
+  <div class="head-right">
+    <div class="lang" role="group" aria-label="Language">
+      <button type="button" class="lang-btn is-active" data-lang="en">EN</button>
+      <span class="lang-sep">/</span>
+      <button type="button" class="lang-btn" data-lang="de">DE</button>
+    </div>
+    <a class="nav-cta" href="#product" data-i18n="nav.what">What it is</a>
+  </div>
 </header>
+
+<span id="top"></span>
 
 <!-- 1 · PHILOSOPHY -->
 <section class="phil">
-  <div class="phil-bust" aria-hidden="true">
-    <img src="assets/aristotle.png" alt="">
-  </div>
+  <div class="phil-bust" aria-hidden="true"><img src="assets/aristotle.png" alt=""></div>
   <div class="wrap">
     <div class="phil-inner">
       <p class="mark-xl reveal">Eudaimonia</p>
-      <p class="ipa reveal">yoo-dai-mon-EE-a &nbsp;·&nbsp; Ancient Greek</p>
-      <h1 class="reveal">Aristotle's word for <span class="b">flourishing</span> — not a fleeting high, but the lifelong practice of living well.</h1>
-      <p class="lead reveal">He meant it as a <em>verb</em>: flourishing is something you <strong>do</strong>, daily, by acting like the person you mean to be. Eudaimon is built on that one idea — and it starts with the smallest, hardest rep of it: actually going to bed when you said you would.</p>
-      <a class="link-cta reveal" href="#product">Meet the device <span class="arr">↓</span></a>
+      <p class="ipa reveal" data-i18n="phil.ipa">yoo-dai-mon-EE-a &nbsp;·&nbsp; Ancient Greek</p>
+      <h1 class="reveal" data-i18n="phil.h1">Aristotle's word for <span class="b">flourishing</span> — not a fleeting high, but the lifelong practice of living well.</h1>
+      <p class="lead reveal" data-i18n="phil.lead">He meant it as a <em>verb</em>: flourishing is something you <strong>do</strong>, daily, by acting like the person you mean to be. Eudaimon is built on that one idea — and it starts with the smallest, hardest rep of it: actually going to bed when you said you would.</p>
+      <a class="link-cta reveal" href="#product" data-i18n="phil.cta">Meet the device <span class="arr">↓</span></a>
     </div>
   </div>
 </section>
@@ -238,11 +205,10 @@
   <div class="wrap">
     <figure class="reveal">
       <div class="glow"></div>
-      <img src="assets/hero.jpg" width="1448" height="1086"
-           alt="The Eudaimon bedside box: a calm clock showing 11:18 with a phone charging inside the open drawer.">
+      <img src="assets/hero.jpg" width="1448" height="1086" alt="The Eudaimon bedside box: a calm clock showing 11:18 with a phone charging inside the open drawer.">
     </figure>
-    <p class="what reveal">A bedside box that takes your phone at night, holds you to <span class="b">your own wind-down</span>, and gives it back in the morning.</p>
-    <p class="tag reveal">Eudaimon — the structure you build before you need it</p>
+    <p class="what reveal" data-i18n="product.what">A bedside box that takes your phone at night, holds you to <span class="b">your own wind-down</span>, and gives it back in the morning.</p>
+    <p class="tag reveal" data-i18n="product.tag">Eudaimon — the structure you build before you need it</p>
   </div>
 </section>
 
@@ -251,89 +217,79 @@
 <!-- 3 · FOUNDER -->
 <section class="band--tight founder">
   <div class="wrap">
-    <p class="kicker reveal">Why I built it</p>
-    <p class="story reveal">
-      Quick, honest one: I doomscrolled past my own bedtime for <strong>years</strong>. I tried it all — screen-time limits, app blockers, greyscale, deleting apps, leaving the phone in another room. Nothing held for more than a week. So I made it my mission to build the thing that finally would. After a lot of dead ends, this is what I want to show you.
-    </p>
-    <p class="sign reveal">— David, founder</p>
+    <p class="kicker reveal" data-i18n="founder.kicker">Why I built it</p>
+    <p class="story reveal" data-i18n="founder.story">Quick, honest one: I doomscrolled past my own bedtime for <strong>years</strong>. I tried it all — screen-time limits, app blockers, greyscale, deleting apps, leaving the phone in another room. Nothing held for more than a week. So I made it my mission to build the thing that finally would. After a lot of dead ends, this is what I want to show you.</p>
+    <p class="sign reveal" data-i18n="founder.sign">— David, founder</p>
   </div>
 </section>
 
 <div class="hair"></div>
 
-<!-- THE PROBLEM -->
+<!-- PROBLEM -->
 <section class="band" id="problem">
   <div class="wrap">
-    <p class="kicker reveal" style="margin-bottom:28px">The problem</p>
-    <p class="pull reveal">The you at 11pm isn't the you who set the alarm at 8am. <span class="b">Same body, different will.</span></p>
-    <p class="lead reveal" style="margin-top:34px">
-      Willpower runs on your <strong>prefrontal cortex</strong> — the decision-making part right behind your forehead. It drains through the day, and by night it's nearly empty. Most apps fail because they ask your most depleted self to make the call, exactly when it can't.
-    </p>
+    <p class="kicker reveal" style="margin-bottom:28px" data-i18n="problem.kicker">The problem</p>
+    <p class="pull reveal" data-i18n="problem.pull">The you at 11pm isn't the you who set the alarm at 8am. <span class="b">Same body, different will.</span></p>
+    <p class="lead reveal" style="margin-top:34px" data-i18n="problem.lead">Willpower runs on your <strong>prefrontal cortex</strong> — the decision-making part right behind your forehead. It drains through the day, and by night it's nearly empty. Most apps fail because they ask your most depleted self to make the call, exactly when it can't.</p>
   </div>
 </section>
 
 <div class="hair"></div>
 
-<!-- THE FLIP -->
+<!-- FLIP -->
 <section class="band">
   <div class="wrap center">
-    <p class="kicker reveal" style="margin-bottom:28px">Eudaimon flips it</p>
-    <p class="pull reveal">Morning-you makes the rules. The box <span class="b">holds them</span> when evening-you would break them.</p>
-    <p class="lead reveal" style="margin-top:26px">A Ulysses contract in hardware: tie yourself to the mast while you're clear-headed, and let the box keep the rope.</p>
+    <p class="kicker reveal" style="margin-bottom:28px" data-i18n="flip.kicker">Eudaimon flips it</p>
+    <p class="pull reveal" data-i18n="flip.pull">Morning-you makes the rules. The box <span class="b">holds them</span> when evening-you would break them.</p>
+    <p class="lead reveal" style="margin-top:26px" data-i18n="flip.lead">A Ulysses contract in hardware: tie yourself to the mast while you're clear-headed, and let the box keep the rope.</p>
   </div>
 </section>
 
 <section class="band--tight">
   <div class="wrap">
     <div class="insight reveal">
-      <p class="q">When it comes to improving yourself, <b>80%</b> is just getting to bed on time.</p>
-      <p class="note">Win the night and the day mostly takes care of itself.</p>
+      <p class="q" data-i18n="insight.q">When it comes to improving yourself, <b>80%</b> is just getting to bed on time.</p>
+      <p class="note" data-i18n="insight.note">Win the night and the day mostly takes care of itself.</p>
     </div>
   </div>
 </section>
 
-<!-- THE NIGHT -->
+<!-- NIGHT -->
 <section class="band" id="night">
   <div class="night-amb" aria-hidden="true"></div>
   <div class="wrap">
-    <p class="kicker reveal" style="margin-bottom:8px">The night, walked through</p>
-    <p class="pull reveal" style="max-width:24ch">It only shows up <span class="b">when you need it.</span> Doing fine? It stays dark.</p>
-
+    <p class="kicker reveal" style="margin-bottom:8px" data-i18n="night.kicker">The night, walked through</p>
+    <p class="pull reveal" style="max-width:24ch" data-i18n="night.pull">It only shows up <span class="b">when you need it.</span> Doing fine? It stays dark.</p>
     <div class="steps">
       <div class="step reveal">
-        <div class="col-left">
-          <div class="num">01</div>
+        <div class="col-left"><div class="num">01</div>
           <span class="glyph dusk" aria-hidden="true"><svg viewBox="0 0 28 28"><line x1="3" y1="22" x2="25" y2="22"/><path d="M8 22a6 6 0 0 1 12 0"/><line x1="14" y1="5" x2="14" y2="9"/><line x1="6" y1="11" x2="7.7" y2="12.7"/><line x1="22" y1="11" x2="20.3" y2="12.7"/></svg></span>
         </div>
-        <div><h3>Wind-down</h3><p>One gentle ping: <span class="hl">ease off now</span>. Not a buzzer — a soft chime you can wave away with a tap.</p></div>
+        <div><h3 data-i18n="step1.h3">Wind-down</h3><p data-i18n="step1.p">One gentle ping: <span class="hl">ease off now</span>. Not a buzzer — a soft chime you can wave away with a tap.</p></div>
       </div>
       <div class="step reveal">
-        <div class="col-left">
-          <div class="num">02</div>
+        <div class="col-left"><div class="num">02</div>
           <span class="glyph night" aria-hidden="true"><svg viewBox="0 0 28 28"><path fill="currentColor" stroke="none" d="M20 5a9 9 0 1 0 4.4 16.6A11 11 0 0 1 20 5z"/></svg></span>
         </div>
-        <div><h3>The evening routine</h3><p>A short checklist you wrote yourself — each item <span class="hl">negotiable</span> or <span class="hl">non-negotiable</span>, so a hard night still ends in bed.</p></div>
+        <div><h3 data-i18n="step2.h3">The evening routine</h3><p data-i18n="step2.p">A short checklist you wrote yourself — each item <span class="hl">negotiable</span> or <span class="hl">non-negotiable</span>, so a hard night still ends in bed.</p></div>
       </div>
       <div class="step reveal">
-        <div class="col-left">
-          <div class="num">03</div>
-          <span class="glyph night" aria-hidden="true"><svg viewBox="0 0 28 28"><path fill="currentColor" stroke="none" d="M19 6a7.5 7.5 0 1 0 4.4 13.6A9 9 0 0 1 19 6z"/><path fill="currentColor" stroke="none" d="M8 6l1 2.6 2.6 1-2.6 1L8 14.2l-1-2.6-2.6-1 2.6-1z"/></svg></span>
+        <div class="col-left"><div class="num">03</div>
+          <span class="glyph night" aria-hidden="true"><svg viewBox="0 0 28 28"><path fill="currentColor" stroke="none" d="M19 6a7.5 7.5 0 1 0 4.5 13.6A9 9 0 0 1 19 6z"/><path fill="currentColor" stroke="none" d="M8 6l1 2.6 2.6 1-2.6 1L8 14.2l-1-2.6-2.6-1 2.6-1z"/></svg></span>
         </div>
-        <div><h3>The phone goes in the box</h3><p>Your phone goes in a real box that <span class="hl">physically detects</span> it. No tap or checkbox can fake the commitment.</p></div>
+        <div><h3 data-i18n="step3.h3">The phone goes in the box</h3><p data-i18n="step3.p">Your phone goes in a real box that <span class="hl">physically detects</span> it. No tap or checkbox can fake the commitment.</p></div>
       </div>
       <div class="step reveal">
-        <div class="col-left">
-          <div class="num">04</div>
+        <div class="col-left"><div class="num">04</div>
           <span class="glyph night" aria-hidden="true"><svg viewBox="0 0 28 28"><path fill="currentColor" stroke="none" d="M8.5 5l1.1 2.9 2.9 1.1-2.9 1.1L8.5 13l-1.1-2.9L4.5 9l2.9-1.1z"/><path fill="currentColor" stroke="none" d="M19.5 13l.8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8z"/><circle fill="currentColor" stroke="none" cx="13.5" cy="20.5" r="1.1"/></svg></span>
         </div>
-        <div><h3>If you stall, it shifts tone</h3><p>It doesn't just get louder — gentle, then firm, then <span class="hl">your own words</span> on the screen. No "comply" button; you finish by doing the thing.</p></div>
+        <div><h3 data-i18n="step4.h3">If you stall, it shifts tone</h3><p data-i18n="step4.p">It doesn't just get louder — gentle, then firm, then <span class="hl">your own words</span> on the screen. No "comply" button; you finish by doing the thing.</p></div>
       </div>
       <div class="step reveal">
-        <div class="col-left">
-          <div class="num">05</div>
+        <div class="col-left"><div class="num">05</div>
           <span class="glyph day" aria-hidden="true"><svg viewBox="0 0 28 28"><circle fill="currentColor" stroke="none" cx="14" cy="14" r="5"/><line x1="14" y1="2.5" x2="14" y2="5.5"/><line x1="14" y1="22.5" x2="14" y2="25.5"/><line x1="2.5" y1="14" x2="5.5" y2="14"/><line x1="22.5" y1="14" x2="25.5" y2="14"/><line x1="6" y1="6" x2="8" y2="8"/><line x1="20" y1="6" x2="18" y2="8"/><line x1="6" y1="22" x2="8" y2="20"/><line x1="20" y1="22" x2="18" y2="20"/></svg></span>
         </div>
-        <div><h3>Morning gives it back</h3><p>Light before the alarm, then a small <span class="hl">task</span> to prove you're up — no snooze, no math. Then the phone is yours again.</p></div>
+        <div><h3 data-i18n="step5.h3">Morning gives it back</h3><p data-i18n="step5.p">Light before the alarm, then a small <span class="hl">task</span> to prove you're up — no snooze, no math. Then the phone is yours again.</p></div>
       </div>
     </div>
   </div>
@@ -345,12 +301,12 @@
 <section class="band">
   <div class="wrap feat">
     <div class="reveal">
-      <span class="kicker">Protective, not punitive</span>
-      <h2>The <span class="b">sheepdog</span> you hired this morning.</h2>
+      <span class="kicker" data-i18n="sheepdog.kicker">Protective, not punitive</span>
+      <h2 data-i18n="sheepdog.h2">The <span class="b">sheepdog</span> you hired this morning.</h2>
     </div>
     <div class="reveal">
-      <p class="lead">Not a cop. It catches you, never judges you, and stays dark and quiet when you're doing fine.</p>
-      <p class="lead" style="margin-top:18px">What testers feel most isn't willpower. It's <strong>relief from the decision</strong> — already made, hours ago, when it was easy.</p>
+      <p class="lead" data-i18n="sheepdog.l1">Not a cop. It catches you, never judges you, and stays dark and quiet when you're doing fine.</p>
+      <p class="lead" style="margin-top:18px" data-i18n="sheepdog.l2">What testers feel most isn't willpower. It's <strong>relief from the decision</strong> — already made, hours ago, when it was easy.</p>
     </div>
   </div>
 </section>
@@ -361,47 +317,50 @@
 <section class="band">
   <div class="wrap feat">
     <div class="reveal">
-      <span class="kicker">Optional accountability</span>
-      <h2>Someone <span class="b">knows</span> — quietly.</h2>
+      <span class="kicker" data-i18n="partner.kicker">Optional accountability</span>
+      <h2 data-i18n="partner.h2">Someone <span class="b">knows</span> — quietly.</h2>
     </div>
     <div class="reveal">
-      <p class="lead">Pick a partner. Miss bedtime, and they get a short, factual note over a channel they already use.</p>
-      <p class="lead" style="margin-top:18px">They never see your apps, your usage, or where you are — only <strong>whether the phone went in</strong>. Accountability without surveillance.</p>
+      <p class="lead" data-i18n="partner.l1">Pick a partner. Miss bedtime, and they get a short, factual note over a channel they already use.</p>
+      <p class="lead" style="margin-top:18px" data-i18n="partner.l2">They never see your apps, your usage, or where you are — only <strong>whether the phone went in</strong>. Accountability without surveillance.</p>
     </div>
   </div>
 </section>
 
 <div class="hair"></div>
 
-<!-- CURRENT STATUS -->
+<!-- STATUS -->
 <section class="band status" id="status">
   <div class="wrap">
-    <p class="kicker reveal" style="margin-bottom:18px">Where it stands today</p>
-    <p class="pull reveal" style="max-width:22ch">A few dozen people are <span class="b">living with it</span> right now.</p>
-    <p class="lead reveal" style="margin-top:26px">
-      Hand-built early units on real nightstands — rough around the edges, honestly. But it works, and nobody wants to hand them back.
-    </p>
+    <p class="kicker reveal" style="margin-bottom:18px" data-i18n="status.kicker">Where it stands today</p>
+    <p class="pull reveal" style="max-width:22ch" data-i18n="status.pull">A few dozen people are <span class="b">living with it</span> right now.</p>
+    <p class="lead reveal" style="margin-top:26px" data-i18n="status.lead">Hand-built early units on real nightstands — rough around the edges, honestly. But it works, and nobody wants to hand them back.</p>
+
+    <figure class="shots reveal">
+      <img src="assets/mvp/mvp-1.jpg" alt="The assembled Eudaimon prototype showing the 11:18 wind-down screen" loading="lazy">
+      <img src="assets/mvp/mvp-2.jpg" alt="Opening the prototype's phone box by hand" loading="lazy">
+      <img src="assets/mvp/mvp-3.jpg" alt="A prototype unit wired up on the windowsill" loading="lazy">
+      <figcaption data-i18n="status.builtby">Built by hand — rough, but real.</figcaption>
+    </figure>
 
     <div class="quotes">
-      <blockquote class="quote reveal"><p class="de">„Ich will es einfach weiter nutzen, noch so leicht.“</p><p class="en">I just want to keep using it — it's that effortless.</p></blockquote>
-      <blockquote class="quote reveal"><p class="de">„Richtige Erleichterung, das abends zu machen.“</p><p class="en">Genuine relief to do this each evening.</p></blockquote>
-      <blockquote class="quote reveal"><p class="de">„Endlich geh ich abends wirklich ins Bett, statt noch stundenlang am Handy.“</p><p class="en">I finally actually go to bed, instead of hours more on my phone.</p></blockquote>
-      <blockquote class="quote reveal"><p class="de">„Abends muss ich nicht mehr drüber nachdenken — die Box macht das.“</p><p class="en">At night I don't have to think about it anymore — the box handles it.</p></blockquote>
+      <blockquote class="quote reveal"><p class="de">„Ich will es einfach weiter nutzen, noch so leicht.“</p><p class="en en-only">I just want to keep using it — it's that effortless.</p></blockquote>
+      <blockquote class="quote reveal"><p class="de">„Richtige Erleichterung, das abends zu machen.“</p><p class="en en-only">Genuine relief to do this each evening.</p></blockquote>
+      <blockquote class="quote reveal"><p class="de">„Endlich geh ich abends wirklich ins Bett, statt noch stundenlang am Handy.“</p><p class="en en-only">I finally actually go to bed, instead of hours more on my phone.</p></blockquote>
+      <blockquote class="quote reveal"><p class="de">„Abends muss ich nicht mehr drüber nachdenken — die Box macht das.“</p><p class="en en-only">At night I don't have to think about it anymore — the box handles it.</p></blockquote>
     </div>
 
-    <p class="kicker stats-cap reveal">The early numbers — 17 active testers</p>
+    <p class="kicker stats-cap reveal" data-i18n="status.statscap">The early numbers — 17 active testers</p>
     <div class="stats reveal">
-      <div class="stat"><div class="n">15<span class="d">/17</span></div><div class="l">have missed their handover time no more than once</div></div>
-      <div class="stat"><div class="n">16<span class="d">/17</span></div><div class="l">would keep using it</div></div>
-      <div class="stat"><div class="n">8<span class="u"> min</span></div><div class="l">average deviation from the phone-handover deadline</div></div>
-      <div class="stat"><div class="n">45<span class="u"> min</span></div><div class="l">average evening routine, across about 4 items</div></div>
+      <div class="stat"><div class="n">15<span class="d">/17</span></div><div class="l" data-i18n="stat1.l">have missed their handover time no more than once</div></div>
+      <div class="stat"><div class="n">16<span class="d">/17</span></div><div class="l" data-i18n="stat2.l">would keep using it</div></div>
+      <div class="stat"><div class="n">8<span class="u"> min</span></div><div class="l" data-i18n="stat3.l">average deviation from the phone-handover deadline</div></div>
+      <div class="stat"><div class="n">45<span class="u"> min</span></div><div class="l" data-i18n="stat4.l">average evening routine, across about 4 items</div></div>
     </div>
 
     <div class="future reveal">
-      <p class="kicker" style="margin-bottom:14px">What's next</p>
-      <p class="lead">
-        An MVP is an MVP. Today's units sense your phone with a push-button — it works, but it's fragile. The next version is a <strong>purpose-built case</strong> with <strong>USB-C charging and detection</strong> built in: plug in to charge, and the box already knows. We're building that now.
-      </p>
+      <p class="kicker" style="margin-bottom:14px" data-i18n="future.kicker">What's next</p>
+      <p class="lead" data-i18n="future.lead">An MVP is an MVP. Today's units sense your phone with a push-button — it works, but it's fragile. The next version is a <strong>purpose-built case</strong> with <strong>USB-C charging and detection</strong> built in: plug in to charge, and the box already knows. We're building that now.</p>
     </div>
   </div>
 </section>
@@ -411,32 +370,101 @@
 <!-- CLOSING -->
 <section class="band">
   <div class="wrap close-simple">
-    <p class="line reveal">The night serves the day.</p>
-    <div class="reveal"><a class="link-cta" href="mailto:plant.thirsty@gmail.com?subject=Eudaimon" style="margin-top:36px">Be the first to know <span class="arr">→</span></a></div>
+    <p class="line reveal" data-i18n="closing.line">The night serves the day.</p>
+    <div class="reveal"><a class="link-cta" href="mailto:plant.thirsty@gmail.com?subject=Eudaimon" style="margin-top:36px" data-i18n="closing.cta">Be the first to know <span class="arr">→</span></a></div>
   </div>
 </section>
 
 <footer>
   <span class="fmark">Eudaimon<span>.</span></span>
-  <small>flourishing, one night at a time</small>
+  <small data-i18n="footer.tagline">flourishing, one night at a time</small>
+  <a class="foot-link" href="impressum.html" data-i18n="footer.impressum">Impressum</a>
   <small>© 2026</small>
 </footer>
 
 <script>
   const bar = document.getElementById('topbar');
   const onScroll = () => bar.classList.toggle('scrolled', window.scrollY > 40);
-  onScroll();
-  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll(); window.addEventListener('scroll', onScroll, {passive:true});
 
   const reveals = document.querySelectorAll('.reveal');
-  if(!('IntersectionObserver' in window)){
-    reveals.forEach(el=>el.classList.add('in'));
-  } else {
-    const io = new IntersectionObserver((entries)=>{
-      entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
-    }, {threshold:0.12, rootMargin:'0px 0px -8% 0px'});
+  if(!('IntersectionObserver' in window)){ reveals.forEach(el=>el.classList.add('in')); }
+  else {
+    const io = new IntersectionObserver((entries)=>{ entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } }); }, {threshold:0.12, rootMargin:'0px 0px -8% 0px'});
     reveals.forEach((el,i)=>{ el.style.transitionDelay = (Math.min(i,3)*60)+'ms'; io.observe(el); });
   }
+
+  // ---- i18n (English in DOM; German translations swapped in) ----
+  const I18N = { de: {
+    "nav.what":"Was es ist",
+    "phil.ipa":"yoo-dai-mon-EE-a &nbsp;·&nbsp; Altgriechisch",
+    "phil.h1":"Aristoteles' Wort für das <span class=\"b\">Aufblühen</span> — kein flüchtiger Rausch, sondern die lebenslange Übung, gut zu leben.",
+    "phil.lead":"Er verstand es als <em>Verb</em>: Aufblühen ist etwas, das man <strong>tut</strong> — täglich, indem man so handelt wie der Mensch, der man sein will. Eudaimon baut auf dieser einen Idee auf. Und es beginnt mit ihrer kleinsten, schwersten Wiederholung: abends wirklich ins Bett zu gehen, wenn man es sich vorgenommen hat.",
+    "phil.cta":"Das Gerät ansehen <span class=\"arr\">↓</span>",
+    "product.what":"Eine Box für den Nachttisch, die nachts dein Handy nimmt, dich an <span class=\"b\">dein eigenes Abendritual</span> hält und es dir morgens zurückgibt.",
+    "product.tag":"Eudaimon — die Struktur, die du aufbaust, bevor du sie brauchst",
+    "founder.kicker":"Warum ich es gebaut habe",
+    "founder.story":"Kurz und ehrlich: Ich habe mich <strong>jahrelang</strong> am Handy an meiner eigenen Schlafenszeit vorbeigescrollt. Ich habe alles versucht — Bildschirmzeit-Limits, App-Blocker, Graustufen, Apps gelöscht, das Handy in einem anderen Raum gelassen. Nichts hielt länger als eine Woche. Also habe ich es mir zur Aufgabe gemacht, das Ding zu bauen, das es endlich schafft. Nach vielen Sackgassen ist das hier, was ich dir zeigen möchte.",
+    "founder.sign":"— David, Gründer",
+    "problem.kicker":"Das Problem",
+    "problem.pull":"Das Ich um 23 Uhr ist nicht das Ich, das um 8 Uhr den Wecker gestellt hat. <span class=\"b\">Gleicher Körper, anderer Wille.</span>",
+    "problem.lead":"Willenskraft läuft über deinen <strong>präfrontalen Kortex</strong> — den Teil des Gehirns direkt hinter der Stirn, wo Entscheidungen fallen. Er entleert sich über den Tag, und nachts ist er fast leer. Die meisten Apps scheitern, weil sie deinem erschöpftesten Ich die Entscheidung überlassen — genau dann, wenn es sie nicht treffen kann.",
+    "flip.kicker":"Eudaimon dreht es um",
+    "flip.pull":"Das Morgen-Ich macht die Regeln. Die Box <span class=\"b\">hält sie</span>, wenn das Abend-Ich sie brechen würde.",
+    "flip.lead":"Ein Odysseus-Vertrag als Hardware: Fessle dich an den Mast, solange du klar bist — und lass die Box das Seil halten.",
+    "insight.q":"Wenn es darum geht, sich zu verbessern, sind <b>80%</b> einfach: rechtzeitig ins Bett.",
+    "insight.note":"Gewinn die Nacht, und der Tag erledigt sich fast von selbst.",
+    "night.kicker":"Die Nacht, Schritt für Schritt",
+    "night.pull":"Es zeigt sich nur, <span class=\"b\">wenn du es brauchst.</span> Läuft alles gut? Dann bleibt es dunkel.",
+    "step1.h3":"Herunterfahren",
+    "step1.p":"Ein sanftes Signal: <span class=\"hl\">jetzt herunterfahren</span>. Kein Summer — ein leiser Ton, den du mit einem Tippen wegwischen kannst.",
+    "step2.h3":"Das Abendritual",
+    "step2.p":"Eine kurze Checkliste, die du selbst geschrieben hast — jeder Punkt <span class=\"hl\">verhandelbar</span> oder <span class=\"hl\">nicht verhandelbar</span>, damit auch eine harte Nacht im Bett endet.",
+    "step3.h3":"Das Handy kommt in die Box",
+    "step3.p":"Dein Handy kommt in eine echte Box, die es <span class=\"hl\">physisch erkennt</span>. Kein Tippen, kein Häkchen kann die Verpflichtung vortäuschen.",
+    "step4.h3":"Wenn du zögerst, ändert sich der Ton",
+    "step4.p":"Es wird nicht einfach lauter — erst sanft, dann bestimmt, dann <span class=\"hl\">deine eigenen Worte</span> auf dem Bildschirm. Kein „Erledigt“-Knopf; du beendest es, indem du es wirklich tust.",
+    "step5.h3":"Der Morgen gibt es zurück",
+    "step5.p":"Licht vor dem Wecker, dann eine kleine <span class=\"hl\">Aufgabe</span>, die beweist, dass du wach bist — kein Snooze, kein Rechnen. Dann gehört das Handy wieder dir.",
+    "sheepdog.kicker":"Schützend, nicht strafend",
+    "sheepdog.h2":"Der <span class=\"b\">Hütehund</span>, den du heute Morgen engagiert hast.",
+    "sheepdog.l1":"Kein Polizist. Es fängt dich auf, verurteilt dich nie und bleibt dunkel und still, solange alles gut läuft.",
+    "sheepdog.l2":"Was Tester am stärksten spüren, ist nicht Willenskraft. Es ist die <strong>Erleichterung von der Entscheidung</strong> — schon getroffen, Stunden vorher, als es leicht war.",
+    "partner.kicker":"Optionale Verbindlichkeit",
+    "partner.h2":"Jemand <span class=\"b\">weiß</span> Bescheid — ganz leise.",
+    "partner.l1":"Wähl eine Vertrauensperson. Verpasst du die Schlafenszeit, bekommt sie eine kurze, sachliche Nachricht — über einen Kanal, den sie ohnehin nutzt.",
+    "partner.l2":"Sie sieht nie deine Apps, deine Nutzung oder wo du bist — nur, <strong>ob das Handy in der Box war</strong>. Verbindlichkeit ohne Überwachung.",
+    "status.kicker":"Wo es heute steht",
+    "status.pull":"Ein paar Dutzend Menschen <span class=\"b\">leben gerade damit</span>.",
+    "status.lead":"Handgebaute frühe Geräte auf echten Nachttischen — ehrlich gesagt an den Rändern rau. Aber es funktioniert, und niemand will sie wieder hergeben.",
+    "status.builtby":"Von Hand gebaut — rau, aber echt.",
+    "status.statscap":"Die ersten Zahlen — 17 aktive Tester",
+    "stat1.l":"haben ihre Abgabezeit höchstens einmal verpasst",
+    "stat2.l":"würden es weiter nutzen",
+    "stat3.l":"durchschnittliche Abweichung von der Handy-Abgabezeit",
+    "stat4.l":"durchschnittliches Abendritual, über rund 4 Punkte",
+    "future.kicker":"Was als Nächstes kommt",
+    "future.lead":"Ein MVP ist ein MVP. Die heutigen Geräte erkennen dein Handy über einen Taster — das funktioniert, ist aber fragil. Die nächste Version ist ein <strong>eigens gefertigtes Gehäuse</strong> mit eingebautem <strong>USB-C-Laden und -Erkennen</strong>: zum Laden einstecken, und die Box weiß schon Bescheid. Genau das bauen wir gerade.",
+    "closing.line":"Die Nacht dient dem Tag.",
+    "closing.cta":"Erfahre es als Erste <span class=\"arr\">→</span>",
+    "footer.tagline":"aufblühen, eine Nacht nach der anderen",
+    "footer.impressum":"Impressum"
+  }};
+  const i18nEls = [...document.querySelectorAll('[data-i18n]')];
+  i18nEls.forEach(el => { el.dataset._en = el.innerHTML; });
+  function setLang(l){
+    document.documentElement.lang = l;
+    i18nEls.forEach(el => {
+      const k = el.getAttribute('data-i18n');
+      el.innerHTML = (l === 'de' && I18N.de[k] != null) ? I18N.de[k] : el.dataset._en;
+    });
+    document.body.classList.toggle('lang-de', l === 'de');
+    document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('is-active', b.dataset.lang === l));
+    try { localStorage.setItem('eud_lang', l); } catch(e){}
+  }
+  document.querySelectorAll('.lang-btn').forEach(b => b.addEventListener('click', () => setLang(b.dataset.lang)));
+  let saved = 'en'; try { saved = localStorage.getItem('eud_lang') || 'en'; } catch(e){}
+  if (saved === 'de') setLang('de');
 </script>
 </body>
 </html>

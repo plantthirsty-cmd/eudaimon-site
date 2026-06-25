@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Impressum — Eudaimon</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0a0908">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<script>document.documentElement.className+=' js';</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,500;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0a0908;--ink:#f0e9da;--ink-soft:rgba(240,233,218,.62);--ink-mute:rgba(240,233,218,.32);
+    --brass:#c8b89a;--hair:rgba(200,184,154,.16);
+    --serif:'Cormorant Garamond', Georgia, serif;--sans:'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-weight:300;line-height:1.72;
+    -webkit-font-smoothing:antialiased;overflow-x:hidden}
+  ::selection{background:rgba(200,184,154,.22);color:#fff}
+  a{color:var(--brass)}
+  header{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;
+    padding:16px 28px;background:rgba(10,9,8,.78);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--hair)}
+  .mark{font-family:var(--serif);font-style:italic;font-weight:600;font-size:22px;color:var(--ink);text-decoration:none}
+  .mark span{color:var(--brass)}
+  .head-right{display:flex;align-items:center;gap:20px}
+  .lang{display:flex;align-items:center;gap:7px}
+  .lang-btn{background:none;border:none;cursor:pointer;font-family:var(--sans);font-weight:500;font-size:12px;letter-spacing:.12em;color:var(--ink-mute);padding:2px 1px;transition:color .3s}
+  .lang-btn:hover{color:var(--ink-soft)}.lang-btn.is-active{color:var(--brass)}
+  .lang-sep{color:var(--ink-mute);font-size:11px}
+  .nav-cta{font-family:var(--sans);font-weight:500;font-size:12px;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--ink-soft);text-decoration:none;border-bottom:1px solid var(--hair);padding-bottom:3px;transition:color .3s,border-color .3s}
+  .nav-cta:hover{color:var(--brass);border-color:var(--brass)}
+  main{max-width:760px;margin:0 auto;padding:150px 28px 110px}
+  h1{font-family:var(--serif);font-style:italic;font-weight:600;font-size:clamp(40px,7vw,64px);color:var(--brass);line-height:1;margin-bottom:10px}
+  .sub{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-mute);font-weight:500;margin-bottom:48px}
+  .ident{font-size:17px;line-height:1.9;color:var(--ink);margin-bottom:8px}
+  .ident .label{display:block;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-mute);font-weight:500;margin:26px 0 6px}
+  h2{font-family:var(--serif);font-style:italic;font-weight:500;font-size:clamp(20px,2.6vw,28px);color:var(--ink);
+    margin:46px 0 14px;border-top:1px solid var(--hair);padding-top:40px}
+  p.body{font-size:15px;line-height:1.78;color:var(--ink-soft);max-width:64ch}
+  p.body + p.body{margin-top:14px}
+  .foot{margin-top:64px;border-top:1px solid var(--hair);padding-top:28px;font-size:12px;letter-spacing:.08em;color:var(--ink-mute)}
+  .foot a{text-decoration:none;border-bottom:1px solid var(--hair)}
+</style>
+</head>
+<body>
+
+<header>
+  <a class="mark" href="index.html">Eudaimon<span>.</span></a>
+  <div class="head-right">
+    <div class="lang" role="group" aria-label="Language">
+      <button type="button" class="lang-btn is-active" data-lang="en">EN</button>
+      <span class="lang-sep">/</span>
+      <button type="button" class="lang-btn" data-lang="de">DE</button>
+    </div>
+    <a class="nav-cta" href="index.html" data-i18n="back">← Home</a>
+  </div>
+</header>
+
+<main>
+  <h1>Impressum</h1>
+  <p class="sub" data-i18n="imp.sub">Information pursuant to § 5 DDG</p>
+
+  <p class="ident">
+    David Britz<br>
+    Cuxhavener Straße 15<br>
+    10555 Berlin<br>
+    <span data-i18n="imp.country">Germany</span>
+  </p>
+
+  <p class="ident"><span class="label" data-i18n="imp.contactLabel">Contact</span>
+    <span data-i18n="imp.emailLabel">Email</span>: <a href="mailto:ihatespamalot7@gmail.com">ihatespamalot7@gmail.com</a>
+  </p>
+
+  <p class="ident"><span class="label" data-i18n="imp.respLabel">Responsible for content under § 18 (2) MStV</span>
+    <span data-i18n="imp.resp">David Britz, address as above.</span>
+  </p>
+
+  <h2 data-i18n="imp.h.content">Liability for content</h2>
+  <p class="body" data-i18n="imp.p.content">As a service provider, we are responsible for our own content on these pages in accordance with § 7 (1) DDG and general law. Under §§ 8 to 10 DDG, however, we are not obliged to monitor transmitted or stored third-party information, or to investigate circumstances that indicate unlawful activity. Obligations to remove or block the use of information under general law remain unaffected. Liability in this respect is only possible from the point in time at which a concrete infringement of the law becomes known. Upon becoming aware of such infringements, we will remove the content concerned without delay.</p>
+
+  <h2 data-i18n="imp.h.links">Liability for links</h2>
+  <p class="body" data-i18n="imp.p.links">Our offer may contain links to external third-party websites over whose content we have no influence. We therefore cannot accept any liability for this third-party content. The respective provider or operator of the linked pages is always responsible for their content. The linked pages were checked for possible legal violations at the time of linking; unlawful content was not recognisable at that time. Permanent monitoring of the content of linked pages is, however, not reasonable without concrete indications of an infringement. Upon becoming aware of legal violations, we will remove such links without delay.</p>
+
+  <h2 data-i18n="imp.h.copy">Copyright</h2>
+  <p class="body" data-i18n="imp.p.copy">The content and works created by the site operator on these pages are subject to German copyright law. Reproduction, processing, distribution, and any kind of use beyond the limits of copyright require the written consent of the respective author or creator. Downloads and copies of this page are only permitted for private, non-commercial use. Insofar as the content on this page was not created by the operator, the copyrights of third parties are respected. Should you nevertheless become aware of a copyright infringement, please notify us accordingly. Upon becoming aware of legal violations, we will remove such content without delay.</p>
+
+  <h2 data-i18n="imp.h.abmahnung">Notice regarding cease-and-desist warnings</h2>
+  <p class="body" data-i18n="imp.p.abmahnung">Should the content or presentation of these pages infringe the rights of third parties or statutory provisions, we ask for a corresponding notification — free of charge and without a fee note. We guarantee that passages rightly objected to will be removed without delay, without the need for you to involve legal counsel. Engaging a lawyer for a chargeable cease-and-desist warning (Abmahnung) would not correspond to our actual or presumed will and would breach the duty to mitigate damages. Any costs incurred without prior contact will be rejected in full and may be asserted by way of counterclaim.</p>
+
+  <p class="foot"><a href="index.html" data-i18n="imp.home">← Back to eudaimon</a></p>
+</main>
+
+<script>
+  const I18N = { de: {
+    "back":"← Start",
+    "imp.sub":"Angaben gemäß § 5 DDG",
+    "imp.country":"Deutschland",
+    "imp.contactLabel":"Kontakt",
+    "imp.emailLabel":"E-Mail",
+    "imp.respLabel":"Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV",
+    "imp.resp":"David Britz, Anschrift wie oben.",
+    "imp.h.content":"Haftung für Inhalte",
+    "imp.p.content":"Als Diensteanbieter sind wir gemäß § 7 Abs. 1 DDG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 DDG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen. Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.",
+    "imp.h.links":"Haftung für Links",
+    "imp.p.links":"Unser Angebot enthält gegebenenfalls Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich. Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft; rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar. Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend entfernen.",
+    "imp.h.copy":"Urheberrecht",
+    "imp.p.copy":"Die durch den Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechts bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet. Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden die Urheberrechte Dritter beachtet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte umgehend entfernen.",
+    "imp.h.abmahnung":"Hinweis zu Abmahnungen",
+    "imp.p.abmahnung":"Sollten der Inhalt oder die Aufmachung dieser Seiten fremde Rechte Dritter oder gesetzliche Bestimmungen verletzen, so bitten wir um eine entsprechende, kostenfreie Nachricht ohne Kostennote. Wir garantieren, dass zu Recht beanstandete Passagen unverzüglich entfernt werden, ohne dass von Ihrer Seite die Einschaltung eines Rechtsbeistandes erforderlich ist. Die Hinzuziehung eines Anwalts zur — aus unserer Sicht — kostenpflichtigen Abmahnung entspräche nicht unserem wirklichen oder mutmaßlichen Willen und würde damit gegen die Schadensminderungspflicht verstoßen. Kosten, die ohne vorherige Kontaktaufnahme entstehen, werden vollumfänglich zurückgewiesen und können im Wege der Gegenklage geltend gemacht werden.",
+    "imp.home":"← Zurück zu Eudaimon"
+  }};
+  const i18nEls = [...document.querySelectorAll('[data-i18n]')];
+  i18nEls.forEach(el => { el.dataset._en = el.innerHTML; });
+  function setLang(l){
+    document.documentElement.lang = l;
+    i18nEls.forEach(el => { const k = el.getAttribute('data-i18n'); el.innerHTML = (l==='de' && I18N.de[k]!=null) ? I18N.de[k] : el.dataset._en; });
+    document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('is-active', b.dataset.lang===l));
+    try { localStorage.setItem('eud_lang', l); } catch(e){}
+  }
+  document.querySelectorAll('.lang-btn').forEach(b => b.addEventListener('click', () => setLang(b.dataset.lang)));
+  let saved='en'; try { saved = localStorage.getItem('eud_lang') || 'en'; } catch(e){}
+  if (saved==='de') setLang('de');
+</script>
+</body>
+</html>
