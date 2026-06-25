@@ -27,9 +27,10 @@
     --serif:'Cormorant Garamond', Georgia, serif;--sans:'Inter', -apple-system, BlinkMacSystemFont, sans-serif;--maxw:1080px;
   }
   *{margin:0;padding:0;box-sizing:border-box}
-  html{scroll-behavior:smooth}
+  html{scroll-behavior:smooth;overflow-x:hidden}
   body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-weight:300;line-height:1.7;
-    -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden}
+    -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+    overflow-x:hidden;width:100%;max-width:100%;overflow-wrap:break-word}
   ::selection{background:rgba(200,184,154,.22);color:#fff}
   .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
   section{position:relative}
@@ -83,7 +84,7 @@
 
   .product .wrap{text-align:center}
   .product figure{position:relative;margin:0 auto 44px;max-width:720px}
-  .product .glow{position:absolute;left:50%;top:48%;transform:translate(-50%,-50%);width:min(960px,116vw);height:560px;z-index:0;pointer-events:none;filter:blur(8px);
+  .product .glow{position:absolute;left:50%;top:48%;transform:translate(-50%,-50%);width:min(960px,100vw);height:560px;z-index:0;pointer-events:none;filter:blur(8px);
     background:radial-gradient(ellipse at center,rgba(232,146,32,.15),rgba(232,146,32,.05) 40%,transparent 70%)}
   .product figure img{position:relative;z-index:1;width:100%;height:auto;display:block;border-radius:14px;box-shadow:0 40px 120px -40px rgba(0,0,0,.85)}
   .product .what{font-family:var(--serif);font-style:italic;font-weight:500;font-size:clamp(24px,3.6vw,40px);line-height:1.22;color:var(--ink);max-width:22ch;margin:0 auto}
@@ -147,8 +148,8 @@
   footer .fmark{font-family:var(--serif);font-style:italic;font-weight:600;color:var(--ink);font-size:17px}
   footer .fmark span{color:var(--brass)}
   footer small{color:var(--ink-mute);font-size:12px;letter-spacing:.08em}
-  footer .foot-link{color:var(--ink-mute);font-size:12px;letter-spacing:.08em;text-decoration:none;border-bottom:1px solid var(--hair);transition:color .3s,border-color .3s}
-  footer .foot-link:hover{color:var(--brass);border-color:var(--brass)}
+  footer .foot-link{color:rgba(240,233,218,.13);font-size:10px;letter-spacing:.05em;text-decoration:none;transition:color .3s}
+  footer .foot-link:hover{color:var(--ink-soft)}
 
   html.js .reveal{opacity:0;transform:translateY(18px);transition:opacity .9s cubic-bezier(.2,.6,.2,1),transform .9s cubic-bezier(.2,.6,.2,1)}
   html.js .reveal.in{opacity:1;transform:none}
@@ -158,13 +159,14 @@
     .wrap{padding:0 22px}
     .feat{grid-template-columns:1fr;gap:28px}
     .step{grid-template-columns:54px 1fr;gap:18px;padding:28px 0}.step .col-left{gap:12px}.glyph{width:24px;height:24px}
-    .phil{min-height:auto;padding:128px 0 76px}.phil-inner{max-width:100%;padding-left:0}
-    .phil-bust{width:108vw;left:-12vw}.phil-bust img{opacity:.16}
+    .phil{min-height:auto;padding:124px 0 72px}.phil-inner{max-width:100%;padding-left:0}
+    .phil-bust{width:104vw;left:-8vw}.phil-bust img{opacity:.15}
     .status .quotes{grid-template-columns:1fr;gap:26px}
     .stats{grid-template-columns:1fr 1fr;gap:30px 22px;padding:34px 0}
     .shots{gap:8px}
-    header{padding:16px 22px}header.scrolled{padding:12px 22px}
-    .head-right{gap:16px}
+    header{padding:14px 20px}header.scrolled{padding:11px 20px}
+    .nav-cta{display:none}
+    .head-right{gap:0}
   }
 </style>
 </head>
