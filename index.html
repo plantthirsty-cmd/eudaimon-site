@@ -150,6 +150,25 @@
   .stat .l{margin-top:14px;font-size:13.5px;line-height:1.5;color:var(--ink-soft);max-width:24ch}
   .future{margin-top:54px}
 
+  /* merged 'why' bullets */
+  .points{margin-top:32px;display:flex;flex-direction:column;gap:16px;max-width:62ch;list-style:none}
+  .points li{position:relative;padding-left:26px;font-size:clamp(15px,1.7vw,18px);color:var(--ink-soft);line-height:1.62}
+  .points li::before{content:"";position:absolute;left:2px;top:.6em;width:7px;height:7px;border-radius:50%;background:var(--brass)}
+  .points li strong{color:var(--ink);font-weight:500}
+  .why-link{margin-top:34px}
+  .why-link a{color:var(--brass);text-decoration:none;border-bottom:1px solid rgba(200,184,154,.4);font-size:14px;letter-spacing:.02em;transition:color .3s}
+  .why-link a:hover{color:#e7dcc6}
+
+  /* where we're headed */
+  .cta-row{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:40px}
+  .btn{display:inline-flex;align-items:center;font-family:var(--sans);font-weight:500;font-size:12.5px;
+    letter-spacing:.16em;text-transform:uppercase;color:var(--brass);text-decoration:none;padding:13px 22px;
+    border:1px solid rgba(200,184,154,.42);border-radius:2px;transition:border-color .3s,color .3s,background .3s}
+  .btn:hover{border-color:var(--brass);color:#e7dcc6;background:rgba(200,184,154,.05)}
+  .proof{margin:42px auto 0;font-size:14px;color:var(--ink-mute);line-height:1.7;max-width:56ch}
+  .proof a{color:var(--ink-soft);text-decoration:none;border-bottom:1px solid var(--hair);transition:color .3s,border-color .3s}
+  .proof a:hover{color:var(--brass);border-color:var(--brass)}
+
   .close-simple{text-align:center;max-width:680px;margin:0 auto}
   .close-simple .line{font-family:var(--serif);font-style:italic;font-weight:500;font-size:clamp(28px,4.6vw,46px);line-height:1.16;color:var(--brass)}
 
@@ -254,32 +273,18 @@
 
 <div class="hair"></div>
 
-<!-- PROBLEM -->
-<section class="band" id="problem">
+<!-- WHY IT WORKS (problem + flip + feel, merged) -->
+<section class="band" id="why">
   <div class="wrap">
-    <p class="kicker reveal" style="margin-bottom:28px" data-i18n="problem.kicker">The problem</p>
-    <p class="pull reveal" data-i18n="problem.pull">The you at 11pm isn't the you who set the alarm at 8am. <span class="b">Same body, different will.</span></p>
-    <p class="lead reveal" style="margin-top:34px" data-i18n="problem.lead">Willpower runs on your <strong>prefrontal cortex</strong> — the decision-making part right behind your forehead. It drains through the day, and by night it's nearly empty. Most apps fail because they ask your most depleted self to make the call, exactly when it can't.</p>
-  </div>
-</section>
-
-<div class="hair"></div>
-
-<!-- FLIP -->
-<section class="band">
-  <div class="wrap center">
-    <p class="kicker reveal" style="margin-bottom:28px" data-i18n="flip.kicker">Eudaimon flips it</p>
-    <p class="pull reveal" data-i18n="flip.pull">Morning-you makes the rules. The box <span class="b">holds them</span> when evening-you would break them.</p>
-    <p class="lead reveal" style="margin-top:26px" data-i18n="flip.lead">A Ulysses contract in hardware: tie yourself to the mast while you're clear-headed, and let the box keep the rope.</p>
-  </div>
-</section>
-
-<section class="band--tight">
-  <div class="wrap">
-    <div class="insight reveal">
-      <p class="q" data-i18n="insight.q">When it comes to improving yourself, <b>80%</b> is just getting to bed on time.</p>
-      <p class="note" data-i18n="insight.note">Win the night and the day mostly takes care of itself.</p>
-    </div>
+    <p class="kicker reveal" style="margin-bottom:28px" data-i18n="why.kicker">Why it works</p>
+    <p class="pull reveal" data-i18n="why.pull">The you at 11pm isn't the you who set the alarm at 8am. <span class="b">Same body, different will.</span></p>
+    <p class="lead reveal" style="margin-top:30px" data-i18n="why.lead">Willpower runs on your prefrontal cortex, and by night it's spent — so most apps fail, asking your most depleted self to make the call. Eudaimon flips it: <strong>morning-you makes the rules, and the box holds them</strong> when evening-you would break them. And 80% of getting better is just getting to bed on time.</p>
+    <ul class="points reveal">
+      <li data-i18n="why.b1"><strong>A sheepdog, not a cop</strong> — it catches you, never shames you, and stays quiet when you're fine.</li>
+      <li data-i18n="why.b2"><strong>Relief, not discipline</strong> — the calm of having already decided, hours ago, when it was easy.</li>
+      <li data-i18n="why.b3"><strong>Optional accountability</strong> — a partner gets a quiet note if you miss bedtime. Never your apps, usage, or location.</li>
+    </ul>
+    <p class="why-link reveal"><a href="principles.html" data-i18n="why.link">The science behind it → Eudaimon principles</a></p>
   </div>
 </section>
 
@@ -326,22 +331,6 @@
 
 <div class="hair"></div>
 
-<!-- HOW IT FEELS (sheepdog + partner, merged) -->
-<section class="band">
-  <div class="wrap feat">
-    <div class="reveal">
-      <span class="kicker" data-i18n="howit.kicker">What it feels like</span>
-      <h2 data-i18n="howit.h2">A <span class="b">sheepdog</span>, not a cop.</h2>
-    </div>
-    <div class="reveal">
-      <p class="lead" data-i18n="howit.p1">It catches you when you slip, never shames you, and stays quiet when you're fine. What people feel most isn't willpower — it's <strong>relief from the decision</strong>, already made when it was easy.</p>
-      <p class="lead" style="margin-top:18px" data-i18n="howit.p2">And if you want, someone knows: miss bedtime and a chosen partner gets a short, factual note — never your apps, usage, or location. <strong>Accountability without surveillance.</strong></p>
-    </div>
-  </div>
-</section>
-
-<div class="hair"></div>
-
 <!-- STATUS -->
 <section class="band status" id="status">
   <div class="wrap">
@@ -371,10 +360,23 @@
       <div class="stat"><div class="n">45<span class="u"> min</span></div><div class="l" data-i18n="stat4.l">average evening routine, across about 4 items</div></div>
     </div>
 
-    <div class="future reveal">
-      <p class="kicker" style="margin-bottom:14px" data-i18n="future.kicker">What's next</p>
-      <p class="lead" data-i18n="future.lead">An MVP is an MVP. Today's units sense your phone with a push-button — it works, but it's fragile. The next version is a <strong>purpose-built case</strong> with <strong>USB-C charging and detection</strong> built in: plug in to charge, and the box already knows. We're building that now.</p>
+  </div>
+</section>
+
+<div class="hair"></div>
+
+<!-- WHERE WE'RE HEADED -->
+<section class="band involved" id="involved">
+  <div class="wrap center">
+    <p class="kicker reveal" data-i18n="next.kicker">Where we're headed</p>
+    <p class="pull reveal" data-i18n="next.pull">We're turning this into a <span class="b">real product</span>, with a small team.</p>
+    <p class="lead reveal" style="margin-top:24px" data-i18n="next.lead">If that's something you'd want, come along. Sign up for the newsletter — no spam, promise — follow the build, or just say hi. We'd genuinely love your input.</p>
+    <div class="cta-row reveal">
+      <a class="btn" href="#newsletter" data-i18n="next.newsletter">Join the newsletter</a>
+      <a class="btn" href="#instagram" target="_blank" rel="noopener" data-i18n="next.instagram">Instagram</a>
+      <a class="btn" href="https://www.linkedin.com/in/david-leon-britz/" target="_blank" rel="noopener" data-i18n="next.linkedin">Connect on LinkedIn</a>
     </div>
+    <p class="proof reveal" data-i18n="next.proof">For proof we can pull this off: my last venture, <a href="https://fedanilabs.de/" target="_blank" rel="noopener">Fedani Labs</a> — a shipped hardware product with its own Kickstarter. Eudaimon is the much bigger swing.</p>
   </div>
 </section>
 
@@ -384,7 +386,6 @@
 <section class="band">
   <div class="wrap close-simple">
     <p class="line reveal" data-i18n="closing.line">The night serves the day.</p>
-    <div class="reveal"><a class="link-cta" href="mailto:plant.thirsty@gmail.com?subject=Eudaimon" style="margin-top:36px" data-i18n="closing.cta">Be the first to know <span class="arr">→</span></a></div>
   </div>
 </section>
 
@@ -424,14 +425,13 @@
     "founder.science":"Hinter der Frage, warum der Abend der schwerste Teil ist, steckt echte Wissenschaft.",
     "founder.scienceLink":"Lies die Eudaimon-Prinzipien →",
     "founder.into":"Also — das hier haben wir gebaut.",
-    "problem.kicker":"Das Problem",
-    "problem.pull":"Das Ich um 23 Uhr ist nicht das Ich, das um 8 Uhr den Wecker gestellt hat. <span class=\"b\">Gleicher Körper, anderer Wille.</span>",
-    "problem.lead":"Willenskraft läuft über deinen <strong>präfrontalen Kortex</strong> — den Teil des Gehirns direkt hinter der Stirn, wo Entscheidungen fallen. Er entleert sich über den Tag, und nachts ist er fast leer. Die meisten Apps scheitern, weil sie deinem erschöpftesten Ich die Entscheidung überlassen — genau dann, wenn es sie nicht treffen kann.",
-    "flip.kicker":"Eudaimon dreht es um",
-    "flip.pull":"Das Morgen-Ich macht die Regeln. Die Box <span class=\"b\">hält sie</span>, wenn das Abend-Ich sie brechen würde.",
-    "flip.lead":"Ein Odysseus-Vertrag als Hardware: Fessle dich an den Mast, solange du klar bist — und lass die Box das Seil halten.",
-    "insight.q":"Wenn es darum geht, sich zu verbessern, sind <b>80%</b> einfach: rechtzeitig ins Bett.",
-    "insight.note":"Gewinn die Nacht, und der Tag erledigt sich fast von selbst.",
+    "why.kicker":"Warum es funktioniert",
+    "why.pull":"Das Ich um 23 Uhr ist nicht das Ich, das um 8 Uhr den Wecker gestellt hat. <span class=\"b\">Gleicher Körper, anderer Wille.</span>",
+    "why.lead":"Willenskraft läuft über den präfrontalen Kortex, und nachts ist er leer — deshalb scheitern die meisten Apps: Sie überlassen deinem erschöpftesten Ich die Entscheidung. Eudaimon dreht es um: <strong>Das Morgen-Ich macht die Regeln, und die Box hält sie</strong>, wenn das Abend-Ich sie brechen würde. Und 80% der Selbstverbesserung sind einfach: rechtzeitig ins Bett.",
+    "why.b1":"<strong>Ein Hütehund, kein Polizist</strong> — es fängt dich auf, beschämt dich nie und bleibt still, solange alles gut läuft.",
+    "why.b2":"<strong>Erleichterung, nicht Disziplin</strong> — die Ruhe, schon entschieden zu haben, Stunden vorher, als es leicht war.",
+    "why.b3":"<strong>Optionale Verbindlichkeit</strong> — eine Vertrauensperson bekommt eine leise Nachricht, wenn du die Schlafenszeit verpasst. Nie deine Apps, Nutzung oder deinen Ort.",
+    "why.link":"Die Wissenschaft dahinter → Eudaimon-Prinzipien",
     "night.kicker":"Die Nacht, Schritt für Schritt",
     "night.pull":"Solange du auf Kurs bist, ist es nur <span class=\"b\">sanfte Führung</span> — es macht sich erst bemerkbar, wenn du anfängst abzurutschen.",
     "step1.h3":"Herunterfahren",
@@ -444,10 +444,13 @@
     "step4.p":"Es wird nicht einfach lauter — erst sanft, dann bestimmt, dann <span class=\"hl\">deine eigenen Worte</span> auf dem Bildschirm. Kein „Erledigt“-Knopf; du beendest es, indem du es wirklich tust.",
     "step5.h3":"Der Morgen gibt es zurück",
     "step5.p":"Licht vor dem Wecker, dann eine kleine <span class=\"hl\">Aufgabe</span>, die beweist, dass du wach bist — kein Snooze, kein Rechnen. Dann gehört das Handy wieder dir.",
-    "howit.kicker":"Wie es sich anfühlt",
-    "howit.h2":"Ein <span class=\"b\">Hütehund</span>, kein Polizist.",
-    "howit.p1":"Es fängt dich auf, wenn du abrutschst, beschämt dich nie und bleibt still, solange alles gut läuft. Was die meisten am stärksten spüren, ist nicht Willenskraft — es ist die <strong>Erleichterung von der Entscheidung</strong>, schon getroffen, als es leicht war.",
-    "howit.p2":"Und wenn du willst, weiß jemand Bescheid: Verpasst du die Schlafenszeit, bekommt eine Vertrauensperson eine kurze, sachliche Nachricht — nie deine Apps, Nutzung oder deinen Ort. <strong>Verbindlichkeit ohne Überwachung.</strong>",
+    "next.kicker":"Wohin es geht",
+    "next.pull":"Wir machen daraus ein <span class=\"b\">echtes Produkt</span>, mit einem kleinen Team.",
+    "next.lead":"Wenn dich das interessiert, komm mit. Trag dich in den Newsletter ein — kein Spam, versprochen — verfolg die Entwicklung oder sag einfach Hallo. Wir freuen uns ehrlich über jeden Input.",
+    "next.newsletter":"Newsletter abonnieren",
+    "next.instagram":"Instagram",
+    "next.linkedin":"Auf LinkedIn vernetzen",
+    "next.proof":"Als Beweis, dass wir das hinbekommen: mein letztes Projekt, <a href=\"https://fedanilabs.de/\" target=\"_blank\" rel=\"noopener\">Fedani Labs</a> — ein ausgeliefertes Hardware-Produkt mit eigenem Kickstarter. Eudaimon ist der deutlich größere Wurf.",
     "status.kicker":"Wo es heute steht",
     "status.pull":"Ein paar Dutzend Menschen <span class=\"b\">leben gerade damit</span>.",
     "status.lead":"Handgebaute frühe Geräte auf echten Nachttischen — ehrlich gesagt an den Rändern rau. Aber es funktioniert, und niemand will sie wieder hergeben.",
@@ -457,10 +460,7 @@
     "stat2.l":"würden es weiter nutzen",
     "stat3.l":"durchschnittliche Abweichung von der Handy-Abgabezeit",
     "stat4.l":"durchschnittliches Abendritual, über rund 4 Punkte",
-    "future.kicker":"Was als Nächstes kommt",
-    "future.lead":"Ein MVP ist ein MVP. Die heutigen Geräte erkennen dein Handy über einen Taster — das funktioniert, ist aber fragil. Die nächste Version ist ein <strong>eigens gefertigtes Gehäuse</strong> mit eingebautem <strong>USB-C-Laden und -Erkennen</strong>: zum Laden einstecken, und die Box weiß schon Bescheid. Genau das bauen wir gerade.",
     "closing.line":"Die Nacht dient dem Tag.",
-    "closing.cta":"Erfahre es als Erste <span class=\"arr\">→</span>",
     "footer.tagline":"aufblühen, eine Nacht nach der anderen",
     "footer.principles":"Prinzipien",
     "footer.impressum":"Impressum"
