@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Eudaimon — flourishing, one night at a time</title>
-<meta name="description" content="Eudaimonia is Aristotle's word for a life well lived. Eudaimon is a bedside box that takes your phone at night, holds you to your own wind-down, and gives it back in the morning.">
+<meta name="description" content="The behavioral psychology answer to doomscrolling. A bedside box that takes your phone at night, holds you to your own wind-down, and gives it back in the morning.">
 <meta name="theme-color" content="#0a0908">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <script>document.documentElement.className+=' js';</script>
@@ -58,6 +58,8 @@
   .pull .b{color:var(--brass)}
   .lead{font-size:clamp(17px,1.9vw,20px);font-weight:300;color:var(--ink-soft);line-height:1.7;max-width:56ch}
   .lead strong{color:var(--ink);font-weight:500}
+  .inline-ref{color:var(--brass);text-decoration:none;border-bottom:1px solid rgba(200,184,154,.4);transition:color .3s,border-color .3s}
+  .inline-ref:hover{color:#e7dcc6;border-color:var(--brass)}
   .link-cta{display:inline-flex;align-items:center;gap:.55em;font-family:var(--sans);font-weight:500;font-size:13px;
     letter-spacing:.2em;text-transform:uppercase;color:var(--brass);text-decoration:none;padding-bottom:7px;
     border-bottom:1px solid rgba(200,184,154,.4);transition:gap .3s,border-color .3s,color .3s}
@@ -70,18 +72,21 @@
   .center{text-align:center;max-width:760px;margin:0 auto}
   .center .pull{margin:0 auto}.center .lead{margin-left:auto;margin-right:auto}
 
+  /* PHILOSOPHY */
   .phil{min-height:92svh;display:flex;align-items:center;overflow:hidden;padding:150px 0 84px}
   .phil-bust{position:absolute;left:-4vw;top:0;bottom:0;width:min(720px,70vw);z-index:0;pointer-events:none;display:flex;align-items:center;justify-content:flex-start}
   .phil-bust img{height:115%;width:auto;object-fit:contain;object-position:left center;opacity:.5;
     -webkit-mask-image:linear-gradient(90deg,#000 52%,transparent 92%);mask-image:linear-gradient(90deg,#000 52%,transparent 92%)}
   .phil-inner{position:relative;z-index:1;width:100%;max-width:600px;padding-left:clamp(0px,10vw,130px)}
   .phil .mark-xl{font-family:var(--serif);font-style:italic;font-weight:600;font-size:clamp(44px,8vw,86px);line-height:.96;color:var(--brass);letter-spacing:.01em}
+  .phil .phil-catch{font-size:clamp(15px,2vw,19px);font-weight:300;color:var(--ink-soft);margin-top:18px;max-width:40ch;line-height:1.4}
   .phil .ipa{margin-top:14px;font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--ink-mute);font-weight:500}
   .phil h1{font-family:var(--serif);font-style:italic;font-weight:500;font-size:clamp(23px,3vw,33px);line-height:1.24;color:var(--ink);margin-top:34px;max-width:24ch}
   .phil h1 .b{color:var(--brass)}
   .phil .lead{margin-top:22px;max-width:46ch}
   .phil .link-cta{margin-top:38px}
 
+  /* PRODUCT */
   .product .wrap{text-align:center}
   .product figure{position:relative;margin:0 auto 44px;max-width:720px}
   .product .glow{position:absolute;left:50%;top:48%;transform:translate(-50%,-50%);width:min(960px,100vw);height:560px;z-index:0;pointer-events:none;filter:blur(8px);
@@ -89,8 +94,8 @@
   .product figure img{position:relative;z-index:1;width:100%;height:auto;display:block;border-radius:14px;box-shadow:0 40px 120px -40px rgba(0,0,0,.85)}
   .product .what{font-family:var(--serif);font-style:italic;font-weight:500;font-size:clamp(24px,3.6vw,40px);line-height:1.22;color:var(--ink);max-width:22ch;margin:0 auto}
   .product .what .b{color:var(--brass)}
-  .product .tag{margin-top:18px;font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-mute);font-weight:500}
 
+  /* FOUNDER */
   .founder .wrap{max-width:900px;margin:0 auto}
   .founder .kicker{display:block;text-align:center;margin-bottom:42px}
   .founder-intro{display:grid;grid-template-columns:250px 1fr;gap:42px;align-items:center}
@@ -106,11 +111,11 @@
   .founder-link a:hover{color:#e7dcc6}
   .founder-into{margin-top:30px;text-align:center;font-family:var(--serif);font-style:italic;font-size:clamp(20px,2.6vw,28px);color:var(--brass)}
 
-  .insight{text-align:center;max-width:760px;margin:0 auto;padding:clamp(40px,6vh,60px) 34px;border-top:1px solid var(--hair);border-bottom:1px solid var(--hair)}
-  .insight .q{font-family:var(--serif);font-style:italic;font-weight:500;font-size:clamp(24px,3.6vw,40px);line-height:1.22;color:var(--brass);max-width:20ch;margin:0 auto}
-  .insight .q b{color:var(--ink);font-weight:500}
-  .insight .note{margin-top:16px;font-size:13.5px;letter-spacing:.04em;color:var(--ink-mute)}
+  /* big editorial section titles */
+  .section-h2{font-family:var(--serif);font-style:italic;font-weight:500;font-size:clamp(34px,5.2vw,60px);line-height:1.08;color:var(--ink);margin-top:12px}
+  .section-h2 .b{color:var(--brass)}
 
+  /* NIGHT */
   .steps{margin-top:58px;display:flex;flex-direction:column}
   .step{display:grid;grid-template-columns:96px 1fr;gap:30px;padding:34px 0;border-top:1px solid var(--hair)}
   .step:last-child{border-bottom:1px solid var(--hair)}
@@ -128,12 +133,24 @@
   .night-amb{position:absolute;inset:0;pointer-events:none;z-index:0;background:linear-gradient(180deg,rgba(46,66,120,.20) 0%,rgba(34,50,98,.12) 38%,transparent 68%,rgba(232,146,32,.06) 100%)}
   #night > .wrap{position:relative;z-index:1}
 
-  .feat{display:grid;grid-template-columns:1fr 1fr;gap:54px;align-items:start}
-  .feat .kicker{margin-bottom:18px;display:block}
-  .feat h2{font-family:var(--serif);font-style:italic;font-weight:500;font-size:clamp(25px,3.3vw,38px);line-height:1.16;color:var(--ink);margin-bottom:18px}
-  .feat h2 .b{color:var(--brass)}
-  .feat .lead{max-width:48ch}
+  /* FEATURES & METHODS */
+  .feat-body{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;margin-top:36px}
+  .feat-list{list-style:none;display:flex;flex-direction:column}
+  .feat-item{padding:20px 0;border-top:1px solid var(--hair)}
+  .feat-item:last-child{border-bottom:1px solid var(--hair)}
+  .feat-item strong{display:block;font-size:14px;font-weight:500;letter-spacing:.04em;color:var(--ink);margin-bottom:6px;text-transform:uppercase}
+  .feat-item p{font-size:14.5px;line-height:1.65;color:var(--ink-soft)}
 
+  /* WHY bullets */
+  .points{margin-top:32px;display:flex;flex-direction:column;gap:16px;max-width:62ch;list-style:none}
+  .points li{position:relative;padding-left:26px;font-size:clamp(15px,1.7vw,18px);color:var(--ink-soft);line-height:1.62}
+  .points li::before{content:"";position:absolute;left:2px;top:.6em;width:7px;height:7px;border-radius:50%;background:var(--brass)}
+  .points li strong{color:var(--ink);font-weight:500}
+  .why-link{margin-top:34px}
+  .why-link a{color:var(--brass);text-decoration:none;border-bottom:1px solid rgba(200,184,154,.4);font-size:14px;letter-spacing:.02em;transition:color .3s}
+  .why-link a:hover{color:#e7dcc6}
+
+  /* STATUS */
   .status .quotes{display:grid;grid-template-columns:1fr 1fr;gap:32px 48px;margin-top:48px}
   .quote{border-left:2px solid var(--hair);padding-left:22px;margin:0}
   .quote .de{font-family:var(--serif);font-style:italic;font-weight:500;font-size:clamp(18px,2.1vw,24px);line-height:1.32;color:var(--ink)}
@@ -148,18 +165,8 @@
   .stat .n .u{font-size:.40em;color:var(--ink-soft);letter-spacing:.02em;font-weight:400}
   .stat .n .d{color:var(--ink-mute)}
   .stat .l{margin-top:14px;font-size:13.5px;line-height:1.5;color:var(--ink-soft);max-width:24ch}
-  .future{margin-top:54px}
 
-  /* merged 'why' bullets */
-  .points{margin-top:32px;display:flex;flex-direction:column;gap:16px;max-width:62ch;list-style:none}
-  .points li{position:relative;padding-left:26px;font-size:clamp(15px,1.7vw,18px);color:var(--ink-soft);line-height:1.62}
-  .points li::before{content:"";position:absolute;left:2px;top:.6em;width:7px;height:7px;border-radius:50%;background:var(--brass)}
-  .points li strong{color:var(--ink);font-weight:500}
-  .why-link{margin-top:34px}
-  .why-link a{color:var(--brass);text-decoration:none;border-bottom:1px solid rgba(200,184,154,.4);font-size:14px;letter-spacing:.02em;transition:color .3s}
-  .why-link a:hover{color:#e7dcc6}
-
-  /* where we're headed */
+  /* WHERE WE'RE HEADED */
   .cta-row{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:40px}
   .btn{display:inline-flex;align-items:center;font-family:var(--sans);font-weight:500;font-size:12.5px;
     letter-spacing:.16em;text-transform:uppercase;color:var(--brass);text-decoration:none;padding:13px 22px;
@@ -168,9 +175,6 @@
   .proof{margin:42px auto 0;font-size:14px;color:var(--ink-mute);line-height:1.7;max-width:56ch}
   .proof a{color:var(--ink-soft);text-decoration:none;border-bottom:1px solid var(--hair);transition:color .3s,border-color .3s}
   .proof a:hover{color:var(--brass);border-color:var(--brass)}
-
-  .close-simple{text-align:center;max-width:680px;margin:0 auto}
-  .close-simple .line{font-family:var(--serif);font-style:italic;font-weight:500;font-size:clamp(28px,4.6vw,46px);line-height:1.16;color:var(--brass)}
 
   footer{border-top:1px solid var(--hair);padding:40px 28px 56px;display:flex;flex-wrap:wrap;gap:14px 26px;align-items:center;justify-content:center;text-align:center}
   footer .fmark{font-family:var(--serif);font-style:italic;font-weight:600;color:var(--ink);font-size:17px}
@@ -187,7 +191,7 @@
 
   @media (max-width:760px){
     .wrap{padding:0 22px}
-    .feat{grid-template-columns:1fr;gap:28px}
+    .feat-body{grid-template-columns:1fr;gap:28px}
     .step{grid-template-columns:54px 1fr;gap:18px;padding:28px 0}.step .col-left{gap:12px}.glyph{width:24px;height:24px}
     .phil{min-height:auto;padding:124px 0 72px}.phil-inner{max-width:100%;padding-left:0}
     .phil-bust{width:104vw;left:-8vw}.phil-bust img{opacity:.15}
@@ -225,6 +229,7 @@
   <div class="wrap">
     <div class="phil-inner">
       <p class="mark-xl reveal">Eudaimonia</p>
+      <p class="phil-catch reveal" data-i18n="phil.catch">The behavioral psychology answer to doomscrolling</p>
       <p class="ipa reveal" data-i18n="phil.ipa">yoo-dai-mon-EE-a &nbsp;·&nbsp; Ancient Greek</p>
       <h1 class="reveal" data-i18n="phil.h1">Aristotle's word for <span class="b">flourishing</span> — not a fleeting high, but the lifelong practice of living well.</h1>
       <p class="lead reveal" data-i18n="phil.lead">He meant it as a <em>verb</em> — flourishing is something you <strong>do</strong>, daily, by acting like who you mean to be. Eudaimon starts with its smallest, hardest rep: going to bed when you said you would.</p>
@@ -267,39 +272,49 @@
       <img src="assets/hero.jpg" width="1448" height="1086" alt="The Eudaimon bedside box: a calm clock showing 11:18 with a phone charging inside the open drawer.">
     </figure>
     <p class="what reveal" data-i18n="product.what">A bedside box that takes your phone at night, holds you to <span class="b">your own wind-down</span>, and gives it back in the morning.</p>
-    <p class="tag reveal" data-i18n="product.tag">Eudaimon — the structure you build before you need it</p>
   </div>
 </section>
 
 <div class="hair"></div>
 
-<!-- WHY IT WORKS (problem + flip + feel, merged) -->
+<!-- THE PROBLEM -->
+<section class="band" id="problem">
+  <div class="wrap">
+    <p class="kicker reveal" style="margin-bottom:20px" data-i18n="prob.kicker">The problem</p>
+    <p class="pull reveal" data-i18n="prob.pull">The you at 11pm isn't the you who set the alarm at 8am. <span class="b">Same body, different will.</span></p>
+    <p class="lead reveal" style="margin-top:28px" data-i18n="prob.lead">If you have trouble putting your phone down and sticking to the routines you actually want to be doing, you are far from alone. It's one of our modern times' biggest issues — and yet we still lack real solutions or understanding. The data is clear: most doomscrolling happens at night, when your willpower is at its lowest. Fix the night, and you stand a fighting chance the next day.</p>
+  </div>
+</section>
+
+<div class="hair"></div>
+
+<!-- HOW EUDAIMON FLIPS IT -->
 <section class="band" id="why">
   <div class="wrap">
-    <p class="kicker reveal" style="margin-bottom:28px" data-i18n="why.kicker">Why it works</p>
-    <p class="pull reveal" data-i18n="why.pull">The you at 11pm isn't the you who set the alarm at 8am. <span class="b">Same body, different will.</span></p>
-    <p class="lead reveal" style="margin-top:30px" data-i18n="why.lead">Willpower runs on your prefrontal cortex, and by night it's spent — so most apps fail, asking your most depleted self to make the call. Eudaimon flips it: <strong>morning-you makes the rules, and the box holds them</strong> when evening-you would break them. And 80% of getting better is just getting to bed on time.</p>
+    <p class="kicker reveal" data-i18n="why.kicker">How it works</p>
+    <h2 class="section-h2 reveal" data-i18n="why.h2">How Eudaimon <span class="b">flips it</span></h2>
+    <p class="lead reveal" style="margin-top:28px" data-i18n="why.lead">Most apps fail because they ask your most depleted self to make the call. Eudaimon does the opposite: you set your rules in the morning, when you're clear-headed — this is called a <a class="inline-ref" href="https://en.wikipedia.org/wiki/Ulysses_pact" target="_blank" rel="noopener">Ulysses contract</a> — and a physical device holds them when evening-you would break them. And 80% of getting better is just getting to bed on time.</p>
     <ul class="points reveal">
       <li data-i18n="why.b1"><strong>A sheepdog, not a cop</strong> — it catches you, never shames you, and stays quiet when you're fine.</li>
       <li data-i18n="why.b2"><strong>Relief, not discipline</strong> — the calm of having already decided, hours ago, when it was easy.</li>
       <li data-i18n="why.b3"><strong>Optional accountability</strong> — a partner gets a quiet note if you miss bedtime. Never your apps, usage, or location.</li>
     </ul>
-    <p class="why-link reveal"><a href="principles.html" data-i18n="why.link">The science behind it → Eudaimon principles</a></p>
   </div>
 </section>
 
-<!-- NIGHT -->
+<!-- THE NIGHT, WALKED THROUGH -->
 <section class="band" id="night">
   <div class="night-amb" aria-hidden="true"></div>
   <div class="wrap">
-    <p class="kicker reveal" style="margin-bottom:8px" data-i18n="night.kicker">The night, walked through</p>
-    <p class="pull reveal" style="max-width:26ch" data-i18n="night.pull">While you're on track, it's just <span class="b">soft guidance</span> — it only makes itself felt the moment you start to slip.</p>
+    <p class="kicker reveal" data-i18n="night.kicker">How it plays out</p>
+    <h2 class="section-h2 reveal" data-i18n="night.h2">The night, <span class="b">walked through</span></h2>
+    <p class="pull reveal" style="max-width:26ch;margin-top:22px" data-i18n="night.pull">While you're on track, it's just <span class="b">soft guidance</span> — it only makes itself felt the moment you start to slip.</p>
     <div class="steps">
       <div class="step reveal">
         <div class="col-left"><div class="num">01</div>
           <span class="glyph dusk" aria-hidden="true"><svg viewBox="0 0 28 28"><line x1="3" y1="22" x2="25" y2="22"/><path d="M8 22a6 6 0 0 1 12 0"/><line x1="14" y1="5" x2="14" y2="9"/><line x1="6" y1="11" x2="7.7" y2="12.7"/><line x1="22" y1="11" x2="20.3" y2="12.7"/></svg></span>
         </div>
-        <div><h3 data-i18n="step1.h3">Wind-down</h3><p data-i18n="step1.p">One gentle ping: <span class="hl">ease off now</span>. Not a buzzer — a soft chime you can wave away with a tap.</p></div>
+        <div><h3 data-i18n="step1.h3">Wind-down</h3><p data-i18n="step1.p">Time to wrap it up. A gentle reminder to send those last texts and do whatever you need to be ready to <span class="hl">hand over your phone</span>.</p></div>
       </div>
       <div class="step reveal">
         <div class="col-left"><div class="num">02</div>
@@ -317,14 +332,51 @@
         <div class="col-left"><div class="num">04</div>
           <span class="glyph night" aria-hidden="true"><svg viewBox="0 0 28 28"><path fill="currentColor" stroke="none" d="M8.5 5l1.1 2.9 2.9 1.1-2.9 1.1L8.5 13l-1.1-2.9L4.5 9l2.9-1.1z"/><path fill="currentColor" stroke="none" d="M19.5 13l.8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8z"/><circle fill="currentColor" stroke="none" cx="13.5" cy="20.5" r="1.1"/></svg></span>
         </div>
-        <div><h3 data-i18n="step4.h3">If you stall, it shifts tone</h3><p data-i18n="step4.p">It doesn't just get louder — gentle, then firm, then <span class="hl">your own words</span> on the screen. No "comply" button; you finish by doing the thing.</p></div>
+        <div><h3 data-i18n="step4.h3">If you stall, it becomes impossible to ignore</h3><p data-i18n="step4.p">Eudaimon is a physical thing in your room. Through audio and visual cues it becomes increasingly hard to ignore, and there is no button to make it stop. The only way out is to do the thing you decided to do this morning.</p></div>
       </div>
       <div class="step reveal">
         <div class="col-left"><div class="num">05</div>
           <span class="glyph day" aria-hidden="true"><svg viewBox="0 0 28 28"><circle fill="currentColor" stroke="none" cx="14" cy="14" r="5"/><line x1="14" y1="2.5" x2="14" y2="5.5"/><line x1="14" y1="22.5" x2="14" y2="25.5"/><line x1="2.5" y1="14" x2="5.5" y2="14"/><line x1="22.5" y1="14" x2="25.5" y2="14"/><line x1="6" y1="6" x2="8" y2="8"/><line x1="20" y1="6" x2="18" y2="8"/><line x1="6" y1="22" x2="8" y2="20"/><line x1="20" y1="22" x2="18" y2="20"/></svg></span>
         </div>
-        <div><h3 data-i18n="step5.h3">Morning gives it back</h3><p data-i18n="step5.p">Light before the alarm, then a small <span class="hl">task</span> to prove you're up — no snooze, no math. Then the phone is yours again.</p></div>
+        <div><h3 data-i18n="step5.h3">Your morning is yours</h3><p data-i18n="step5.p">Eudaimon is your alarm clock, so your phone can stay in the box for those <span class="hl">precious few minutes</span> where you stretch, breathe, and actually wake up. Then your phone is yours again.</p></div>
       </div>
+    </div>
+  </div>
+</section>
+
+<div class="hair"></div>
+
+<!-- FEATURES & METHODS -->
+<section class="band" id="features">
+  <div class="wrap">
+    <p class="kicker reveal" style="margin-bottom:14px" data-i18n="feat.kicker">Features &amp; methods</p>
+    <h2 class="section-h2 reveal" data-i18n="feat.h2">Further than any app <span class="b">ever could</span></h2>
+    <div class="feat-body">
+      <div>
+        <p class="lead reveal" data-i18n="feat.lead">Eudaimon is built to get you further than your tired brain or any app ever could — because of how it's designed and where it lives. If you want to go deeper on the psychology, the <a class="inline-ref" href="principles.html">principles page</a> has all of it.</p>
+      </div>
+      <ul class="feat-list reveal">
+        <li class="feat-item">
+          <strong data-i18n="feat.f1t">Not on your phone</strong>
+          <p data-i18n="feat.f1p">Your phone is the problem. Any app on it has a conflict of interest. Eudaimon is a completely separate device.</p>
+        </li>
+        <li class="feat-item">
+          <strong data-i18n="feat.f2t">Physical detection</strong>
+          <p data-i18n="feat.f2p">The box physically senses your phone. No checkbox, no tap — you've actually committed, not just said you did.</p>
+        </li>
+        <li class="feat-item">
+          <strong data-i18n="feat.f3t">The ritual is the commitment</strong>
+          <p data-i18n="feat.f3p">Placing your phone in a physical box is a real act. That's what makes a pre-commitment hold in a way no swipe ever could.</p>
+        </li>
+        <li class="feat-item">
+          <strong data-i18n="feat.f4t">Optional accountability</strong>
+          <p data-i18n="feat.f4p">A trusted person can receive a quiet nudge if you miss your time. No usage data, no location, no drama — just a gentle ping to someone you chose.</p>
+        </li>
+        <li class="feat-item">
+          <strong data-i18n="feat.f5t">Relief by design</strong>
+          <p data-i18n="feat.f5p">The feeling testers report most isn't discipline. It's relief — the quiet of not having to decide tonight, because morning-you already did.</p>
+        </li>
+      </ul>
     </div>
   </div>
 </section>
@@ -346,10 +398,10 @@
     </figure>
 
     <div class="quotes">
-      <blockquote class="quote reveal"><p class="de">„Ich will es einfach weiter nutzen, noch so leicht.“</p><p class="en en-only">I just want to keep using it — it's that effortless.</p></blockquote>
-      <blockquote class="quote reveal"><p class="de">„Richtige Erleichterung, das abends zu machen.“</p><p class="en en-only">Genuine relief to do this each evening.</p></blockquote>
-      <blockquote class="quote reveal"><p class="de">„Endlich geh ich abends wirklich ins Bett, statt noch stundenlang am Handy.“</p><p class="en en-only">I finally actually go to bed, instead of hours more on my phone.</p></blockquote>
-      <blockquote class="quote reveal"><p class="de">„Abends muss ich nicht mehr drüber nachdenken — die Box macht das.“</p><p class="en en-only">At night I don't have to think about it anymore — the box handles it.</p></blockquote>
+      <blockquote class="quote reveal"><p class="de">„Ich will es einfach weiter nutzen, noch so leicht."</p><p class="en en-only">I just want to keep using it — it's that effortless.</p></blockquote>
+      <blockquote class="quote reveal"><p class="de">„Richtige Erleichterung, das abends zu machen."</p><p class="en en-only">Genuine relief to do this each evening.</p></blockquote>
+      <blockquote class="quote reveal"><p class="de">„Endlich geh ich abends wirklich ins Bett, statt noch stundenlang am Handy."</p><p class="en en-only">I finally actually go to bed, instead of hours more on my phone.</p></blockquote>
+      <blockquote class="quote reveal"><p class="de">„Abends muss ich nicht mehr drüber nachdenken — die Box macht das."</p><p class="en en-only">At night I don't have to think about it anymore — the box handles it.</p></blockquote>
     </div>
 
     <p class="kicker stats-cap reveal" data-i18n="status.statscap">The early numbers — 17 active testers</p>
@@ -359,7 +411,6 @@
       <div class="stat"><div class="n">8<span class="u"> min</span></div><div class="l" data-i18n="stat3.l">average deviation from the phone-handover deadline</div></div>
       <div class="stat"><div class="n">45<span class="u"> min</span></div><div class="l" data-i18n="stat4.l">average evening routine, across about 4 items</div></div>
     </div>
-
   </div>
 </section>
 
@@ -377,15 +428,6 @@
       <a class="btn" href="https://www.linkedin.com/in/david-leon-britz/" target="_blank" rel="noopener" data-i18n="next.linkedin">Connect on LinkedIn</a>
     </div>
     <p class="proof reveal" data-i18n="next.proof">For proof we can pull this off: my last venture, <a href="https://fedanilabs.de/" target="_blank" rel="noopener">Fedani Labs</a> — a shipped hardware product with its own Kickstarter. Eudaimon is the much bigger swing.</p>
-  </div>
-</section>
-
-<div class="hair"></div>
-
-<!-- CLOSING -->
-<section class="band">
-  <div class="wrap close-simple">
-    <p class="line reveal" data-i18n="closing.line">The night serves the day.</p>
   </div>
 </section>
 
@@ -409,15 +451,15 @@
     reveals.forEach((el,i)=>{ el.style.transitionDelay = (Math.min(i,3)*60)+'ms'; io.observe(el); });
   }
 
-  // ---- i18n (English in DOM; German translations swapped in) ----
+  // ---- i18n ----
   const I18N = { de: {
     "nav.what":"Was es ist",
+    "phil.catch":"Die verhaltenspsychologische Antwort auf Doomscrolling",
     "phil.ipa":"yoo-dai-mon-EE-a &nbsp;·&nbsp; Altgriechisch",
     "phil.h1":"Aristoteles' Wort für das <span class=\"b\">Aufblühen</span> — kein flüchtiger Rausch, sondern die lebenslange Übung, gut zu leben.",
     "phil.lead":"Er verstand es als <em>Verb</em> — Aufblühen ist etwas, das man <strong>tut</strong>, täglich, indem man so handelt wie der Mensch, der man sein will. Eudaimon beginnt mit der kleinsten, schwersten Wiederholung: abends ins Bett zu gehen, wenn man es sich vorgenommen hat.",
     "phil.cta":"Das Gerät ansehen <span class=\"arr\">↓</span>",
     "product.what":"Eine Box für den Nachttisch, die nachts dein Handy nimmt, dich an <span class=\"b\">dein eigenes Abendritual</span> hält und es dir morgens zurückgibt.",
-    "product.tag":"Eudaimon — die Struktur, die du aufbaust, bevor du sie brauchst",
     "founder.kicker":"Warum ich es gebaut habe",
     "founder.bio1":"Ich bin David — 21, Student und Hardtech-Gründer. Und jemand, der seit Jahren mit Doomscrolling kämpft.",
     "founder.bio2":"Es nervt. Sehr. Ich habe jede Lösung da draußen ausprobiert — die App-Blocker, alles — und nichts hielt lange. Also habe ich die letzten Monate mit den klügsten Menschen, die ich kenne, an etwas gearbeitet, das endlich funktioniert.",
@@ -425,25 +467,41 @@
     "founder.science":"Hinter der Frage, warum der Abend der schwerste Teil ist, steckt echte Wissenschaft.",
     "founder.scienceLink":"Lies die Eudaimon-Prinzipien →",
     "founder.into":"Also — das hier haben wir gebaut.",
-    "why.kicker":"Warum es funktioniert",
-    "why.pull":"Das Ich um 23 Uhr ist nicht das Ich, das um 8 Uhr den Wecker gestellt hat. <span class=\"b\">Gleicher Körper, anderer Wille.</span>",
-    "why.lead":"Willenskraft läuft über den präfrontalen Kortex, und nachts ist er leer — deshalb scheitern die meisten Apps: Sie überlassen deinem erschöpftesten Ich die Entscheidung. Eudaimon dreht es um: <strong>Das Morgen-Ich macht die Regeln, und die Box hält sie</strong>, wenn das Abend-Ich sie brechen würde. Und 80% der Selbstverbesserung sind einfach: rechtzeitig ins Bett.",
+    "prob.kicker":"Das Problem",
+    "prob.pull":"Das Ich um 23 Uhr ist nicht das Ich, das um 8 Uhr den Wecker gestellt hat. <span class=\"b\">Gleicher Körper, anderer Wille.</span>",
+    "prob.lead":"Wenn du dein Handy abends nicht weglegen kannst und an deinen eigenen Routinen scheiterst, bist du damit weit nicht allein. Es ist eines der größten Probleme unserer Zeit — und dennoch fehlen uns echte Lösungen. Die Daten sind eindeutig: Das meiste Doomscrolling passiert nachts, wenn deine Willenskraft am niedrigsten ist. Schaffst du es, früh ins Bett zu kommen, hast du am nächsten Tag eine echte Chance.",
+    "why.kicker":"Wie es funktioniert",
+    "why.h2":"Wie Eudaimon es <span class=\"b\">umdreht</span>",
+    "why.lead":"Die meisten Apps scheitern, weil sie dein erschöpftestes Ich um die Entscheidung bitten. Eudaimon macht das Gegenteil: Du legst deine Regeln morgens fest, wenn du klar im Kopf bist — das nennt man einen <a class=\"inline-ref\" href=\"https://en.wikipedia.org/wiki/Ulysses_pact\" target=\"_blank\" rel=\"noopener\">Odysseus-Vertrag</a> — und ein physisches Gerät hält sie ein, wenn dein Abend-Ich sie brechen würde. Und 80 % der Selbstverbesserung sind einfach: rechtzeitig ins Bett.",
     "why.b1":"<strong>Ein Hütehund, kein Polizist</strong> — es fängt dich auf, beschämt dich nie und bleibt still, solange alles gut läuft.",
     "why.b2":"<strong>Erleichterung, nicht Disziplin</strong> — die Ruhe, schon entschieden zu haben, Stunden vorher, als es leicht war.",
     "why.b3":"<strong>Optionale Verbindlichkeit</strong> — eine Vertrauensperson bekommt eine leise Nachricht, wenn du die Schlafenszeit verpasst. Nie deine Apps, Nutzung oder deinen Ort.",
-    "why.link":"Die Wissenschaft dahinter → Eudaimon-Prinzipien",
-    "night.kicker":"Die Nacht, Schritt für Schritt",
+    "night.kicker":"Wie es abläuft",
+    "night.h2":"Die Nacht, <span class=\"b\">Schritt für Schritt</span>",
     "night.pull":"Solange du auf Kurs bist, ist es nur <span class=\"b\">sanfte Führung</span> — es macht sich erst bemerkbar, wenn du anfängst abzurutschen.",
     "step1.h3":"Herunterfahren",
-    "step1.p":"Ein sanftes Signal: <span class=\"hl\">jetzt herunterfahren</span>. Kein Summer — ein leiser Ton, den du mit einem Tippen wegwischen kannst.",
+    "step1.p":"Zeit zum Abschließen. Eine sanfte Erinnerung, die letzten Nachrichten zu schicken und alles zu tun, was du brauchst, um bereit zu sein, dein Handy <span class=\"hl\">abzugeben</span>.",
     "step2.h3":"Das Abendritual",
     "step2.p":"Eine kurze Checkliste, die du selbst geschrieben hast — jeder Punkt <span class=\"hl\">verhandelbar</span> oder <span class=\"hl\">nicht verhandelbar</span>, damit auch eine harte Nacht im Bett endet.",
     "step3.h3":"Das Handy kommt in die Box",
     "step3.p":"Dein Handy kommt in eine echte Box, die es <span class=\"hl\">physisch erkennt</span>. Kein Tippen, kein Häkchen kann die Verpflichtung vortäuschen.",
-    "step4.h3":"Wenn du zögerst, ändert sich der Ton",
-    "step4.p":"Es wird nicht einfach lauter — erst sanft, dann bestimmt, dann <span class=\"hl\">deine eigenen Worte</span> auf dem Bildschirm. Kein „Erledigt“-Knopf; du beendest es, indem du es wirklich tust.",
-    "step5.h3":"Der Morgen gibt es zurück",
-    "step5.p":"Licht vor dem Wecker, dann eine kleine <span class=\"hl\">Aufgabe</span>, die beweist, dass du wach bist — kein Snooze, kein Rechnen. Dann gehört das Handy wieder dir.",
+    "step4.h3":"Wenn du zögerst, wird es unmöglich zu ignorieren",
+    "step4.p":"Eudaimon ist ein physisches Ding in deinem Zimmer. Durch Audio- und visuelle Signale wird es zunehmend unmöglich zu ignorieren — und es gibt keinen Knopf, um es zum Schweigen zu bringen. Der einzige Ausweg ist, das zu tun, was du heute Morgen entschieden hast.",
+    "step5.h3":"Dein Morgen gehört dir",
+    "step5.p":"Eudaimon ist dein Wecker, sodass dein Handy für jene <span class=\"hl\">kostbaren Minuten</span> in der Box bleiben kann, in denen du dich streckst, atmest und wirklich aufwachst. Dann gehört das Handy wieder dir.",
+    "feat.kicker":"Features &amp; Methoden",
+    "feat.h2":"Weiter als jede App <span class=\"b\">je könnte</span>",
+    "feat.lead":"Eudaimon ist darauf ausgelegt, dich weiter zu bringen als dein müdes Gehirn oder jede App je könnte — durch sein Design und seinen Ort im Raum. Wenn du tiefer in die Psychologie einsteigen willst, findest du alles auf der <a class=\"inline-ref\" href=\"principles.html\">Prinzipien-Seite</a>.",
+    "feat.f1t":"Nicht auf deinem Handy",
+    "feat.f1p":"Dein Handy ist das Problem. Jede App darauf hat einen Interessenkonflikt. Eudaimon ist ein vollständig separates Gerät.",
+    "feat.f2t":"Physische Erkennung",
+    "feat.f2p":"Die Box erkennt dein Handy physisch. Kein Häkchen, kein Tippen — du hast dich wirklich verpflichtet, nicht nur gesagt, dass du es hast.",
+    "feat.f3t":"Das Ritual ist die Verpflichtung",
+    "feat.f3p":"Dein Handy in eine physische Box zu legen ist ein echter Akt. Das ist es, was eine Vorab-Verpflichtung hält, wie es kein Wischen je könnte.",
+    "feat.f4t":"Optionale Verbindlichkeit",
+    "feat.f4p":"Eine Vertrauensperson kann eine sanfte Benachrichtigung erhalten, wenn du deine Zeit verpasst. Keine Nutzungsdaten, kein Standort, kein Drama — nur ein leises Signal an jemanden, den du ausgewählt hast.",
+    "feat.f5t":"Erleichterung by Design",
+    "feat.f5p":"Das Gefühl, das Tester am häufigsten berichten, ist nicht Disziplin. Es ist Erleichterung — die Stille, heute Abend keine Entscheidung treffen zu müssen, weil dein Morgen-Ich es bereits getan hat.",
     "next.kicker":"Wohin es geht",
     "next.pull":"Wir machen daraus ein <span class=\"b\">echtes Produkt</span>, mit einem kleinen Team.",
     "next.lead":"Wenn dich das interessiert, komm mit. Trag dich in den Newsletter ein — kein Spam, versprochen — verfolg die Entwicklung oder sag einfach Hallo. Wir freuen uns ehrlich über jeden Input.",
@@ -460,7 +518,6 @@
     "stat2.l":"würden es weiter nutzen",
     "stat3.l":"durchschnittliche Abweichung von der Handy-Abgabezeit",
     "stat4.l":"durchschnittliches Abendritual, über rund 4 Punkte",
-    "closing.line":"Die Nacht dient dem Tag.",
     "footer.tagline":"aufblühen, eine Nacht nach der anderen",
     "footer.principles":"Prinzipien",
     "footer.impressum":"Impressum"
