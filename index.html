@@ -172,6 +172,9 @@
     letter-spacing:.16em;text-transform:uppercase;color:var(--brass);text-decoration:none;padding:13px 22px;
     border:1px solid rgba(200,184,154,.42);border-radius:2px;transition:border-color .3s,color .3s,background .3s}
   .btn:hover{border-color:var(--brass);color:#e7dcc6;background:rgba(200,184,154,.05)}
+  .btn--primary{background:var(--brass);color:#0a0908;border-color:var(--brass);font-weight:600}
+  .btn--primary:hover{background:#e7dcc6;border-color:#e7dcc6;color:#0a0908}
+  .reassure{margin:18px auto 0;font-size:12.5px;letter-spacing:.04em;color:var(--ink-mute)}
   .proof{margin:42px auto 0;font-size:14px;color:var(--ink-mute);line-height:1.7;max-width:56ch}
   .proof a{color:var(--ink-soft);text-decoration:none;border-bottom:1px solid var(--hair);transition:color .3s,border-color .3s}
   .proof a:hover{color:var(--brass);border-color:var(--brass)}
@@ -415,17 +418,18 @@
 
 <div class="hair"></div>
 
-<!-- WHERE WE'RE HEADED -->
+<!-- THE FIRST PRODUCTION RUN -->
 <section class="band involved" id="involved">
   <div class="wrap center">
-    <p class="kicker reveal" data-i18n="next.kicker">Where we're headed</p>
-    <p class="pull reveal" data-i18n="next.pull">We're turning this into a <span class="b">real product</span>, with a small team.</p>
-    <p class="lead reveal" style="margin-top:24px" data-i18n="next.lead">If that's something you'd want, come along. Sign up for the newsletter — no spam, promise — follow the build, or just say hi. We'd genuinely love your input.</p>
+    <p class="kicker reveal" data-i18n="next.kicker">What's next</p>
+    <p class="pull reveal" data-i18n="next.pull">The <span class="b">first production run</span> is coming.</p>
+    <p class="lead reveal" style="margin-top:24px" data-i18n="next.lead">We're building a limited first batch, properly made: a purpose-built case, USB-C, the works. It won't be many. Newsletter subscribers get first access the moment it opens, at the founders' price, before anyone else.</p>
     <div class="cta-row reveal">
-      <a class="btn" href="#newsletter" data-i18n="next.newsletter">Join the newsletter</a>
-      <a class="btn" href="#instagram" target="_blank" rel="noopener" data-i18n="next.instagram">Instagram</a>
+      <a class="btn btn--primary" href="#newsletter" data-i18n="next.newsletter">Get first access</a>
+      <a class="btn" href="#instagram" target="_blank" rel="noopener" data-i18n="next.instagram">Follow the build</a>
       <a class="btn" href="https://www.linkedin.com/in/david-leon-britz/" target="_blank" rel="noopener" data-i18n="next.linkedin">Connect on LinkedIn</a>
     </div>
+    <p class="reassure reveal" data-i18n="next.reassure">No spam. One note when the first run opens, nothing else.</p>
     <p class="proof reveal" data-i18n="next.proof">For proof we can pull this off: my last venture, <a href="https://fedanilabs.de/" target="_blank" rel="noopener">Fedani Labs</a> — a shipped hardware product with its own Kickstarter. Eudaimon is the much bigger swing.</p>
   </div>
 </section>
@@ -500,12 +504,13 @@
     "feat.f4p":"Eine Vertrauensperson kann eine sanfte Benachrichtigung erhalten, wenn du deine Zeit verpasst. Keine Nutzungsdaten, kein Standort, kein Drama — nur ein leises Signal an jemanden, den du ausgewählt hast.",
     "feat.f5t":"Erleichterung by Design",
     "feat.f5p":"Das Gefühl, das Tester am häufigsten berichten, ist nicht Disziplin. Es ist Erleichterung — die Stille, heute Abend keine Entscheidung treffen zu müssen, weil dein Morgen-Ich es bereits getan hat.",
-    "next.kicker":"Wohin es geht",
-    "next.pull":"Wir machen daraus ein <span class=\"b\">echtes Produkt</span>, mit einem kleinen Team.",
-    "next.lead":"Wenn dich das interessiert, komm mit. Trag dich in den Newsletter ein — kein Spam, versprochen — verfolg die Entwicklung oder sag einfach Hallo. Wir freuen uns ehrlich über jeden Input.",
-    "next.newsletter":"Newsletter abonnieren",
-    "next.instagram":"Instagram",
+    "next.kicker":"Was als Nächstes kommt",
+    "next.pull":"Die <span class=\"b\">erste Produktionsserie</span> kommt.",
+    "next.lead":"Wir bauen eine begrenzte erste Charge, richtig gemacht: ein eigens entwickeltes Gehäuse, USB-C, alles dran. Es werden nicht viele. Newsletter-Abonnenten bekommen als Erste Zugang, sobald es losgeht, zum Gründerpreis, vor allen anderen.",
+    "next.newsletter":"Frühzeitig Zugang sichern",
+    "next.instagram":"Verfolg die Entwicklung",
     "next.linkedin":"Auf LinkedIn vernetzen",
+    "next.reassure":"Kein Spam. Eine Nachricht, wenn die erste Serie startet, sonst nichts.",
     "next.proof":"Als Beweis, dass wir das hinbekommen: mein letztes Projekt, <a href=\"https://fedanilabs.de/\" target=\"_blank\" rel=\"noopener\">Fedani Labs</a> — ein ausgeliefertes Hardware-Produkt mit eigenem Kickstarter. Eudaimon ist der deutlich größere Wurf.",
     "status.kicker":"Wo es heute steht",
     "status.pull":"Ein paar Dutzend Menschen <span class=\"b\">leben gerade damit</span>.",
