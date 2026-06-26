@@ -91,11 +91,20 @@
   .product .what .b{color:var(--brass)}
   .product .tag{margin-top:18px;font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-mute);font-weight:500}
 
-  .founder .wrap{max-width:720px;margin:0 auto;text-align:center}
-  .founder .kicker{display:inline-block;margin-bottom:26px}
-  .founder p.story{font-size:clamp(18px,2.1vw,22px);font-weight:300;color:var(--ink-soft);line-height:1.66}
-  .founder p.story strong{color:var(--ink);font-weight:500}
-  .founder .sign{margin-top:26px;font-family:var(--serif);font-style:italic;font-size:22px;color:var(--brass)}
+  .founder .wrap{max-width:900px;margin:0 auto}
+  .founder .kicker{display:block;text-align:center;margin-bottom:42px}
+  .founder-intro{display:grid;grid-template-columns:250px 1fr;gap:42px;align-items:center}
+  .founder-photo{width:100%;border-radius:14px;display:block;filter:saturate(.97);box-shadow:0 30px 80px -40px rgba(0,0,0,.8)}
+  .founder-bio .founder-lead{font-family:var(--serif);font-style:italic;font-weight:500;font-size:clamp(22px,3vw,31px);line-height:1.22;color:var(--ink)}
+  .founder-bio .founder-body{margin-top:18px;font-size:clamp(15px,1.7vw,18px);color:var(--ink-soft);line-height:1.7}
+  .founder-bio .founder-body strong{color:var(--ink);font-weight:500}
+  .usage{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:50px}
+  .usage img{width:100%;aspect-ratio:9/16;object-fit:cover;object-position:top center;border-radius:10px;border:1px solid var(--hair);display:block}
+  .usage figcaption{grid-column:1/-1;margin-top:15px;text-align:center;font-size:12px;letter-spacing:.06em;color:var(--ink-mute)}
+  .founder-link{margin-top:46px;text-align:center;font-size:clamp(15px,1.7vw,18px);color:var(--ink-soft);line-height:1.6}
+  .founder-link a{color:var(--brass);text-decoration:none;border-bottom:1px solid rgba(200,184,154,.4);white-space:nowrap;transition:color .3s}
+  .founder-link a:hover{color:#e7dcc6}
+  .founder-into{margin-top:30px;text-align:center;font-family:var(--serif);font-style:italic;font-size:clamp(20px,2.6vw,28px);color:var(--brass)}
 
   .insight{text-align:center;max-width:760px;margin:0 auto;padding:clamp(40px,6vh,60px) 34px;border-top:1px solid var(--hair);border-bottom:1px solid var(--hair)}
   .insight .q{font-family:var(--serif);font-style:italic;font-weight:500;font-size:clamp(24px,3.6vw,40px);line-height:1.22;color:var(--brass);max-width:20ch;margin:0 auto}
@@ -150,6 +159,8 @@
   footer small{color:var(--ink-mute);font-size:12px;letter-spacing:.08em}
   footer .foot-link{color:rgba(240,233,218,.13);font-size:10px;letter-spacing:.05em;text-decoration:none;transition:color .3s}
   footer .foot-link:hover{color:var(--ink-soft)}
+  footer .foot-nav{color:var(--ink-soft);font-size:12px;letter-spacing:.08em;text-decoration:none;border-bottom:1px solid var(--hair);transition:color .3s,border-color .3s}
+  footer .foot-nav:hover{color:var(--brass);border-color:var(--brass)}
 
   html.js .reveal{opacity:0;transform:translateY(18px);transition:opacity .9s cubic-bezier(.2,.6,.2,1),transform .9s cubic-bezier(.2,.6,.2,1)}
   html.js .reveal.in{opacity:1;transform:none}
@@ -164,6 +175,9 @@
     .status .quotes{grid-template-columns:1fr;gap:26px}
     .stats{grid-template-columns:1fr 1fr;gap:30px 22px;padding:34px 0}
     .shots{gap:8px}
+    .founder-intro{grid-template-columns:1fr;gap:26px;text-align:center}
+    .founder-photo{max-width:210px;margin:0 auto}
+    .usage{gap:8px;margin-top:38px}
     header{padding:14px 20px}header.scrolled{padding:11px 20px}
     .nav-cta{display:none}
     .head-right{gap:0}
@@ -194,7 +208,7 @@
       <p class="mark-xl reveal">Eudaimonia</p>
       <p class="ipa reveal" data-i18n="phil.ipa">yoo-dai-mon-EE-a &nbsp;·&nbsp; Ancient Greek</p>
       <h1 class="reveal" data-i18n="phil.h1">Aristotle's word for <span class="b">flourishing</span> — not a fleeting high, but the lifelong practice of living well.</h1>
-      <p class="lead reveal" data-i18n="phil.lead">He meant it as a <em>verb</em>: flourishing is something you <strong>do</strong>, daily, by acting like the person you mean to be. Eudaimon is built on that one idea — and it starts with the smallest, hardest rep of it: actually going to bed when you said you would.</p>
+      <p class="lead reveal" data-i18n="phil.lead">He meant it as a <em>verb</em> — flourishing is something you <strong>do</strong>, daily, by acting like who you mean to be. Eudaimon starts with its smallest, hardest rep: going to bed when you said you would.</p>
       <a class="link-cta reveal" href="#product" data-i18n="phil.cta">Meet the device <span class="arr">↓</span></a>
     </div>
   </div>
@@ -202,7 +216,31 @@
 
 <div class="hair"></div>
 
-<!-- 2 · PRODUCT -->
+<!-- 2 · FOUNDER -->
+<section class="band founder">
+  <div class="wrap">
+    <p class="kicker reveal" data-i18n="founder.kicker">Why I built it</p>
+    <div class="founder-intro reveal">
+      <img class="founder-photo" src="assets/founder/david.jpg" alt="David, founder of Eudaimon">
+      <div class="founder-bio">
+        <p class="founder-lead" data-i18n="founder.bio1">I'm David — a 21-year-old student and hardtech founder. And someone who's fought doomscrolling for years.</p>
+        <p class="founder-body" data-i18n="founder.bio2">It sucks. A lot. I've tried every solution out there — the screen-blocking apps, all of it — and nothing held for long. So I spent the last months with the smartest people I know, drafting something that finally works.</p>
+      </div>
+    </div>
+    <figure class="usage reveal">
+      <img src="assets/founder/screen-usage-1.jpg" alt="My iOS Screen Time: 6h 55min" loading="lazy">
+      <img src="assets/founder/screen-usage-2.jpg" alt="My iOS Screen Time: 10h 53min" loading="lazy">
+      <img src="assets/founder/screen-usage-3.jpg" alt="My iOS Screen Time: 10h 59min" loading="lazy">
+      <figcaption data-i18n="founder.usagecap">My own screen time. This is what I built it against.</figcaption>
+    </figure>
+    <p class="founder-link reveal"><span data-i18n="founder.science">There's real science behind why the evening is the hardest part.</span> <a href="principles.html" data-i18n="founder.scienceLink">Read the Eudaimon principles →</a></p>
+    <p class="founder-into reveal" data-i18n="founder.into">So here's what we built.</p>
+  </div>
+</section>
+
+<div class="hair"></div>
+
+<!-- 3 · PRODUCT -->
 <section class="band product" id="product">
   <div class="wrap">
     <figure class="reveal">
@@ -211,17 +249,6 @@
     </figure>
     <p class="what reveal" data-i18n="product.what">A bedside box that takes your phone at night, holds you to <span class="b">your own wind-down</span>, and gives it back in the morning.</p>
     <p class="tag reveal" data-i18n="product.tag">Eudaimon — the structure you build before you need it</p>
-  </div>
-</section>
-
-<div class="hair"></div>
-
-<!-- 3 · FOUNDER -->
-<section class="band--tight founder">
-  <div class="wrap">
-    <p class="kicker reveal" data-i18n="founder.kicker">Why I built it</p>
-    <p class="story reveal" data-i18n="founder.story">Quick, honest one: I doomscrolled past my own bedtime for <strong>years</strong>. I tried it all — screen-time limits, app blockers, greyscale, deleting apps, leaving the phone in another room. Nothing held for more than a week. So I made it my mission to build the thing that finally would. After a lot of dead ends, this is what I want to show you.</p>
-    <p class="sign reveal" data-i18n="founder.sign">— David, founder</p>
   </div>
 </section>
 
@@ -261,7 +288,7 @@
   <div class="night-amb" aria-hidden="true"></div>
   <div class="wrap">
     <p class="kicker reveal" style="margin-bottom:8px" data-i18n="night.kicker">The night, walked through</p>
-    <p class="pull reveal" style="max-width:24ch" data-i18n="night.pull">It only shows up <span class="b">when you need it.</span> Doing fine? It stays dark.</p>
+    <p class="pull reveal" style="max-width:26ch" data-i18n="night.pull">While you're on track, it's just <span class="b">soft guidance</span> — it only makes itself felt the moment you start to slip.</p>
     <div class="steps">
       <div class="step reveal">
         <div class="col-left"><div class="num">01</div>
@@ -299,32 +326,16 @@
 
 <div class="hair"></div>
 
-<!-- SHEEPDOG -->
+<!-- HOW IT FEELS (sheepdog + partner, merged) -->
 <section class="band">
   <div class="wrap feat">
     <div class="reveal">
-      <span class="kicker" data-i18n="sheepdog.kicker">Protective, not punitive</span>
-      <h2 data-i18n="sheepdog.h2">The <span class="b">sheepdog</span> you hired this morning.</h2>
+      <span class="kicker" data-i18n="howit.kicker">What it feels like</span>
+      <h2 data-i18n="howit.h2">A <span class="b">sheepdog</span>, not a cop.</h2>
     </div>
     <div class="reveal">
-      <p class="lead" data-i18n="sheepdog.l1">Not a cop. It catches you, never judges you, and stays dark and quiet when you're doing fine.</p>
-      <p class="lead" style="margin-top:18px" data-i18n="sheepdog.l2">What testers feel most isn't willpower. It's <strong>relief from the decision</strong> — already made, hours ago, when it was easy.</p>
-    </div>
-  </div>
-</section>
-
-<div class="hair"></div>
-
-<!-- PARTNER -->
-<section class="band">
-  <div class="wrap feat">
-    <div class="reveal">
-      <span class="kicker" data-i18n="partner.kicker">Optional accountability</span>
-      <h2 data-i18n="partner.h2">Someone <span class="b">knows</span> — quietly.</h2>
-    </div>
-    <div class="reveal">
-      <p class="lead" data-i18n="partner.l1">Pick a partner. Miss bedtime, and they get a short, factual note over a channel they already use.</p>
-      <p class="lead" style="margin-top:18px" data-i18n="partner.l2">They never see your apps, your usage, or where you are — only <strong>whether the phone went in</strong>. Accountability without surveillance.</p>
+      <p class="lead" data-i18n="howit.p1">It catches you when you slip, never shames you, and stays quiet when you're fine. What people feel most isn't willpower — it's <strong>relief from the decision</strong>, already made when it was easy.</p>
+      <p class="lead" style="margin-top:18px" data-i18n="howit.p2">And if you want, someone knows: miss bedtime and a chosen partner gets a short, factual note — never your apps, usage, or location. <strong>Accountability without surveillance.</strong></p>
     </div>
   </div>
 </section>
@@ -380,6 +391,7 @@
 <footer>
   <span class="fmark">Eudaimon<span>.</span></span>
   <small data-i18n="footer.tagline">flourishing, one night at a time</small>
+  <a class="foot-nav" href="principles.html" data-i18n="footer.principles">Principles</a>
   <a class="foot-link" href="impressum.html" data-i18n="footer.impressum">Impressum</a>
   <small>© 2026</small>
 </footer>
@@ -401,13 +413,17 @@
     "nav.what":"Was es ist",
     "phil.ipa":"yoo-dai-mon-EE-a &nbsp;·&nbsp; Altgriechisch",
     "phil.h1":"Aristoteles' Wort für das <span class=\"b\">Aufblühen</span> — kein flüchtiger Rausch, sondern die lebenslange Übung, gut zu leben.",
-    "phil.lead":"Er verstand es als <em>Verb</em>: Aufblühen ist etwas, das man <strong>tut</strong> — täglich, indem man so handelt wie der Mensch, der man sein will. Eudaimon baut auf dieser einen Idee auf. Und es beginnt mit ihrer kleinsten, schwersten Wiederholung: abends wirklich ins Bett zu gehen, wenn man es sich vorgenommen hat.",
+    "phil.lead":"Er verstand es als <em>Verb</em> — Aufblühen ist etwas, das man <strong>tut</strong>, täglich, indem man so handelt wie der Mensch, der man sein will. Eudaimon beginnt mit der kleinsten, schwersten Wiederholung: abends ins Bett zu gehen, wenn man es sich vorgenommen hat.",
     "phil.cta":"Das Gerät ansehen <span class=\"arr\">↓</span>",
     "product.what":"Eine Box für den Nachttisch, die nachts dein Handy nimmt, dich an <span class=\"b\">dein eigenes Abendritual</span> hält und es dir morgens zurückgibt.",
     "product.tag":"Eudaimon — die Struktur, die du aufbaust, bevor du sie brauchst",
     "founder.kicker":"Warum ich es gebaut habe",
-    "founder.story":"Kurz und ehrlich: Ich habe mich <strong>jahrelang</strong> am Handy an meiner eigenen Schlafenszeit vorbeigescrollt. Ich habe alles versucht — Bildschirmzeit-Limits, App-Blocker, Graustufen, Apps gelöscht, das Handy in einem anderen Raum gelassen. Nichts hielt länger als eine Woche. Also habe ich es mir zur Aufgabe gemacht, das Ding zu bauen, das es endlich schafft. Nach vielen Sackgassen ist das hier, was ich dir zeigen möchte.",
-    "founder.sign":"— David, Gründer",
+    "founder.bio1":"Ich bin David — 21, Student und Hardtech-Gründer. Und jemand, der seit Jahren mit Doomscrolling kämpft.",
+    "founder.bio2":"Es nervt. Sehr. Ich habe jede Lösung da draußen ausprobiert — die App-Blocker, alles — und nichts hielt lange. Also habe ich die letzten Monate mit den klügsten Menschen, die ich kenne, an etwas gearbeitet, das endlich funktioniert.",
+    "founder.usagecap":"Meine eigene Bildschirmzeit. Genau dagegen habe ich es gebaut.",
+    "founder.science":"Hinter der Frage, warum der Abend der schwerste Teil ist, steckt echte Wissenschaft.",
+    "founder.scienceLink":"Lies die Eudaimon-Prinzipien →",
+    "founder.into":"Also — das hier haben wir gebaut.",
     "problem.kicker":"Das Problem",
     "problem.pull":"Das Ich um 23 Uhr ist nicht das Ich, das um 8 Uhr den Wecker gestellt hat. <span class=\"b\">Gleicher Körper, anderer Wille.</span>",
     "problem.lead":"Willenskraft läuft über deinen <strong>präfrontalen Kortex</strong> — den Teil des Gehirns direkt hinter der Stirn, wo Entscheidungen fallen. Er entleert sich über den Tag, und nachts ist er fast leer. Die meisten Apps scheitern, weil sie deinem erschöpftesten Ich die Entscheidung überlassen — genau dann, wenn es sie nicht treffen kann.",
@@ -417,7 +433,7 @@
     "insight.q":"Wenn es darum geht, sich zu verbessern, sind <b>80%</b> einfach: rechtzeitig ins Bett.",
     "insight.note":"Gewinn die Nacht, und der Tag erledigt sich fast von selbst.",
     "night.kicker":"Die Nacht, Schritt für Schritt",
-    "night.pull":"Es zeigt sich nur, <span class=\"b\">wenn du es brauchst.</span> Läuft alles gut? Dann bleibt es dunkel.",
+    "night.pull":"Solange du auf Kurs bist, ist es nur <span class=\"b\">sanfte Führung</span> — es macht sich erst bemerkbar, wenn du anfängst abzurutschen.",
     "step1.h3":"Herunterfahren",
     "step1.p":"Ein sanftes Signal: <span class=\"hl\">jetzt herunterfahren</span>. Kein Summer — ein leiser Ton, den du mit einem Tippen wegwischen kannst.",
     "step2.h3":"Das Abendritual",
@@ -428,14 +444,10 @@
     "step4.p":"Es wird nicht einfach lauter — erst sanft, dann bestimmt, dann <span class=\"hl\">deine eigenen Worte</span> auf dem Bildschirm. Kein „Erledigt“-Knopf; du beendest es, indem du es wirklich tust.",
     "step5.h3":"Der Morgen gibt es zurück",
     "step5.p":"Licht vor dem Wecker, dann eine kleine <span class=\"hl\">Aufgabe</span>, die beweist, dass du wach bist — kein Snooze, kein Rechnen. Dann gehört das Handy wieder dir.",
-    "sheepdog.kicker":"Schützend, nicht strafend",
-    "sheepdog.h2":"Der <span class=\"b\">Hütehund</span>, den du heute Morgen engagiert hast.",
-    "sheepdog.l1":"Kein Polizist. Es fängt dich auf, verurteilt dich nie und bleibt dunkel und still, solange alles gut läuft.",
-    "sheepdog.l2":"Was Tester am stärksten spüren, ist nicht Willenskraft. Es ist die <strong>Erleichterung von der Entscheidung</strong> — schon getroffen, Stunden vorher, als es leicht war.",
-    "partner.kicker":"Optionale Verbindlichkeit",
-    "partner.h2":"Jemand <span class=\"b\">weiß</span> Bescheid — ganz leise.",
-    "partner.l1":"Wähl eine Vertrauensperson. Verpasst du die Schlafenszeit, bekommt sie eine kurze, sachliche Nachricht — über einen Kanal, den sie ohnehin nutzt.",
-    "partner.l2":"Sie sieht nie deine Apps, deine Nutzung oder wo du bist — nur, <strong>ob das Handy in der Box war</strong>. Verbindlichkeit ohne Überwachung.",
+    "howit.kicker":"Wie es sich anfühlt",
+    "howit.h2":"Ein <span class=\"b\">Hütehund</span>, kein Polizist.",
+    "howit.p1":"Es fängt dich auf, wenn du abrutschst, beschämt dich nie und bleibt still, solange alles gut läuft. Was die meisten am stärksten spüren, ist nicht Willenskraft — es ist die <strong>Erleichterung von der Entscheidung</strong>, schon getroffen, als es leicht war.",
+    "howit.p2":"Und wenn du willst, weiß jemand Bescheid: Verpasst du die Schlafenszeit, bekommt eine Vertrauensperson eine kurze, sachliche Nachricht — nie deine Apps, Nutzung oder deinen Ort. <strong>Verbindlichkeit ohne Überwachung.</strong>",
     "status.kicker":"Wo es heute steht",
     "status.pull":"Ein paar Dutzend Menschen <span class=\"b\">leben gerade damit</span>.",
     "status.lead":"Handgebaute frühe Geräte auf echten Nachttischen — ehrlich gesagt an den Rändern rau. Aber es funktioniert, und niemand will sie wieder hergeben.",
@@ -450,6 +462,7 @@
     "closing.line":"Die Nacht dient dem Tag.",
     "closing.cta":"Erfahre es als Erste <span class=\"arr\">→</span>",
     "footer.tagline":"aufblühen, eine Nacht nach der anderen",
+    "footer.principles":"Prinzipien",
     "footer.impressum":"Impressum"
   }};
   const i18nEls = [...document.querySelectorAll('[data-i18n]')];
