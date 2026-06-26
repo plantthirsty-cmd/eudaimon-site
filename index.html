@@ -42,6 +42,10 @@
     border-bottom:1px solid var(--hair);padding:14px 28px}
   .mark{font-family:var(--serif);font-style:italic;font-weight:600;font-size:23px;color:var(--ink);text-decoration:none}
   .mark span{color:var(--brass)}
+  .head-left{display:flex;align-items:center;gap:clamp(18px,3vw,36px)}
+  .head-nav{display:flex;align-items:center;gap:24px}
+  .head-nav a{font-family:var(--sans);font-weight:500;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);text-decoration:none;transition:color .3s}
+  .head-nav a:hover{color:var(--brass)}
   .head-right{display:flex;align-items:center;gap:22px}
   .lang{display:flex;align-items:center;gap:7px}
   .lang-btn{background:none;border:none;cursor:pointer;font-family:var(--sans);font-weight:500;font-size:12px;
@@ -103,8 +107,8 @@
   .founder-bio .founder-lead{font-family:var(--serif);font-style:italic;font-weight:500;font-size:clamp(22px,3vw,31px);line-height:1.22;color:var(--ink)}
   .founder-bio .founder-body{margin-top:18px;font-size:clamp(15px,1.7vw,18px);color:var(--ink-soft);line-height:1.7}
   .founder-bio .founder-body strong{color:var(--ink);font-weight:500}
-  .founder-bio .founder-fedani{margin-top:16px;font-size:13.5px;color:var(--ink-mute);line-height:1.6}
-  .founder-bio .founder-fedani a{color:var(--ink-soft);text-decoration:none;border-bottom:1px solid var(--hair);transition:color .3s,border-color .3s}
+  .founder-bio .founder-fedani{margin-top:16px;font-size:14px;color:var(--ink-soft);line-height:1.62}
+  .founder-bio .founder-fedani a{color:var(--brass);text-decoration:none;border-bottom:1px solid rgba(200,184,154,.4);transition:color .3s,border-color .3s}
   .founder-bio .founder-fedani a:hover{color:var(--brass);border-color:var(--brass)}
   .usage{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:50px}
   .usage img{width:100%;aspect-ratio:9/16;object-fit:cover;object-position:top center;border-radius:10px;border:1px solid var(--hair);display:block}
@@ -153,9 +157,8 @@
   /* STATUS */
   .status .quotes{display:grid;grid-template-columns:1fr 1fr;gap:32px 48px;margin-top:48px}
   .quote{border-left:2px solid var(--hair);padding-left:22px;margin:0}
-  .quote .de{font-family:var(--serif);font-style:italic;font-weight:500;font-size:clamp(18px,2.1vw,24px);line-height:1.32;color:var(--ink)}
-  .quote .en{margin-top:10px;font-size:13px;letter-spacing:.03em;color:var(--ink-mute);line-height:1.5}
-  body.lang-de .en-only{display:none}
+  .quote .q-main{font-family:var(--serif);font-style:italic;font-weight:500;font-size:clamp(18px,2.1vw,24px);line-height:1.32;color:var(--ink)}
+  .quote .q-orig{margin-top:11px;font-size:13px;letter-spacing:.02em;color:var(--ink-mute);line-height:1.5}
   .shots{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:42px}
   .shots img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:10px;display:block;filter:saturate(.92) contrast(1.02)}
   .shots figcaption{grid-column:1/-1;margin-top:14px;font-size:12px;letter-spacing:.06em;color:var(--ink-mute);text-align:center}
@@ -264,7 +267,8 @@
     .founder-photo{max-width:210px;margin:0 auto}
     .usage{gap:8px;margin-top:38px}
     header{padding:14px 20px}header.scrolled{padding:11px 20px}
-    .nav-cta{display:none}
+    .head-nav{display:none}
+    .head-left{gap:0}
     .head-right{gap:0}
   }
 </style>
@@ -272,14 +276,19 @@
 <body>
 
 <header id="topbar">
-  <a class="mark" href="#top">Eudaimon<span>.</span></a>
+  <div class="head-left">
+    <a class="mark" href="#top">Eudaimon<span>.</span></a>
+    <nav class="head-nav">
+      <a href="#product" data-i18n="nav.what">What it is</a>
+      <a href="principles.html" data-i18n="nav.principles">Principles &amp; methods</a>
+    </nav>
+  </div>
   <div class="head-right">
     <div class="lang" role="group" aria-label="Language">
       <button type="button" class="lang-btn is-active" data-lang="en">EN</button>
       <span class="lang-sep">/</span>
       <button type="button" class="lang-btn" data-lang="de">DE</button>
     </div>
-    <a class="nav-cta" href="#product" data-i18n="nav.what">What it is</a>
   </div>
 </header>
 
@@ -470,10 +479,10 @@
     </figure>
 
     <div class="quotes">
-      <blockquote class="quote reveal"><p class="de">„Ich will es einfach weiter nutzen, noch so leicht."</p><p class="en en-only">I just want to keep using it — it's that effortless.</p></blockquote>
-      <blockquote class="quote reveal"><p class="de">„Richtige Erleichterung, das abends zu machen."</p><p class="en en-only">Genuine relief to do this each evening.</p></blockquote>
-      <blockquote class="quote reveal"><p class="de">„Endlich geh ich abends wirklich ins Bett, statt noch stundenlang am Handy."</p><p class="en en-only">I finally actually go to bed, instead of hours more on my phone.</p></blockquote>
-      <blockquote class="quote reveal"><p class="de">„Abends muss ich nicht mehr drüber nachdenken — die Box macht das."</p><p class="en en-only">At night I don't have to think about it anymore — the box handles it.</p></blockquote>
+      <blockquote class="quote reveal"><p class="q-main">I just want to keep using it — it's that effortless.</p><p class="q-orig">„Ich will einfach nicht mehr aufhören — so leicht geht's."</p></blockquote>
+      <blockquote class="quote reveal"><p class="q-main">A genuine relief to do this every evening.</p><p class="q-orig">„Echt eine Erleichterung, das jeden Abend zu machen."</p></blockquote>
+      <blockquote class="quote reveal"><p class="q-main">I finally actually go to bed, instead of hours more on my phone.</p><p class="q-orig">„Endlich gehe ich abends wirklich ins Bett, statt noch stundenlang am Handy zu hängen."</p></blockquote>
+      <blockquote class="quote reveal"><p class="q-main">At night I don't have to think about it anymore — the box takes care of it.</p><p class="q-orig">„Abends muss ich nicht mehr drüber nachdenken — das macht die Box."</p></blockquote>
     </div>
 
     <p class="kicker stats-cap reveal" data-i18n="status.statscap">The early numbers — 17 active testers</p>
@@ -620,6 +629,7 @@
   // ---- i18n ----
   const I18N = { de: {
     "nav.what":"Was es ist",
+    "nav.principles":"Prinzipien & Methoden",
     "phil.catch":"Die verhaltenspsychologische Antwort auf Doomscrolling.",
     "phil.ipa":"yoo-dai-mon-EE-a &nbsp;·&nbsp; Altgriechisch",
     "phil.h1":"Aristoteles' Wort für das <span class=\"b\">Aufblühen</span> — kein flüchtiger Rausch, sondern die lebenslange Übung, gut zu leben.",
@@ -635,10 +645,10 @@
     "founder.scienceLink":"Lies die Eudaimon-Prinzipien →",
     "prob.kicker":"Das Problem",
     "prob.pull":"Das Ich um 23 Uhr ist nicht das Ich, das um 8 Uhr den Wecker gestellt hat. <span class=\"b\">Gleicher Körper, anderer Wille.</span>",
-    "prob.lead":"Wenn du dein Handy abends nicht weglegen und nicht an den Routinen festhalten kannst, die du eigentlich willst, bist du weit nicht allein — es ist eines der prägenden Probleme unserer Zeit. Und die Daten sind klar: Das meiste Doomscrolling passiert nach Einbruch der Dunkelheit, wenn deine Willenskraft am niedrigsten ist. Reparier die Nacht, und der nächste Tag hat eine Chance.",
+    "prob.lead":"Wenn du dein Handy abends nicht weglegen und die Routinen, die du eigentlich willst, nicht durchziehen kannst, bist du damit längst nicht allein — es ist eines der prägenden Probleme unserer Zeit. Und die Daten sind eindeutig: Das meiste Doomscrolling passiert nach Einbruch der Dunkelheit, wenn deine Willenskraft am tiefsten ist. Kriegst du die Nacht in den Griff, hat der nächste Tag eine echte Chance.",
     "why.kicker":"Wie es funktioniert",
     "why.h2":"Wie Eudaimon es <span class=\"b\">umdreht</span>",
-    "why.lead":"Die meisten Apps scheitern, weil sie dein erschöpftestes Ich um die Entscheidung bitten. Eudaimon macht das Gegenteil: Du legst deine Regeln morgens fest, wenn du klar im Kopf bist — das nennt man einen <a class=\"inline-ref\" href=\"https://en.wikipedia.org/wiki/Ulysses_pact\" target=\"_blank\" rel=\"noopener\">Odysseus-Vertrag</a> — und ein physisches Gerät hält sie ein, wenn dein Abend-Ich sie brechen würde. Und 80 % der Selbstverbesserung sind einfach: rechtzeitig ins Bett.",
+    "why.lead":"Die meisten Apps scheitern, weil sie ausgerechnet dein erschöpftestes Ich entscheiden lassen. Eudaimon macht es umgekehrt: Du legst deine Regeln morgens fest, wenn du einen klaren Kopf hast — das nennt man einen <a class=\"inline-ref\" href=\"https://en.wikipedia.org/wiki/Ulysses_pact\" target=\"_blank\" rel=\"noopener\">Odysseus-Vertrag</a> — und ein physisches Gerät hält sie ein, wenn dein Abend-Ich sie brechen würde. Und 80 % davon, besser zu werden, sind einfach: rechtzeitig schlafen gehen.",
     "why.b1":"<strong>Ein Hütehund, kein Polizist</strong> — es fängt dich auf, beschämt dich nie und bleibt still, solange alles gut läuft.",
     "why.b2":"<strong>Erleichterung, nicht Disziplin</strong> — die Ruhe, schon entschieden zu haben, Stunden vorher, als es leicht war.",
     "why.b3":"<strong>Optionale Verbindlichkeit</strong> — eine Vertrauensperson bekommt eine leise Nachricht, wenn du die Schlafenszeit verpasst. Nie deine Apps, Nutzung oder deinen Ort.",
@@ -646,7 +656,7 @@
     "night.h2":"Die Nacht, <span class=\"b\">Schritt für Schritt</span>",
     "night.pull":"Solange du auf Kurs bist, ist es nur <span class=\"b\">sanfte Führung</span> — es macht sich erst bemerkbar, wenn du anfängst abzurutschen.",
     "step1.h3":"Herunterfahren",
-    "step1.p":"Zeit zum Abschließen. Eine sanfte Erinnerung, die letzten Nachrichten zu schicken und alles zu tun, was du brauchst, um bereit zu sein, dein Handy <span class=\"hl\">abzugeben</span>.",
+    "step1.p":"Zeit zum Runterkommen. Eine sanfte Erinnerung, die letzten Nachrichten zu schicken und zu erledigen, was nötig ist, bevor du dein Handy <span class=\"hl\">abgibst</span>.",
     "step2.h3":"Das Abendritual",
     "step2.p":"Eine kurze Checkliste, die du selbst geschrieben hast — jeder Punkt <span class=\"hl\">verhandelbar</span> oder <span class=\"hl\">nicht verhandelbar</span>, damit auch eine harte Nacht im Bett endet.",
     "step3.h3":"Das Handy kommt in die Box",
@@ -657,7 +667,7 @@
     "step5.p":"Eudaimon ist dein Wecker, sodass dein Handy für jene <span class=\"hl\">kostbaren Minuten</span> in der Box bleiben kann, in denen du dich streckst, atmest und wirklich aufwachst. Dann gehört das Handy wieder dir.",
     "feat.kicker":"Features &amp; Methoden",
     "feat.h2":"Weiter als jede App <span class=\"b\">je könnte</span>",
-    "feat.lead":"Es funktioniert wegen seines Orts und seiner Bauweise — nicht auf deinem Handy, physisch real, mit einem Ritual, das die Verpflichtung wirklich halten lässt. Wir wollen den ganzen Gedanken offenlegen: Eudaimon wird gemeinsam mit Neurowissenschaftlern und Psychologie-Studierenden der HU Berlin entwickelt, und jedes Prinzip dahinter steht auf einer Seite.",
+    "feat.lead":"Es funktioniert, weil es woanders steht und anders gebaut ist — nicht auf deinem Handy, physisch real, mit einem Ritual, das die Verpflichtung wirklich halten lässt. Wir wollen den ganzen Gedanken offenlegen: Eudaimon wird gemeinsam mit Neurowissenschaftlern und Psychologie-Studierenden der HU Berlin entwickelt, und jedes Prinzip dahinter steht auf einer Seite.",
     "feat.cta":"Die Prinzipien &amp; Methoden <span class=\"arr\">→</span>",
     "pb.cap":"Echte Zahlen, von echten Testern — nichts erfunden",
     "pb.l1":"echte Tester leben gerade damit",
@@ -668,21 +678,21 @@
     "vs.kicker":"Warum nicht einfach eine App?",
     "vs.d1":"Wo es lebt",
     "vs.a1":"Auf deinem Handy, direkt neben dem, dem du widerstehen willst.",
-    "vs.e1":"Ein separates Objekt durch den Raum. Nichts zum Wegwischen.",
+    "vs.e1":"Ein eigenes Gerät, ein Stück weit weg. Nichts zum Wegwischen.",
     "vs.d3":"Weiß es, ob du es durchgezogen hast?",
     "vs.a3":"Es vertraut einem Häkchen, das du selbst setzt.",
-    "vs.e3":"Es erkennt das Handy physisch. Nichts vorzutäuschen.",
+    "vs.e3":"Es erkennt das Handy physisch. Da lässt sich nichts vortäuschen.",
     "vs.d4":"Wenn du am schwächsten bist",
     "vs.a4":"Immer noch nur ein Bildschirm, den du wegwischst.",
     "vs.e4":"Wird schwerer zu ignorieren, nicht leichter.",
     "vs.d5":"Wie es sich anfühlt",
-    "vs.a5":"Noch etwas, das an dir nörgelt.",
+    "vs.a5":"Noch etwas, das ständig an dir herumnörgelt.",
     "vs.e5":"Erleichterung. Die Entscheidung fiel schon heute Morgen.",
     "mid.line":"Das ist das System, das für unsere Tester bereits funktioniert — jetzt kannst du <span class=\"b\">deins reservieren.</span>",
     "mid.cta":"Platz reservieren",
     "next.kicker":"Sichere dir die erste Serie",
     "next.pull":"Sichere dir den <span class=\"b\">Gründerpreis</span>.",
-    "next.lead":"Wir bauen eine begrenzte erste Charge, richtig gemacht: ein eigens entwickeltes Gehäuse, USB-C, alles dran. Es werden nicht viele — und mit einer Reservierung stehst du als Erste:r in der Reihe, zum Gründerpreis, vor allen anderen.",
+    "next.lead":"Wir bauen eine begrenzte erste Charge, richtig gemacht: ein eigens entwickeltes Gehäuse, USB-C, alles dran. Es werden nicht viele — und mit einer Reservierung stehst du ganz vorne in der Reihe, zum Gründerpreis, vor allen anderen.",
     "next.pricetag":"Gründerpreis · nur erste Produktionsserie",
     "next.newsletter":"Platz reservieren",
     "next.instagram":"Verfolg die Entwicklung",
@@ -705,8 +715,8 @@
     "next.proof":"Als Beweis, dass wir das hinbekommen: mein letztes Projekt, <a href=\"https://fedanilabs.de/\" target=\"_blank\" rel=\"noopener\">Fedani Labs</a> — ein ausgeliefertes Hardware-Produkt mit eigenem Kickstarter. Eudaimon ist der deutlich größere Wurf.",
     "status.kicker":"Wo es heute steht",
     "status.pull":"Über ein Dutzend Menschen <span class=\"b\">leben gerade damit</span>.",
-    "status.lead":"Handgebaute frühe Geräte auf echten Nachttischen — ehrlich gesagt an den Rändern rau. Aber es funktioniert, und niemand will sie wieder hergeben.",
-    "status.builtby":"Von Hand gebaut — rau, aber echt.",
+    "status.lead":"Handgebaute frühe Geräte auf echten Nachttischen — ehrlich gesagt an den Ecken und Kanten noch rau. Aber es funktioniert, und niemand will sie wieder hergeben.",
+    "status.builtby":"Von Hand gebaut — rau, aber echt. Weitere Fotos folgen bald.",
     "status.statscap":"Die ersten Zahlen — 17 aktive Tester",
     "stat1.l":"haben ihre Abgabezeit höchstens einmal verpasst",
     "stat2.l":"würden es weiter nutzen",

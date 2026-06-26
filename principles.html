@@ -27,6 +27,10 @@
     padding:16px 28px;background:rgba(10,9,8,.78);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--hair)}
   .mark{font-family:var(--serif);font-style:italic;font-weight:600;font-size:22px;color:var(--ink);text-decoration:none}
   .mark span{color:var(--brass)}
+  .head-left{display:flex;align-items:center;gap:clamp(16px,3vw,32px)}
+  .head-nav{display:flex;align-items:center;gap:22px}
+  .head-nav a{font-family:var(--sans);font-weight:500;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);text-decoration:none;transition:color .3s}
+  .head-nav a:hover{color:var(--brass)}
   .head-right{display:flex;align-items:center;gap:20px}
   .lang{display:flex;align-items:center;gap:7px}
   .lang-btn{background:none;border:none;cursor:pointer;font-family:var(--sans);font-weight:500;font-size:12px;letter-spacing:.12em;color:var(--ink-mute);padding:2px 1px;transition:color .3s}
@@ -50,20 +54,25 @@
   .endnote{margin-top:54px;font-family:var(--serif);font-style:italic;font-size:clamp(19px,2.4vw,26px);color:var(--brass);line-height:1.34}
   .foot{margin-top:44px;font-size:12px;letter-spacing:.08em;color:var(--ink-mute)}
   .foot a{text-decoration:none;border-bottom:1px solid var(--hair)}
-  @media (max-width:760px){header{padding:14px 20px}main{padding:120px 20px 90px}.head-right{gap:16px}}
+  @media (max-width:760px){header{padding:14px 20px}main{padding:120px 20px 90px}.head-right{gap:16px}.head-nav{display:none}.head-left{gap:0}}
 </style>
 </head>
 <body>
 
 <header>
-  <a class="mark" href="index.html">Eudaimon<span>.</span></a>
+  <div class="head-left">
+    <a class="mark" href="index.html">Eudaimon<span>.</span></a>
+    <nav class="head-nav">
+      <a href="index.html#product" data-i18n="nav.what">What it is</a>
+      <a href="principles.html" data-i18n="nav.principles">Principles &amp; methods</a>
+    </nav>
+  </div>
   <div class="head-right">
     <div class="lang" role="group" aria-label="Language">
       <button type="button" class="lang-btn is-active" data-lang="en">EN</button>
       <span class="lang-sep">/</span>
       <button type="button" class="lang-btn" data-lang="de">DE</button>
     </div>
-    <a class="nav-cta" href="index.html" data-i18n="back">← Home</a>
   </div>
 </header>
 
@@ -121,7 +130,8 @@
 
 <script>
   const I18N = { de: {
-    "back":"← Start",
+    "nav.what":"Was es ist",
+    "nav.principles":"Prinzipien & Methoden",
     "pr.eyebrow":"Die Wissenschaft hinter Eudaimon",
     "pr.title":"Die Prinzipien",
     "pr.intro":"Eudaimon ist kein Willenskraft-Trick. Es baut auf eine Handvoll harter Wahrheiten darüber, wie das <strong>Abend-Gehirn</strong> wirklich funktioniert — aus Neurowissenschaft und Verhaltenspsychologie — und jede einzelne steckt im Gerät. Hier der ganze Gedanke, der Reihe nach.",
@@ -131,8 +141,8 @@
     "pr.p2":"Odysseus ließ sich an den Mast binden, bevor er die Sirenen hören konnte. Vorab-Bindung — ein <em>Odysseus-Vertrag</em> — ist einer der robustesten Befunde der Verhaltensforschung: Dein klarer Kopf setzt die Regeln, und etwas außerhalb von dir hält sie, wenn das erschöpfte Ich nachgeben würde. Eudaimon ist dieses Etwas.",
     "pr.h3":"Nur eine Verpflichtung, die dein Körper eingeht, hält",
     "pr.p3":"Eine Absicht, die du mit dem Daumen rückgängig machen kannst, ist keine Verpflichtung. Die Box erkennt dein Handy physisch — kein Häkchen, kein Ehrensystem — und so wird das Andocken zu einem kleinen, echten Akt mit Gewicht. Dieses physische Ritual sagt deinem Gehirn, dass der Tag sich schließt, und lässt das Versprechen wirklich halten.",
-    "pr.h4":"Es darf nicht auf dem leben, wogegen es kämpft",
-    "pr.p4":"Reiz und Verlangen sitzen auf demselben Bildschirm. Jede App, die dein Handy kontrolliert, hat einen eingebauten Interessenkonflikt — sie lebt einen Wisch entfernt von genau dem, dem du widerstehst. Eudaimon ist ein separates Objekt durch den Raum: kein Feed, nichts zu verkaufen, nichts zu verlieren, wenn du das Handy weglegst.",
+    "pr.h4":"Es darf nicht auf dem Gerät sitzen, das es bekämpft",
+    "pr.p4":"Reiz und Verlangen sitzen auf demselben Bildschirm. Jede App, die dein Handy kontrolliert, hat einen eingebauten Interessenkonflikt — sie ist nur einen Wisch entfernt von genau dem, dem du widerstehst. Eudaimon ist ein eigenes Gerät, ein Stück weit weg: kein Feed, nichts zu verkaufen, nichts zu verlieren, wenn du das Handy weglegst.",
     "pr.h5":"In der Gefahrenzone bewegt Verlust mehr als Gewinn",
     "pr.p5":"Menschen strengen sich weit mehr an, um einen Verlust zu vermeiden, als um einen gleich großen Gewinn zu erreichen — Verlustaversion, einer der bestbelegten Effekte des Fachs. Wenn du also abzurutschen beginnst, verkauft dir Eudaimon nicht die Produktivität von morgen; es zeigt dir, was du gerade jetzt verlierst: den Schlaf, den Morgen, das Morgen, das du schon gewählt hast.",
     "pr.h6":"Druck, den du ignorieren kannst, wird zur Tapete",
