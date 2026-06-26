@@ -195,12 +195,55 @@
   footer .foot-nav{color:var(--ink-soft);font-size:12px;letter-spacing:.08em;text-decoration:none;border-bottom:1px solid var(--hair);transition:color .3s,border-color .3s}
   footer .foot-nav:hover{color:var(--brass);border-color:var(--brass)}
 
+  /* proof bar */
+  .proofbar{border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);padding:32px 0;background:rgba(240,233,218,.015)}
+  .proofbar-row{display:flex;justify-content:center;align-items:flex-start;gap:clamp(26px,6vw,82px);flex-wrap:wrap;text-align:center}
+  .pf{display:flex;flex-direction:column;gap:7px;align-items:center}
+  .pf-n{font-family:var(--sans);font-weight:300;font-size:clamp(28px,4vw,40px);color:var(--brass);line-height:1;letter-spacing:-.02em}
+  .pf-n .pf-d{color:var(--ink-mute)}
+  .pf-l{font-size:12.5px;letter-spacing:.03em;color:var(--ink-soft);max-width:16ch;line-height:1.4}
+
+  /* comparison: vs an app */
+  .vs{margin-top:44px;display:flex;flex-direction:column;gap:14px}
+  .vs-item{border-top:1px solid var(--hair);padding-top:20px}
+  .vs-dim{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-mute);font-weight:500;margin-bottom:14px}
+  .vs-pair{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .vs-app,.vs-eud{font-size:14.5px;line-height:1.55;padding:14px 16px;border-radius:4px}
+  .vs-app{color:var(--ink-mute);background:rgba(240,233,218,.02)}
+  .vs-eud{color:var(--ink);background:rgba(200,184,154,.06);border:1px solid rgba(200,184,154,.18)}
+  .vs-tag{display:block;font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;margin-bottom:6px}
+  .vs-app .vs-tag{color:var(--ink-mute)}.vs-eud .vs-tag{color:var(--brass)}
+
+  /* mid-page CTA */
+  .midcta{text-align:center}
+  .midcta-line{font-family:var(--serif);font-style:italic;font-weight:500;font-size:clamp(23px,3.6vw,36px);color:var(--ink);max-width:24ch;margin:0 auto 28px;line-height:1.18}
+  .midcta-line .b{color:var(--brass)}
+
+  /* price */
+  .price{margin:34px auto 0;display:flex;align-items:baseline;justify-content:center;gap:14px}
+  .price-now{font-family:var(--sans);font-weight:300;font-size:clamp(36px,5.4vw,52px);color:var(--brass);line-height:1;letter-spacing:-.02em}
+  .price-was{font-size:19px;color:var(--ink-mute);text-decoration:line-through}
+  .price-tag{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-mute);font-weight:500;margin-top:12px}
+
+  /* FAQ */
+  .faq-wrap{max-width:760px;margin:0 auto}
+  .faq details{border-top:1px solid var(--hair)}
+  .faq details:last-of-type{border-bottom:1px solid var(--hair)}
+  .faq summary{cursor:pointer;list-style:none;padding:22px 38px 22px 0;position:relative;font-family:var(--serif);font-style:italic;font-weight:500;font-size:clamp(18px,2.2vw,24px);color:var(--ink)}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"+";position:absolute;right:4px;top:20px;font-family:var(--sans);font-weight:300;font-size:24px;color:var(--brass)}
+  .faq details[open] summary::after{content:"–"}
+  .faq .faq-a{padding:0 0 24px;font-size:15px;line-height:1.72;color:var(--ink-soft);max-width:66ch}
+  .faq .faq-a a{color:var(--brass);text-decoration:none;border-bottom:1px solid rgba(200,184,154,.4)}
+
   html.js .reveal{opacity:0;transform:translateY(18px);transition:opacity .9s cubic-bezier(.2,.6,.2,1),transform .9s cubic-bezier(.2,.6,.2,1)}
   html.js .reveal.in{opacity:1;transform:none}
   @media (prefers-reduced-motion:reduce){html.js .reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
 
   @media (max-width:760px){
     .wrap{padding:0 22px}
+    .vs-pair{grid-template-columns:1fr;gap:10px}
+    .proofbar-row{gap:24px 30px}
     .step{grid-template-columns:54px 1fr;gap:18px;padding:28px 0}.step .col-left{gap:12px}.glyph{width:24px;height:24px}
     .phil{min-height:auto;padding:124px 0 72px}.phil-inner{max-width:100%;padding-left:0}
     .phil-bust{width:104vw;left:-8vw}.phil-bust img{opacity:.15}
@@ -260,7 +303,16 @@
   </div>
 </section>
 
-<div class="hair"></div>
+<!-- PROOF BAR -->
+<section class="proofbar">
+  <div class="wrap">
+    <div class="proofbar-row reveal">
+      <div class="pf"><span class="pf-n">17</span><span class="pf-l" data-i18n="pb.l1">testers living with it now</span></div>
+      <div class="pf"><span class="pf-n">16<span class="pf-d">/17</span></span><span class="pf-l" data-i18n="pb.l2">would keep using it</span></div>
+      <div class="pf"><span class="pf-n">15<span class="pf-d">/17</span></span><span class="pf-l" data-i18n="pb.l3">rarely or never miss bedtime</span></div>
+    </div>
+  </div>
+</section>
 
 <!-- THE PROBLEM -->
 <section class="band" id="problem">
@@ -284,6 +336,45 @@
       <li data-i18n="why.b2"><strong>Relief, not discipline</strong> — the calm of having already decided, hours ago, when it was easy.</li>
       <li data-i18n="why.b3"><strong>Optional accountability</strong> — a partner gets a quiet note if you miss bedtime. Never your apps, usage, or location.</li>
     </ul>
+
+    <p class="kicker reveal" style="margin-top:64px;margin-bottom:6px" data-i18n="vs.kicker">Why not just an app?</p>
+    <div class="vs">
+      <div class="vs-item reveal">
+        <p class="vs-dim" data-i18n="vs.d1">Where it lives</p>
+        <div class="vs-pair">
+          <div class="vs-app"><span class="vs-tag">App</span><span data-i18n="vs.a1">On your phone, right next to the thing you're trying to resist.</span></div>
+          <div class="vs-eud"><span class="vs-tag">Eudaimon</span><span data-i18n="vs.e1">A separate object across the room. Nothing to swipe.</span></div>
+        </div>
+      </div>
+      <div class="vs-item reveal">
+        <p class="vs-dim" data-i18n="vs.d2">How you get around it</p>
+        <div class="vs-pair">
+          <div class="vs-app"><span class="vs-tag">App</span><span data-i18n="vs.a2">One tap to dismiss, or just delete it.</span></div>
+          <div class="vs-eud"><span class="vs-tag">Eudaimon</span><span data-i18n="vs.e2">The only way out is to actually do the thing.</span></div>
+        </div>
+      </div>
+      <div class="vs-item reveal">
+        <p class="vs-dim" data-i18n="vs.d3">Does it know you followed through?</p>
+        <div class="vs-pair">
+          <div class="vs-app"><span class="vs-tag">App</span><span data-i18n="vs.a3">It trusts a checkbox you tap yourself.</span></div>
+          <div class="vs-eud"><span class="vs-tag">Eudaimon</span><span data-i18n="vs.e3">It physically detects the phone. Nothing to fake.</span></div>
+        </div>
+      </div>
+      <div class="vs-item reveal">
+        <p class="vs-dim" data-i18n="vs.d4">When you're at your weakest</p>
+        <div class="vs-pair">
+          <div class="vs-app"><span class="vs-tag">App</span><span data-i18n="vs.a4">Still just a screen you can swipe away.</span></div>
+          <div class="vs-eud"><span class="vs-tag">Eudaimon</span><span data-i18n="vs.e4">Gets harder to ignore, not easier.</span></div>
+        </div>
+      </div>
+      <div class="vs-item reveal">
+        <p class="vs-dim" data-i18n="vs.d5">What it feels like</p>
+        <div class="vs-pair">
+          <div class="vs-app"><span class="vs-tag">App</span><span data-i18n="vs.a5">One more thing nagging you.</span></div>
+          <div class="vs-eud"><span class="vs-tag">Eudaimon</span><span data-i18n="vs.e5">Relief. The choice was already made this morning.</span></div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -326,6 +417,16 @@
         <div><h3 data-i18n="step5.h3">Your morning is yours</h3><p data-i18n="step5.p">Eudaimon is your alarm clock, so your phone can stay in the box for those <span class="hl">precious few minutes</span> where you stretch, breathe, and actually wake up. Then your phone is yours again.</p></div>
       </div>
     </div>
+  </div>
+</section>
+
+<div class="hair"></div>
+
+<!-- MID-PAGE CTA -->
+<section class="band--tight midcta">
+  <div class="wrap">
+    <p class="midcta-line reveal" data-i18n="mid.line">This is the part nobody who tries it <span class="b">wants to give back.</span></p>
+    <a class="btn btn--primary reveal" href="#involved" data-i18n="mid.cta">Reserve your spot</a>
   </div>
 </section>
 
@@ -377,19 +478,57 @@
 
 <div class="hair"></div>
 
+<!-- FAQ -->
+<section class="band" id="faq">
+  <div class="wrap">
+    <p class="kicker reveal" style="margin-bottom:14px" data-i18n="faq.kicker">Questions</p>
+    <h2 class="section-h2 reveal" data-i18n="faq.h2">Before you <span class="b">reserve</span></h2>
+    <div class="faq-wrap faq reveal" style="margin-top:38px">
+      <details>
+        <summary data-i18n="faq.q1">What does it cost?</summary>
+        <p class="faq-a" data-i18n="faq.a1">The first production run is <strong>€99</strong> — the founders' price, for early backers only. It goes to <strong>€149</strong> afterwards. Reserving now costs nothing; you only pay when your unit ships.</p>
+      </details>
+      <details>
+        <summary data-i18n="faq.q2">Do I pay anything today?</summary>
+        <p class="faq-a" data-i18n="faq.a2">No. Reserving just holds your place in the first run and locks in the €99 price. No card, no charge — we only reach out when it's ready to ship.</p>
+      </details>
+      <details>
+        <summary data-i18n="faq.q3">What if there's a real emergency at night?</summary>
+        <p class="faq-a" data-i18n="faq.a3">You're never truly locked out. There's a way to get your phone back early — it just takes a deliberate moment, by design, so it stays a real commitment and not a one-tap escape hatch.</p>
+      </details>
+      <details>
+        <summary data-i18n="faq.q4">Is my data private?</summary>
+        <p class="faq-a" data-i18n="faq.a4">Yes. Eudaimon doesn't track your usage, your apps, or your location. The only thing it can share — and only if you switch it on — is a quiet "missed bedtime" note to one person you choose.</p>
+      </details>
+      <details>
+        <summary data-i18n="faq.q5">Will it work with my phone?</summary>
+        <p class="faq-a" data-i18n="faq.a5">Any phone fits — iPhone or Android. The box holds the phone itself, so it isn't tied to one model or operating system.</p>
+      </details>
+      <details>
+        <summary data-i18n="faq.q6">When does it ship?</summary>
+        <p class="faq-a" data-i18n="faq.a6">The first run is in production now. Reserve your spot and we'll send you the timeline and first access the moment it opens — no fake countdowns, just the real date when we have it.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<div class="hair"></div>
+
 <!-- THE FIRST PRODUCTION RUN -->
 <section class="band involved" id="involved">
   <div class="wrap center">
-    <p class="kicker reveal" data-i18n="next.kicker">What's next</p>
-    <p class="pull reveal" data-i18n="next.pull">The <span class="b">first production run</span> is coming.</p>
-    <p class="lead reveal" style="margin-top:24px" data-i18n="next.lead">We're building a limited first batch, properly made: a purpose-built case, USB-C, the works. It won't be many. Newsletter subscribers get first access the moment it opens, at the founders' price, before anyone else.</p>
+    <p class="kicker reveal" data-i18n="next.kicker">Reserve the first run</p>
+    <p class="pull reveal" data-i18n="next.pull">Lock in the <span class="b">founders' price</span>.</p>
+    <p class="lead reveal" style="margin-top:24px" data-i18n="next.lead">We're building a limited first batch, properly made: a purpose-built case, USB-C, the works. It won't be many — and reserving puts you first in line at the founders' price, before anyone else.</p>
+    <div class="price reveal"><span class="price-now">€99</span><span class="price-was">€149</span></div>
+    <p class="price-tag reveal" data-i18n="next.pricetag">Founders' price · first production run only</p>
     <form class="nl-form reveal" id="nlForm" action="https://formsubmit.co/ihatespamalot7@gmail.com" method="POST" novalidate>
       <input class="nl-input" type="email" name="email" required placeholder="you@email.com" aria-label="Email address" autocomplete="email">
-      <button class="btn btn--primary" type="submit" data-i18n="next.newsletter">Get first access</button>
+      <button class="btn btn--primary" type="submit" data-i18n="next.newsletter">Reserve your spot</button>
       <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
     </form>
     <p class="nl-msg reveal" id="nlMsg" role="status" aria-live="polite"></p>
-    <p class="reassure reveal" data-i18n="next.reassure">No spam. One note when the first run opens, nothing else.</p>
+    <p class="reassure reveal" data-i18n="next.reassure">No payment today — reserving is free and holds your price. 30-day money-back once it's in your hands. No spam, ever.</p>
     <div class="cta-row reveal">
       <a class="btn" href="https://instagram.com/your.eudaimon" target="_blank" rel="noopener" data-i18n="next.instagram">Follow the build</a>
       <a class="btn" href="https://www.linkedin.com/in/david-leon-britz/" target="_blank" rel="noopener" data-i18n="next.linkedin">Connect on LinkedIn</a>
@@ -509,13 +648,49 @@
     "feat.lead":"Es funktioniert wegen seines Orts und seiner Bauweise — nicht auf deinem Handy, physisch real, mit optionaler Verbindlichkeit und einem Ritual, das die Verpflichtung wirklich halten lässt. Der ganze Gedanke dahinter, und die Psychologie darunter, steht auf einer Seite.",
     "feat.teaser":"Nicht auf deinem Handy · Physische Erkennung · Das Ritual ist die Verpflichtung · Optionale Verbindlichkeit · Erleichterung by Design",
     "feat.cta":"Die Prinzipien &amp; Methoden <span class=\"arr\">→</span>",
-    "next.kicker":"Was als Nächstes kommt",
-    "next.pull":"Die <span class=\"b\">erste Produktionsserie</span> kommt.",
-    "next.lead":"Wir bauen eine begrenzte erste Charge, richtig gemacht: ein eigens entwickeltes Gehäuse, USB-C, alles dran. Es werden nicht viele. Newsletter-Abonnenten bekommen als Erste Zugang, sobald es losgeht, zum Gründerpreis, vor allen anderen.",
-    "next.newsletter":"Frühzeitig Zugang sichern",
+    "pb.l1":"Tester leben gerade damit",
+    "pb.l2":"würden es weiter nutzen",
+    "pb.l3":"verpassen die Schlafenszeit selten oder nie",
+    "vs.kicker":"Warum nicht einfach eine App?",
+    "vs.d1":"Wo es lebt",
+    "vs.a1":"Auf deinem Handy, direkt neben dem, dem du widerstehen willst.",
+    "vs.e1":"Ein separates Objekt durch den Raum. Nichts zum Wegwischen.",
+    "vs.d2":"Wie du es umgehst",
+    "vs.a2":"Ein Tippen zum Wegwischen — oder einfach löschen.",
+    "vs.e2":"Der einzige Ausweg ist, es wirklich zu tun.",
+    "vs.d3":"Weiß es, ob du es durchgezogen hast?",
+    "vs.a3":"Es vertraut einem Häkchen, das du selbst setzt.",
+    "vs.e3":"Es erkennt das Handy physisch. Nichts vorzutäuschen.",
+    "vs.d4":"Wenn du am schwächsten bist",
+    "vs.a4":"Immer noch nur ein Bildschirm, den du wegwischst.",
+    "vs.e4":"Wird schwerer zu ignorieren, nicht leichter.",
+    "vs.d5":"Wie es sich anfühlt",
+    "vs.a5":"Noch etwas, das an dir nörgelt.",
+    "vs.e5":"Erleichterung. Die Entscheidung fiel schon heute Morgen.",
+    "mid.line":"Das ist der Teil, den niemand, der es probiert, <span class=\"b\">wieder hergeben will.</span>",
+    "mid.cta":"Platz reservieren",
+    "next.kicker":"Sichere dir die erste Serie",
+    "next.pull":"Sichere dir den <span class=\"b\">Gründerpreis</span>.",
+    "next.lead":"Wir bauen eine begrenzte erste Charge, richtig gemacht: ein eigens entwickeltes Gehäuse, USB-C, alles dran. Es werden nicht viele — und mit einer Reservierung stehst du als Erste:r in der Reihe, zum Gründerpreis, vor allen anderen.",
+    "next.pricetag":"Gründerpreis · nur erste Produktionsserie",
+    "next.newsletter":"Platz reservieren",
     "next.instagram":"Verfolg die Entwicklung",
     "next.linkedin":"Auf LinkedIn vernetzen",
-    "next.reassure":"Kein Spam. Eine Nachricht, wenn die erste Serie startet, sonst nichts.",
+    "next.reassure":"Heute keine Zahlung — reservieren ist kostenlos und sichert deinen Preis. 30 Tage Geld-zurück, sobald es bei dir ist. Niemals Spam.",
+    "faq.kicker":"Fragen",
+    "faq.h2":"Bevor du <span class=\"b\">reservierst</span>",
+    "faq.q1":"Was kostet es?",
+    "faq.a1":"Die erste Produktionsserie kostet <strong>99 €</strong> — der Gründerpreis, nur für frühe Unterstützer. Danach sind es <strong>149 €</strong>. Reservieren kostet nichts; du zahlst erst, wenn dein Gerät versendet wird.",
+    "faq.q2":"Zahle ich heute etwas?",
+    "faq.a2":"Nein. Eine Reservierung hält nur deinen Platz in der ersten Serie und sichert den Preis von 99 €. Keine Karte, keine Abbuchung — wir melden uns erst, wenn es versandbereit ist.",
+    "faq.q3":"Was, wenn nachts ein echter Notfall ist?",
+    "faq.a3":"Du bist nie wirklich ausgesperrt. Es gibt einen Weg, dein Handy früher zurückzubekommen — er braucht nur einen bewussten Moment, damit es eine echte Verpflichtung bleibt und kein Ein-Tipp-Notausgang.",
+    "faq.q4":"Sind meine Daten privat?",
+    "faq.a4":"Ja. Eudaimon verfolgt weder deine Nutzung noch deine Apps oder deinen Standort. Das Einzige, was es teilen kann — und nur wenn du es einschaltest — ist eine leise „Schlafenszeit verpasst“-Nachricht an eine Person deiner Wahl.",
+    "faq.q5":"Funktioniert es mit meinem Handy?",
+    "faq.a5":"Jedes Handy passt — iPhone oder Android. Die Box hält das Handy selbst, sie ist also nicht an ein Modell oder Betriebssystem gebunden.",
+    "faq.q6":"Wann wird geliefert?",
+    "faq.a6":"Die erste Serie ist gerade in Produktion. Reservier dir deinen Platz, und wir schicken dir den Zeitplan und ersten Zugang, sobald es losgeht — keine falschen Countdowns, nur das echte Datum, sobald wir es haben.",
     "next.proof":"Als Beweis, dass wir das hinbekommen: mein letztes Projekt, <a href=\"https://fedanilabs.de/\" target=\"_blank\" rel=\"noopener\">Fedani Labs</a> — ein ausgeliefertes Hardware-Produkt mit eigenem Kickstarter. Eudaimon ist der deutlich größere Wurf.",
     "status.kicker":"Wo es heute steht",
     "status.pull":"Ein paar Dutzend Menschen <span class=\"b\">leben gerade damit</span>.",
