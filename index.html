@@ -79,12 +79,12 @@
     -webkit-mask-image:linear-gradient(90deg,#000 52%,transparent 92%);mask-image:linear-gradient(90deg,#000 52%,transparent 92%)}
   .phil-inner{position:relative;z-index:1;width:100%;max-width:600px;padding-left:clamp(0px,10vw,130px)}
   .phil .mark-xl{font-family:var(--serif);font-style:italic;font-weight:600;font-size:clamp(44px,8vw,86px);line-height:.96;color:var(--brass);letter-spacing:.01em}
-  .phil .phil-catch{font-size:clamp(15px,2vw,19px);font-weight:300;color:var(--ink-soft);margin-top:18px;max-width:40ch;line-height:1.4}
+  .phil .phil-catch{font-family:var(--serif);font-style:italic;font-weight:500;font-size:clamp(18px,2.4vw,24px);color:var(--brass);margin-top:36px;max-width:34ch;line-height:1.3}
   .phil .ipa{margin-top:14px;font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--ink-mute);font-weight:500}
   .phil h1{font-family:var(--serif);font-style:italic;font-weight:500;font-size:clamp(23px,3vw,33px);line-height:1.24;color:var(--ink);margin-top:34px;max-width:24ch}
   .phil h1 .b{color:var(--brass)}
   .phil .lead{margin-top:22px;max-width:46ch}
-  .phil .link-cta{margin-top:38px}
+  .phil .link-cta{margin-top:24px}
 
   /* PRODUCT */
   .product .wrap{text-align:center}
@@ -133,13 +133,10 @@
   .night-amb{position:absolute;inset:0;pointer-events:none;z-index:0;background:linear-gradient(180deg,rgba(46,66,120,.20) 0%,rgba(34,50,98,.12) 38%,transparent 68%,rgba(232,146,32,.06) 100%)}
   #night > .wrap{position:relative;z-index:1}
 
-  /* FEATURES & METHODS */
-  .feat-body{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;margin-top:36px}
-  .feat-list{list-style:none;display:flex;flex-direction:column}
-  .feat-item{padding:20px 0;border-top:1px solid var(--hair)}
-  .feat-item:last-child{border-bottom:1px solid var(--hair)}
-  .feat-item strong{display:block;font-size:14px;font-weight:500;letter-spacing:.04em;color:var(--ink);margin-bottom:6px;text-transform:uppercase}
-  .feat-item p{font-size:14.5px;line-height:1.65;color:var(--ink-soft)}
+  /* FEATURES & METHODS (teaser) */
+  #features .lead{margin-left:auto;margin-right:auto}
+  .feat-teaser{margin:34px auto 0;max-width:46ch;font-size:13px;letter-spacing:.06em;line-height:2;color:var(--brass);text-transform:uppercase;font-weight:500}
+  #features .link-cta{margin-top:36px}
 
   /* WHY bullets */
   .points{margin-top:32px;display:flex;flex-direction:column;gap:16px;max-width:62ch;list-style:none}
@@ -204,7 +201,6 @@
 
   @media (max-width:760px){
     .wrap{padding:0 22px}
-    .feat-body{grid-template-columns:1fr;gap:28px}
     .step{grid-template-columns:54px 1fr;gap:18px;padding:28px 0}.step .col-left{gap:12px}.glyph{width:24px;height:24px}
     .phil{min-height:auto;padding:124px 0 72px}.phil-inner{max-width:100%;padding-left:0}
     .phil-bust{width:104vw;left:-8vw}.phil-bust img{opacity:.15}
@@ -242,10 +238,10 @@
   <div class="wrap">
     <div class="phil-inner">
       <p class="mark-xl reveal">Eudaimonia</p>
-      <p class="phil-catch reveal" data-i18n="phil.catch">The behavioral psychology answer to doomscrolling</p>
       <p class="ipa reveal" data-i18n="phil.ipa">yoo-dai-mon-EE-a &nbsp;·&nbsp; Ancient Greek</p>
       <h1 class="reveal" data-i18n="phil.h1">Aristotle's word for <span class="b">flourishing</span> — not a fleeting high, but the lifelong practice of living well.</h1>
       <p class="lead reveal" data-i18n="phil.lead">He meant it as a <em>verb</em> — flourishing is something you <strong>do</strong>, daily, by acting like who you mean to be. Eudaimon starts with its smallest, hardest rep: going to bed when you said you would.</p>
+      <p class="phil-catch reveal" data-i18n="phil.catch">The behavioral psychology answer to doomscrolling.</p>
       <a class="link-cta reveal" href="#product" data-i18n="phil.cta">Meet the device <span class="arr">↓</span></a>
     </div>
   </div>
@@ -335,61 +331,14 @@
 
 <div class="hair"></div>
 
-<!-- FEATURES & METHODS -->
+<!-- FEATURES & METHODS (teaser) -->
 <section class="band" id="features">
-  <div class="wrap">
+  <div class="wrap center">
     <p class="kicker reveal" style="margin-bottom:14px" data-i18n="feat.kicker">Features &amp; methods</p>
     <h2 class="section-h2 reveal" data-i18n="feat.h2">Further than any app <span class="b">ever could</span></h2>
-    <div class="feat-body">
-      <div>
-        <p class="lead reveal" data-i18n="feat.lead">Eudaimon is built to get you further than your tired brain or any app ever could — because of how it's designed and where it lives. If you want to go deeper on the psychology, the <a class="inline-ref" href="principles.html">principles page</a> has all of it.</p>
-      </div>
-      <ul class="feat-list reveal">
-        <li class="feat-item">
-          <strong data-i18n="feat.f1t">Not on your phone</strong>
-          <p data-i18n="feat.f1p">Your phone is the problem. Any app on it has a conflict of interest. Eudaimon is a completely separate device.</p>
-        </li>
-        <li class="feat-item">
-          <strong data-i18n="feat.f2t">Physical detection</strong>
-          <p data-i18n="feat.f2p">The box physically senses your phone. No checkbox, no tap — you've actually committed, not just said you did.</p>
-        </li>
-        <li class="feat-item">
-          <strong data-i18n="feat.f3t">The ritual is the commitment</strong>
-          <p data-i18n="feat.f3p">Placing your phone in a physical box is a real act. That's what makes a pre-commitment hold in a way no swipe ever could.</p>
-        </li>
-        <li class="feat-item">
-          <strong data-i18n="feat.f4t">Optional accountability</strong>
-          <p data-i18n="feat.f4p">A trusted person can receive a quiet nudge if you miss your time. No usage data, no location, no drama — just a gentle ping to someone you chose.</p>
-        </li>
-        <li class="feat-item">
-          <strong data-i18n="feat.f5t">Relief by design</strong>
-          <p data-i18n="feat.f5p">The feeling testers report most isn't discipline. It's relief — the quiet of not having to decide tonight, because morning-you already did.</p>
-        </li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<div class="hair"></div>
-
-<!-- FOUNDER -->
-<section class="band founder">
-  <div class="wrap">
-    <p class="kicker reveal" data-i18n="founder.kicker">Why I built it</p>
-    <div class="founder-intro reveal">
-      <img class="founder-photo" src="assets/founder/david.jpg" alt="David, founder of Eudaimon">
-      <div class="founder-bio">
-        <p class="founder-lead" data-i18n="founder.bio1">I'm David — a 21-year-old student and hardtech founder. And someone who's fought doomscrolling for years.</p>
-        <p class="founder-body" data-i18n="founder.bio2">It sucks. A lot. I've tried every solution out there — the screen-blocking apps, all of it — and nothing held for long. So I spent the last months with the smartest people I know, drafting something that finally works.</p>
-      </div>
-    </div>
-    <figure class="usage reveal">
-      <img src="assets/founder/screen-usage-1.jpg" alt="My iOS Screen Time: 6h 55min" loading="lazy">
-      <img src="assets/founder/screen-usage-2.jpg" alt="My iOS Screen Time: 10h 53min" loading="lazy">
-      <img src="assets/founder/screen-usage-3.jpg" alt="My iOS Screen Time: 10h 59min" loading="lazy">
-      <figcaption data-i18n="founder.usagecap">My own screen time. This is what I built it against.</figcaption>
-    </figure>
-    <p class="founder-link reveal"><span data-i18n="founder.science">There's real science behind why the evening is the hardest part.</span> <a href="principles.html" data-i18n="founder.scienceLink">Read the Eudaimon principles →</a></p>
+    <p class="lead reveal" style="margin-top:26px" data-i18n="feat.lead">It works because of where it lives and how it's built — off your phone, physically real, with optional accountability and a ritual that makes the commitment actually stick. The full thinking, and the psychology under it, lives on one page.</p>
+    <p class="feat-teaser reveal" data-i18n="feat.teaser">Not on your phone · Physical detection · The ritual is the commitment · Optional accountability · Relief by design</p>
+    <a class="link-cta reveal" href="principles.html" data-i18n="feat.cta">The principles &amp; methods <span class="arr">→</span></a>
   </div>
 </section>
 
@@ -449,6 +398,29 @@
   </div>
 </section>
 
+<div class="hair"></div>
+
+<!-- FOUNDER (the person behind it) -->
+<section class="band founder">
+  <div class="wrap">
+    <p class="kicker reveal" data-i18n="founder.kicker">Who's behind it</p>
+    <div class="founder-intro reveal">
+      <img class="founder-photo" src="assets/founder/david.jpg" alt="David, founder of Eudaimon">
+      <div class="founder-bio">
+        <p class="founder-lead" data-i18n="founder.bio1">I'm David — a 21-year-old student and hardtech founder. And someone who's fought doomscrolling for years.</p>
+        <p class="founder-body" data-i18n="founder.bio2">It sucks. A lot. I've tried every solution out there — the screen-blocking apps, all of it — and nothing held for long. So I spent the last months with the smartest people I know, drafting something that finally works.</p>
+      </div>
+    </div>
+    <figure class="usage reveal">
+      <img src="assets/founder/screen-usage-1.jpg" alt="My iOS Screen Time: 6h 55min" loading="lazy">
+      <img src="assets/founder/screen-usage-2.jpg" alt="My iOS Screen Time: 10h 53min" loading="lazy">
+      <img src="assets/founder/screen-usage-3.jpg" alt="My iOS Screen Time: 10h 59min" loading="lazy">
+      <figcaption data-i18n="founder.usagecap">My own screen time. This is what I built it against.</figcaption>
+    </figure>
+    <p class="founder-link reveal"><span data-i18n="founder.science">There's real science behind why the evening is the hardest part.</span> <a href="principles.html" data-i18n="founder.scienceLink">Read the Eudaimon principles →</a></p>
+  </div>
+</section>
+
 <footer>
   <span class="fmark">Eudaimon<span>.</span></span>
   <small data-i18n="footer.tagline">flourishing, one night at a time</small>
@@ -498,13 +470,13 @@
   // ---- i18n ----
   const I18N = { de: {
     "nav.what":"Was es ist",
-    "phil.catch":"Die verhaltenspsychologische Antwort auf Doomscrolling",
+    "phil.catch":"Die verhaltenspsychologische Antwort auf Doomscrolling.",
     "phil.ipa":"yoo-dai-mon-EE-a &nbsp;·&nbsp; Altgriechisch",
     "phil.h1":"Aristoteles' Wort für das <span class=\"b\">Aufblühen</span> — kein flüchtiger Rausch, sondern die lebenslange Übung, gut zu leben.",
     "phil.lead":"Er verstand es als <em>Verb</em> — Aufblühen ist etwas, das man <strong>tut</strong>, täglich, indem man so handelt wie der Mensch, der man sein will. Eudaimon beginnt mit der kleinsten, schwersten Wiederholung: abends ins Bett zu gehen, wenn man es sich vorgenommen hat.",
     "phil.cta":"Das Gerät ansehen <span class=\"arr\">↓</span>",
     "product.what":"Eine Box für den Nachttisch, die nachts dein Handy nimmt, dich an <span class=\"b\">dein eigenes Abendritual</span> hält und es dir morgens zurückgibt.",
-    "founder.kicker":"Warum ich es gebaut habe",
+    "founder.kicker":"Wer dahintersteckt",
     "founder.bio1":"Ich bin David — 21, Student und Hardtech-Gründer. Und jemand, der seit Jahren mit Doomscrolling kämpft.",
     "founder.bio2":"Es nervt. Sehr. Ich habe jede Lösung da draußen ausprobiert — die App-Blocker, alles — und nichts hielt lange. Also habe ich die letzten Monate mit den klügsten Menschen, die ich kenne, an etwas gearbeitet, das endlich funktioniert.",
     "founder.usagecap":"Meine eigene Bildschirmzeit. Genau dagegen habe ich es gebaut.",
@@ -534,17 +506,9 @@
     "step5.p":"Eudaimon ist dein Wecker, sodass dein Handy für jene <span class=\"hl\">kostbaren Minuten</span> in der Box bleiben kann, in denen du dich streckst, atmest und wirklich aufwachst. Dann gehört das Handy wieder dir.",
     "feat.kicker":"Features &amp; Methoden",
     "feat.h2":"Weiter als jede App <span class=\"b\">je könnte</span>",
-    "feat.lead":"Eudaimon ist darauf ausgelegt, dich weiter zu bringen als dein müdes Gehirn oder jede App je könnte — durch sein Design und seinen Ort im Raum. Wenn du tiefer in die Psychologie einsteigen willst, findest du alles auf der <a class=\"inline-ref\" href=\"principles.html\">Prinzipien-Seite</a>.",
-    "feat.f1t":"Nicht auf deinem Handy",
-    "feat.f1p":"Dein Handy ist das Problem. Jede App darauf hat einen Interessenkonflikt. Eudaimon ist ein vollständig separates Gerät.",
-    "feat.f2t":"Physische Erkennung",
-    "feat.f2p":"Die Box erkennt dein Handy physisch. Kein Häkchen, kein Tippen — du hast dich wirklich verpflichtet, nicht nur gesagt, dass du es hast.",
-    "feat.f3t":"Das Ritual ist die Verpflichtung",
-    "feat.f3p":"Dein Handy in eine physische Box zu legen ist ein echter Akt. Das ist es, was eine Vorab-Verpflichtung hält, wie es kein Wischen je könnte.",
-    "feat.f4t":"Optionale Verbindlichkeit",
-    "feat.f4p":"Eine Vertrauensperson kann eine sanfte Benachrichtigung erhalten, wenn du deine Zeit verpasst. Keine Nutzungsdaten, kein Standort, kein Drama — nur ein leises Signal an jemanden, den du ausgewählt hast.",
-    "feat.f5t":"Erleichterung by Design",
-    "feat.f5p":"Das Gefühl, das Tester am häufigsten berichten, ist nicht Disziplin. Es ist Erleichterung — die Stille, heute Abend keine Entscheidung treffen zu müssen, weil dein Morgen-Ich es bereits getan hat.",
+    "feat.lead":"Es funktioniert wegen seines Orts und seiner Bauweise — nicht auf deinem Handy, physisch real, mit optionaler Verbindlichkeit und einem Ritual, das die Verpflichtung wirklich halten lässt. Der ganze Gedanke dahinter, und die Psychologie darunter, steht auf einer Seite.",
+    "feat.teaser":"Nicht auf deinem Handy · Physische Erkennung · Das Ritual ist die Verpflichtung · Optionale Verbindlichkeit · Erleichterung by Design",
+    "feat.cta":"Die Prinzipien &amp; Methoden <span class=\"arr\">→</span>",
     "next.kicker":"Was als Nächstes kommt",
     "next.pull":"Die <span class=\"b\">erste Produktionsserie</span> kommt.",
     "next.lead":"Wir bauen eine begrenzte erste Charge, richtig gemacht: ein eigens entwickeltes Gehäuse, USB-C, alles dran. Es werden nicht viele. Newsletter-Abonnenten bekommen als Erste Zugang, sobald es losgeht, zum Gründerpreis, vor allen anderen.",
