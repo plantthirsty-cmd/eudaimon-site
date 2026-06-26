@@ -1,5 +1,0 @@
--rw-------@ 1 DavidBritz_2  staff  143266 16:13 bals asfasfafaf.PNG
--rw-------@ 1 DavidBritz_2  staff  367747 22:17 bals sdfsdgsdgs.PNG
--rw-------@ 1 DavidBritz_2  staff  414273 16:43 bals sdsdgsdg.PNG
---- also any image modified in last 30 min ---
--rw-r--r--@ 1 DavidBritz_2  staff  1874606 10:04 ./David aiubfduibfdsf.png
